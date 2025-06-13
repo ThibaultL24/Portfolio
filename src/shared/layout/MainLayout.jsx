@@ -18,7 +18,7 @@ const MainLayout = ({ children }) => {
   return (
     <Flex direction="column" minH="100vh" fontFamily={font} lang={language}>
       <Navbar />
-      <Box as="main" pt="70px" flex="1">
+      <Box as="main" pt="100px" flex="1">
         {children}
       </Box>
       <Footer />

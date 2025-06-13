@@ -17,7 +17,15 @@ const Footer = () => {
     >
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <Text color="brand.neon" textShadow="0 0 10px rgba(0, 255, 157, 0.5)">
-          © 2024 Thibault Lenormand. {t("home.footer.rights")}
+          © 2024 Thibault Lenormand
+        </Text>
+
+        <Text
+          color="brand.neon"
+          textShadow="0 0 10px rgba(0, 255, 157, 0.5)"
+          ml="-20px"
+        >
+          {t("home.footer.rights")}
         </Text>
 
         <HStack spacing={6}>

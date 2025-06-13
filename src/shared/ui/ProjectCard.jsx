@@ -28,7 +28,7 @@ const ProjectCard = ({
         <Text as="h3" fontWeight="bold" fontSize="lg" mb={3}>
           {title}
         </Text>
-        <Text fontSize="sm" mb={5}>
+        <Text fontSize="sm" mb={5} color="gray.300">
           {description}
         </Text>
         <Link
