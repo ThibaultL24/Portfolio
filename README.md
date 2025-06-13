@@ -1,54 +1,56 @@
-# React + TypeScript + Vite
+# Portfolio Personnel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Un portfolio moderne et interactif développé avec React, Vite et diverses technologies modernes.
 
-Currently, two official plugins are available:
+## 🚀 Technologies Utilisées
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** - Bibliothèque JavaScript pour la construction d'interfaces utilisateur
+- **Vite** - Outil de build moderne et rapide
+- **Chakra UI** - Bibliothèque de composants React
+- **Framer Motion** - Bibliothèque d'animations
+- **React Three Fiber** - Rendu 3D dans React
+- **i18next** - Internationalisation
+- **React Router** - Gestion des routes
+- **TailwindCSS** - Framework CSS utilitaire
 
-## Expanding the ESLint configuration
+## 🎨 Fonctionnalités
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Design moderne et responsive
+- Animations fluides avec Framer Motion
+- Support multilingue avec i18next
+- Composants 3D avec React Three Fiber
+- Navigation fluide avec React Router
+- Interface utilisateur élégante avec Chakra UI
+- Animations de fond personnalisées
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📁 Structure du Projet
+
+```
+src/
+├── assets/         # Images et ressources statiques
+├── features/       # Fonctionnalités principales
+├── hooks/          # Hooks React personnalisés
+├── pages/          # Composants de pages
+├── shared/         # Composants partagés
+└── translations/   # Fichiers de traduction
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 Configuration
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Le projet utilise :
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Vite pour le bundling
+- ESLint pour le linting
+- TailwindCSS pour le styling
+- PostCSS pour le traitement CSS
+
+## 🌐 Internationalisation
+
+Le projet supporte plusieurs langues grâce à i18next. Les traductions sont stockées dans le dossier `src/translations/`.
+
+## 🎯 Fonctionnalités à Venir
+
+- [ ] Ajout de nouvelles sections
+- [ ] Optimisation des performances
+- [ ] Amélioration des animations
+- [ ] Support de nouvelles langues
