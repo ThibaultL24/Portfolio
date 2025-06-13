@@ -47,10 +47,3 @@ Le projet utilise :
 ## 🌐 Internationalisation
 
 Le projet supporte plusieurs langues grâce à i18next. Les traductions sont stockées dans le dossier `src/translations/`.
-
-## 🎯 Fonctionnalités à Venir
-
-- [ ] Ajout de nouvelles sections
-- [ ] Optimisation des performances
-- [ ] Amélioration des animations
-- [ ] Support de nouvelles langues
