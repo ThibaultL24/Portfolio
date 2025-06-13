@@ -1,0 +1,171 @@
+/* Import Open Dyslexic font */
+@import url("https://fonts.cdnfonts.com/css/opendyslexic");
+/* Import Montserrat font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+a {
+  font-weight: 500;
+  color: white;
+  text-decoration: inherit;
+}
+a:hover {
+  color: gray.300;
+}
+
+body {
+  margin: 0;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: white;
+}
+button:focus,
+button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* OpenDyslexic specific adjustments */
+p,
+li {
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.8em;
+}
+
+/* OpenDyslexic specific adjustments - only applied when the font is active */
+.font-opendyslexic p,
+.font-opendyslexic li {
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+}
+
+.font-opendyslexic h1,
+.font-opendyslexic h2,
+.font-opendyslexic h3,
+.font-opendyslexic h4,
+.font-opendyslexic h5,
+.font-opendyslexic h6 {
+  margin-bottom: 0.8em;
+}
+
+/* Default Montserrat styles avec animations */
+.font-montserrat {
+  letter-spacing: 0.2px;
+  line-height: 1.6;
+}
+
+/* Ombres de texte pour les titres avec Montserrat */
+.font-montserrat h1,
+.font-montserrat h2,
+.font-montserrat h3 {
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+
+.font-montserrat h4,
+.font-montserrat h5,
+.font-montserrat h6 {
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Style global pour les coins arrondis */
+.font-montserrat div,
+.font-montserrat section,
+.font-montserrat article,
+.font-montserrat input,
+.font-montserrat textarea {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Style pour les cartes et éléments au survol */
+.font-montserrat .card,
+.font-montserrat [role="group"],
+.font-montserrat .hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.font-montserrat .card:hover,
+.font-montserrat [role="group"]:hover,
+.font-montserrat .hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations de transition générales */
+.font-montserrat * {
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* Ensure proper text sizing */
+@media (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
