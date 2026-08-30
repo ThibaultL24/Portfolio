@@ -1,7 +1,8 @@
 export const creations = {
-  title: "CREATIONS",
+  title: "Creations",
+  kicker: "Notebooks",
   description:
-    "Discover my creative works, visual explorations, code snippets, and reflections on design and development.",
+    "Drawings, texts, explorations. What does not fit on a project card, and still matters.",
   tabs: {
     visuals: "Visuals",
     code: "Code",

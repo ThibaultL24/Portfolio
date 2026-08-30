@@ -1,7 +1,8 @@
 export const contact = {
-  title: "CONTACT",
+  title: "Contact",
+  kicker: "Atelier",
   description:
-    "Vous avez un projet en tête ou une opportunité à discuter ? N'hésitez pas à me contacter, je serais ravi d'échanger avec vous.",
+    "Un site, un produit, un texte. Écrivez-moi — je réponds depuis Avignon.",
   form: {
     title: "Envoyez-moi un message",
     name: "Nom",

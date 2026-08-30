@@ -1,53 +1,40 @@
+// src/shared/ui/Card.jsx
 import { Box } from "@chakra-ui/react";
 
-/**
- * Composant Card réutilisable avec animations
- * @param {Object} props
- * @param {React.ReactNode} props.children - Le contenu de la carte
- * @param {boolean} props.hoverEffect - Activer/désactiver l'effet de survol (défaut: true)
- * @param {boolean} props.showShadow - Activer/désactiver l'ombre (défaut: true)
- * @param {string} props.borderRadius - Rayon de la bordure (défaut: "12px")
- * @param {Object} props.rest - Autres props à passer au Box
- */
 const Card = ({
   children,
   hoverEffect = true,
   showShadow = true,
-  borderRadius = "12px",
+  borderRadius = "22px",
   ...rest
 }) => {
-  // Base styles always applied
   const baseStyles = {
     className: "card",
-    border: "1px solid transparent",
-    bg: "black",
-    color: "white",
+    border: "1px solid rgba(201,163,106,0.16)",
+    bg: "rgba(20, 17, 14, 0.86)",
+    color: "brand.parchment",
     borderRadius,
-    transition: "transform 0.3s, box-shadow 0.3s, border-color 0.3s",
+    transition:
+      "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease, border-color 0.3s",
     w: "100%",
+    overflow: "hidden",
     ...rest,
   };
 
-  // Conditional styles
   const shadowStyles = showShadow
-    ? { boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }
+    ? { boxShadow: "0 18px 50px rgba(0,0,0,0.28)" }
     : {};
 
   const hoverStyles = hoverEffect
     ? {
         _hover: {
-          borderColor: "brand.neon",
-          transform: "translateY(-5px)",
-          boxShadow: "0 0 20px rgba(0, 255, 157, 0.3)",
+          borderColor: "rgba(201,163,106,0.45)",
+          transform: "translateY(-6px)",
+          boxShadow: "0 28px 70px rgba(201,163,106,0.12)",
           ...rest._hover,
         },
       }
-    : {
-        _hover: {
-          borderColor: "brand.neon",
-          ...rest._hover,
-        },
-      };
+    : {};
 
   return (
     <Box {...baseStyles} {...shadowStyles} {...hoverStyles}>

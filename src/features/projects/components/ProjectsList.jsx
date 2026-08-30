@@ -1,56 +1,32 @@
-import { Grid, VStack, Text } from "@chakra-ui/react";
+// src/features/projects/components/ProjectsList.jsx
+import { useState } from "react";
+import { Grid, VStack, HStack, Button, Text } from "@chakra-ui/react";
 import ProjectCard from "../../../shared/ui/ProjectCard";
 import { useTranslation } from "../../../hooks/useTranslation";
-import patteAPatteImg from "../../../assets/img/patte_a_patte.svg";
-import decentRepImg from "../../../assets/img/decentrep/img_decentrep.webp";
-import graphImg from "../../../assets/img/graph/graph1.png";
-import agentImg from "../../../assets/img/agent.gif";
-import playerMapImg from "../../../assets/img/agentplayermap.png";
+import { PROJECT_CATALOG, PROJECT_FILTERS } from "../data/projects";
 
 const ProjectsList = () => {
   const { t } = useTranslation();
+  const [filter, setFilter] = useState("all");
 
-  const PROJECTS = [
-    {
-      id: 4,
-      title: t("projects.list.project4.title"),
-      description: t("projects.list.project4.description"),
-      imageSrc: agentImg,
-      github: "https://github.com/Agent-BossFighters",
-    },
-    {
-      id: 5,
-      title: t("projects.list.project5.title"),
-      description: t("projects.list.project5.description"),
-      imageSrc: playerMapImg,
-      github: "https://github.com/Agent-BossFighters/Player-map",
-      production: "https://devfolio.co/projects/agent-player-map-759e",
-    },
-    {
-      id: 2,
-      title: t("projects.list.project2.title"),
-      description: t("projects.list.project2.description"),
-      imageSrc: graphImg,
-      production: "https://graph.i7n.thp-lab.org/",
-    },
-    {
-      id: 3,
-      title: t("projects.list.project3.title"),
-      description: t("projects.list.project3.description"),
-      imageSrc: decentRepImg,
-      github: "https://github.com/THP-Lab/intuition-recommendation-assistant",
-    },
-    {
-      id: 1,
-      title: t("projects.list.project1.title"),
-      description: t("projects.list.project1.description"),
-      imageSrc: patteAPatteImg,
-      github: "https://github.com/Paupiety/patte-a-patte",
-    },
-  ];
+  const visible = PROJECT_CATALOG.filter(
+    (project) => filter === "all" || project.category === filter
+  );
 
   return (
-    <VStack spacing={12} w="100%" py={8}>
+    <VStack spacing={10} w="100%" align="stretch">
+      <HStack spacing={3} wrap="wrap">
+        {PROJECT_FILTERS.map((key) => (
+          <Button
+            key={key}
+            size="sm"
+            variant={filter === key ? "solid" : "outline"}
+            onClick={() => setFilter(key)}
+          >
+            {t(`projects.filters.${key}`)}
+          </Button>
+        ))}
+      </HStack>
       <Grid
         templateColumns={{
           base: "1fr",
@@ -60,18 +36,24 @@ const ProjectsList = () => {
         gap={8}
         w="100%"
       >
-        {PROJECTS.map((project) => (
+        {visible.map((project) => (
           <ProjectCard
             key={project.id}
-            title={project.title}
-            description={project.description}
+            featured={project.featured}
+            title={t(`projects.list.${project.key}.title`)}
+            description={t(`projects.list.${project.key}.description`)}
             imageSrc={project.imageSrc}
             projectId={project.id}
-            github={project.github}
-            production={project.production}
+            year={project.year}
+            category={project.category}
+            accent={project.accent}
+            motif={project.motif}
           />
         ))}
       </Grid>
+      {visible.length === 0 && (
+        <Text color="rgba(244,236,225,0.55)">—</Text>
+      )}
     </VStack>
   );
 };

@@ -1,3 +1,4 @@
+// src/features/home/components/HeroSection.jsx
 import {
   Box,
   Flex,
@@ -9,135 +10,123 @@ import {
   Link,
   Button,
 } from "@chakra-ui/react";
-import { FaDownload, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import profileImg from "../../../assets/img/accueil.jpg";
+import { Link as RouterLink } from "react-router-dom";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import profileImg from "../../../assets/img/Thibault1.jpg";
 import { useTranslation } from "../../../hooks/useTranslation";
 
 const HeroSection = () => {
   const { t } = useTranslation();
 
   return (
-    <Box position="relative" minH="80vh" bg="#0a0a0a" overflow="hidden">
-      <VStack
-        align="flex-start"
-        spacing={8}
-        maxW={{ base: "100%", md: "65%" }}
-        p={{ base: 8, md: 20 }}
-        position="relative"
-        zIndex={2}
+    <Box position="relative" minH={{ base: "auto", md: "86vh" }} overflow="hidden">
+      <Flex
+        direction={{ base: "column", lg: "row" }}
+        align="stretch"
+        minH={{ lg: "86vh" }}
       >
-        <Heading
-          as="h1"
-          fontSize={{ base: "4xl", md: "6xl" }}
-          fontWeight="bold"
-          lineHeight="1.2"
+        <VStack
+          align="flex-start"
+          spacing={8}
+          flex="1"
+          px={{ base: 2, md: 6, lg: 4 }}
+          py={{ base: 12, md: 20 }}
+          maxW={{ lg: "58%" }}
+          zIndex={2}
         >
-          {t("home.title")}
           <Text
-            as="span"
-            display="block"
-            color="gray.400"
-            mt={2}
-            fontSize={{ base: "2xl", md: "4xl" }}
-            fontFamily="'Roboto Mono', monospace"
-            letterSpacing="0.1em"
+            fontFamily="'IBM Plex Mono', monospace"
+            fontSize="xs"
+            letterSpacing="0.28em"
             textTransform="uppercase"
+            color="brand.copper"
+          >
+            {t("home.kicker")}
+          </Text>
+          <Heading
+            as="h1"
+            fontSize={{ base: "4xl", md: "6xl", xl: "7xl" }}
+            fontWeight="500"
+            lineHeight="0.95"
+            letterSpacing="-0.04em"
+            color="brand.parchment"
+          >
+            Thibault
+            <Text as="span" display="block" fontStyle="italic" color="brand.copper">
+              Lenormand
+            </Text>
+          </Heading>
+          <Text
+            fontFamily="'IBM Plex Mono', monospace"
+            fontSize="sm"
+            letterSpacing="0.18em"
+            textTransform="uppercase"
+            color="rgba(244,236,225,0.55)"
           >
             {t("home.subtitle")}
           </Text>
-        </Heading>
+          <Text
+            fontSize={{ base: "md", md: "lg" }}
+            color="rgba(244,236,225,0.78)"
+            maxW="560px"
+            lineHeight="1.8"
+          >
+            {t("home.description")}
+          </Text>
+          <HStack spacing={4} pt={2} wrap="wrap">
+            <Button as={RouterLink} to="/projects" variant="solid" size="lg">
+              {t("home.ctaProjects")}
+            </Button>
+            <Button as={RouterLink} to="/contact" variant="outline" size="lg">
+              {t("home.ctaContact")}
+            </Button>
+          </HStack>
+          <HStack spacing={5} pt={2}>
+            <Link href="https://github.com/ThibaultL24" isExternal>
+              <Icon as={FaGithub} w={5} h={5} />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/thibault-lenormand-b38b96268/"
+              isExternal
+            >
+              <Icon as={FaLinkedin} w={5} h={5} />
+            </Link>
+            <Link href="https://x.com/ThibaultLENORM2" isExternal>
+              <Icon as={FaTwitter} w={5} h={5} />
+            </Link>
+          </HStack>
+        </VStack>
 
-        <Text
-          fontSize="lg"
-          color="gray.300"
-          maxW="700px"
-          lineHeight="1.8"
-          letterSpacing="0.3px"
+        <Box
+          position="relative"
+          flex="1"
+          minH={{ base: "360px", md: "520px", lg: "auto" }}
+          mx={{ base: 0, lg: 0 }}
         >
-          {t("home.description")}
-        </Text>
-
-        <HStack spacing={6} pt={4}>
-          <Button
-            as="a"
-            href="/path-to-cv.pdf"
-            download
-            leftIcon={<FaDownload color="#00ff9d" />}
-            variant="outline"
-            color="brand.neon"
-            borderColor="brand.neon"
-            _hover={{
-              bg: "transparent",
-              color: "white",
-              borderColor: "white",
-              boxShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
-            }}
+          <Box
+            position="absolute"
+            inset={{ base: "8% 6% 8% 12%", lg: "10% 8% 10% 18%" }}
+            borderRadius="32px 8px 40px 12px"
+            overflow="hidden"
+            border="1px solid rgba(201,163,106,0.28)"
+            boxShadow="0 30px 80px rgba(0,0,0,0.45)"
           >
-            {t("home.downloadCV")}
-          </Button>
-        </HStack>
-
-        <HStack spacing={6}>
-          <Link
-            href="https://github.com/ThibaultL24"
-            isExternal
-            _hover={{ color: "gray.300" }}
-          >
-            <Icon as={FaGithub} w={6} h={6} />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/thibault-lenormand-b38b96268/"
-            isExternal
-            _hover={{ color: "gray.300" }}
-          >
-            <Icon as={FaLinkedin} w={6} h={6} />
-          </Link>
-          <Link
-            href="https://x.com/ThibaultLENORM2"
-            isExternal
-            _hover={{ color: "gray.300" }}
-          >
-            <Icon as={FaTwitter} w={6} h={6} />
-          </Link>
-        </HStack>
-      </VStack>
-
-      {/* Image */}
-      <Box
-        position="absolute"
-        top={0}
-        right={0}
-        width={{ base: "100%", md: "55%" }}
-        height="100%"
-        zIndex={1}
-        overflow="hidden"
-      >
-        {/* Fond sombre dégradé */}
-        <Box
-          position="absolute"
-          top={0}
-          left={0}
-          width="120%"
-          height="100%"
-          bgGradient="linear(to-r, #0a0a0a 0%, transparent 100%)"
-          zIndex={2}
-        />
-
-        {/* Image */}
-        <Box
-          position="absolute"
-          top={0}
-          right={0}
-          width="100%"
-          height="100%"
-          backgroundImage={`url(${profileImg})`}
-          backgroundSize="cover"
-          backgroundPosition="right center"
-          backgroundRepeat="no-repeat"
-          filter="brightness(75%)"
-          opacity={0.85}
-        />
-      </Box>
+            <Box
+              w="100%"
+              h="100%"
+              backgroundImage={`url(${profileImg})`}
+              backgroundSize="cover"
+              backgroundPosition="50% 12%"
+              filter="grayscale(0.25) contrast(1.08) saturate(0.85)"
+            />
+            <Box
+              position="absolute"
+              inset={0}
+              bgGradient="linear(to-t, rgba(14,12,10,0.55), transparent 50%)"
+            />
+          </Box>
+        </Box>
+      </Flex>
     </Box>
   );
 };

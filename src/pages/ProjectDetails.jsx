@@ -1,157 +1,102 @@
+// src/pages/ProjectDetails.jsx
 import {
   Box,
   Container,
   Heading,
   Text,
-  SimpleGrid,
   Link,
   VStack,
   HStack,
   Tag,
-  Divider,
   AspectRatio,
+  Button,
 } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
+import { useParams, Link as RouterLink } from "react-router-dom";
 import { useTranslation } from "../hooks/useTranslation";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import decentRepImg1 from "../assets/img/decentrep/decentrep1.png";
-import decentRepImg2 from "../assets/img/decentrep/decentrep2.png";
-import decentRepImg3 from "../assets/img/decentrep/decentrep3.png";
-import graphImg2 from "../assets/img/graph/graph2.png";
-import graphImg3 from "../assets/img/graph/graph3.png";
-import graphImg4 from "../assets/img/graph/graph4.png";
-import patteImg1 from "../assets/img/patte/patte1.png";
-import patteImg2 from "../assets/img/patte/patte2.png";
-import patteImg3 from "../assets/img/patte/patte3.png";
-import patteImg4 from "../assets/img/patte/patte4.png";
-import patteImg5 from "../assets/img/patte/patte5.png";
-import patteImg6 from "../assets/img/patte/patte6.png";
-import patteImg7 from "../assets/img/patte/patte7.png";
+import { getProjectById } from "../features/projects/data/projects";
+import ProjectCover from "../shared/ui/ProjectCover";
 
 const ProjectDetails = () => {
   const { projectId } = useParams();
   const { t } = useTranslation();
+  const meta = getProjectById(projectId);
 
-  const getProjectData = (id) => {
-    const projectKey = `project${id}`;
-    return {
-      id: parseInt(id),
-      title: t(`projects.list.${projectKey}.title`),
-      description: t(`projects.list.${projectKey}.description`),
-      longDescription: t(`projects.list.${projectKey}.longDescription`),
-      images:
-        id === "3"
-          ? [decentRepImg1, decentRepImg2, decentRepImg3]
-          : id === "2"
-          ? [graphImg2, graphImg3, graphImg4]
-          : id === "1"
-          ? [
-              patteImg1,
-              patteImg2,
-              patteImg3,
-              patteImg4,
-              patteImg5,
-              patteImg6,
-              patteImg7,
-            ]
-          : [],
-      technologies: t(`projects.list.${projectKey}.technologies`),
-      authors: t(`projects.list.${projectKey}.authors`),
-      links: {
-        github:
-          id === "1"
-            ? "https://github.com/Paupiety/patte-a-patte"
-            : id === "3"
-            ? "https://github.com/THP-Lab/intuition-recommendation-assistant"
-            : id === "4"
-            ? "https://github.com/Agent-BossFighters"
-            : id === "5"
-            ? "https://github.com/Agent-BossFighters/Player-map"
-            : null,
-        production:
-          id === "2"
-            ? "https://graph.i7n.thp-lab.org/"
-            : id === "4"
-            ? "https://agent-bossfighters.com/"
-            : id === "5"
-            ? "https://devfolio.co/projects/agent-player-map-759e"
-            : null,
-        claimify:
-          id === "3" ? t(`projects.list.${projectKey}.links.claimify`) : null,
-        youtube:
-          id === "4" ? "https://www.youtube.com/embed/470PiwCqN7Y" : null,
-        loom:
-          id === "5"
-            ? "https://www.loom.com/embed/075a0ec241ba41e3bafd02e9a0a663ed?sid=86524f64-f7bb-4079-bf23-bdff6cd30700"
-            : null,
-      },
-    };
-  };
+  if (!meta) {
+    return (
+      <Container maxW="container.lg" py={20}>
+        <Text>Projet introuvable.</Text>
+        <Button as={RouterLink} to="/projects" mt={6} variant="outline">
+          {t("nav.projects")}
+        </Button>
+      </Container>
+    );
+  }
 
-  const project = getProjectData(projectId);
+  const title = t(`projects.list.${meta.key}.title`);
+  const longDescription = t(`projects.list.${meta.key}.longDescription`);
+  const technologies = t(`projects.list.${meta.key}.technologies`);
+  const authors = t(`projects.list.${meta.key}.authors`);
 
   const renderDescription = (description) => {
-    if (projectId === "3" && project.links.claimify) {
+    if (meta.claimify && typeof description === "string") {
       const parts = description.split("Claimify");
-      return (
-        <>
-          {parts[0]}
-          <Link
-            href={project.links.claimify}
-            isExternal
-            color="brand.blueGreen"
-            fontWeight="bold"
-            _hover={{ color: "brand.primary" }}
-          >
-            Claimify
-          </Link>
-          {parts[1]}
-        </>
-      );
+      if (parts.length > 1) {
+        return (
+          <>
+            {parts[0]}
+            <Link href={meta.claimify} isExternal color="brand.copper" fontWeight="600">
+              Claimify
+            </Link>
+            {parts[1]}
+          </>
+        );
+      }
     }
     return description;
   };
 
   return (
-    <Container maxW="container.xl" py={12}>
-      <VStack spacing={8} align="stretch">
-        {/* En-tête du projet */}
+    <Container maxW="container.lg" py={{ base: 10, md: 16 }}>
+      <VStack spacing={10} align="stretch">
         <Box>
-          <Heading as="h1" size="2xl" mb={4}>
-            {project.title}
+          <HStack
+            spacing={4}
+            mb={4}
+            fontFamily="'IBM Plex Mono', monospace"
+            fontSize="xs"
+            letterSpacing="0.2em"
+            textTransform="uppercase"
+            color="brand.copper"
+          >
+            <Text as="span">{meta.year}</Text>
+            <Text as="span">{t(`projects.filters.${meta.category}`)}</Text>
+          </HStack>
+          <Heading as="h1" fontSize={{ base: "4xl", md: "5xl" }} mb={6}>
+            {title}
           </Heading>
-          <Text fontSize="lg" whiteSpace="pre-line">
-            {renderDescription(project.longDescription)}
+          <Text fontSize="lg" whiteSpace="pre-line" color="rgba(244,236,225,0.78)" lineHeight="1.85">
+            {renderDescription(longDescription)}
           </Text>
         </Box>
 
-        {/* Carousel d'images ou Vidéo */}
-        <Box borderRadius="lg" overflow="hidden">
-          {projectId === "4" ? (
+        <Box borderRadius="22px" overflow="hidden" border="1px solid rgba(201,163,106,0.16)">
+          {meta.youtube ? (
             <AspectRatio ratio={16 / 9}>
-              <iframe
-                src={project.links.youtube}
-                title="Agent Project Demo"
-                allowFullScreen
-              />
+              <iframe src={meta.youtube} title={`${title} demo`} allowFullScreen />
             </AspectRatio>
-          ) : projectId === "5" ? (
+          ) : meta.loom ? (
             <Box position="relative" paddingBottom="53.75%" height="0">
               <iframe
-                src={project.links.loom}
+                src={meta.loom}
+                title={`${title} demo`}
                 frameBorder="0"
                 allowFullScreen
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                }}
+                style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
               />
             </Box>
-          ) : (
+          ) : meta.images?.length > 0 ? (
             <Carousel
               showThumbs={false}
               infiniteLoop
@@ -159,96 +104,79 @@ const ProjectDetails = () => {
               interval={5000}
               showStatus={false}
             >
-              {project.images.map((image, index) => (
-                <Box
-                  key={index}
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  bg="gray.100"
-                >
+              {meta.images.map((image, index) => (
+                <Box key={index} bg="#171410">
                   <img
                     src={image}
-                    alt={`${project.title} - Image ${index + 1}`}
-                    style={{
-                      maxWidth: "100%",
-                      maxHeight: "600px",
-                      objectFit: "contain",
-                    }}
+                    alt={`${title} - ${index + 1}`}
+                    style={{ maxHeight: "560px", objectFit: "contain" }}
                   />
                 </Box>
               ))}
             </Carousel>
+          ) : meta.imageSrc ? (
+            <img src={meta.imageSrc} alt={title} style={{ width: "100%", display: "block" }} />
+          ) : (
+            <Box h="320px">
+              <ProjectCover title={title} accent={meta.accent} motif={meta.motif} />
+            </Box>
           )}
         </Box>
 
-        {/* Technologies utilisées */}
         <Box>
-          <Heading as="h2" size="lg" mb={4}>
+          <Heading as="h2" fontSize="2xl" mb={4}>
             {t("projects.details.technologies")}
           </Heading>
-          <HStack spacing={4} wrap="wrap">
-            {project.technologies.map((tech, index) => (
-              <Tag
-                key={index}
-                size="lg"
-                colorScheme={tech.color}
-                borderRadius="full"
-                px={4}
-                py={2}
-              >
-                {tech.name}
-              </Tag>
-            ))}
+          <HStack spacing={3} wrap="wrap">
+            {Array.isArray(technologies) &&
+              technologies.map((tech, index) => (
+                <Tag
+                  key={index}
+                  size="lg"
+                  borderRadius="full"
+                  px={4}
+                  py={2}
+                  bg="rgba(201,163,106,0.1)"
+                  color="brand.parchment"
+                  border="1px solid rgba(201,163,106,0.25)"
+                >
+                  {tech.name}
+                </Tag>
+              ))}
           </HStack>
         </Box>
 
-        {/* Auteurs */}
         <Box>
-          <Heading as="h2" size="lg" mb={4}>
+          <Heading as="h2" fontSize="2xl" mb={4}>
             {t("projects.details.authors")}
           </Heading>
-          <VStack align="start" spacing={2}>
-            {project.authors.map((author, index) => (
-              <Text key={index} fontSize="md">
-                {author}
-              </Text>
-            ))}
+          <VStack align="start" spacing={1}>
+            {Array.isArray(authors) &&
+              authors.map((author, index) => (
+                <Text key={index} color="rgba(244,236,225,0.75)">
+                  {author}
+                </Text>
+              ))}
           </VStack>
         </Box>
 
-        {/* Liens du projet */}
-        <Box>
-          <Heading as="h2" size="lg" mb={4}>
-            {t("projects.details.links")}
-          </Heading>
-          <HStack spacing={6}>
-            {project.links.github && (
-              <Link
-                href={project.links.github}
-                isExternal
-                color="brand.blueGreen"
-                fontWeight="bold"
-                _hover={{ color: "brand.primary" }}
-              >
-                GitHub
-              </Link>
-            )}
-            {project.links.production && (
-              <Link
-                href={project.links.production}
-                isExternal
-                color="brand.blueGreen"
-                fontWeight="bold"
-                _hover={{ color: "brand.primary" }}
-              >
-                {projectId === "5"
-                  ? t("projects.details.hackathon")
-                  : t("projects.details.production")}
-              </Link>
-            )}
-          </HStack>
-        </Box>
+        <HStack spacing={4} wrap="wrap">
+          {meta.github && (
+            <Button as={Link} href={meta.github} isExternal variant="outline">
+              GitHub
+            </Button>
+          )}
+          {meta.production && (
+            <Button as={Link} href={meta.production} isExternal variant="solid">
+              {meta.productionLabel === "hackathon"
+                ? t("projects.details.hackathon")
+                : t("projects.details.production")}
+            </Button>
+          )}
+          <Button as={RouterLink} to="/projects" variant="ghost">
+            ← {t("nav.projects")}
+          </Button>
+        </HStack>
       </VStack>
     </Container>
   );

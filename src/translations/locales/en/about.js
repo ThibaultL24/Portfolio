@@ -1,7 +1,8 @@
 export const about = {
-  title: "ABOUT",
+  title: "About",
   description:
-    "Discover my journey, skills, and vision. Learn more about the person behind the projects.",
+    "Literature, stage, then code. A career shift, and a way of building that never forgets language.",
+  kicker: "Path",
   profile: {
     title: "Profile",
     introduction: "My name is Thibault Lenormand.",
@@ -16,7 +17,9 @@ export const about = {
     downloadCV: "Download CV",
   },
   skills: {
-    title: "SKILLS",
+    title: "Skills",
+    experienceTitle: "Experience",
+    educationTitle: "Education",
     categories: {
       "front-end": "Front-end",
       "back-end": "Back-end",
@@ -25,10 +28,13 @@ export const about = {
     items: {
       "html/css": "HTML/CSS",
       javascript: "JavaScript",
+      typescript: "TypeScript",
       react: "React",
+      "nextjs": "Next.js",
       "tailwind css": "Tailwind CSS",
       "node.js": "Node.js",
       ruby: "Ruby",
+      rust: "Rust",
       sql: "SQL",
       docker: "Docker",
       figma: "Figma",
