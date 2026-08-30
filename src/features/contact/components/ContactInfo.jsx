@@ -62,7 +62,7 @@ const ContactInfo = () => {
               href="https://github.com/ThibaultL24"
               target="_blank"
               rel="noopener noreferrer"
-              leftIcon={<FaGithub color="#00ff9d" />}
+              leftIcon={<FaGithub />}
               variant="outline"
               color="brand.neon"
               borderColor="brand.neon"
@@ -71,6 +71,14 @@ const ContactInfo = () => {
                 color: "white",
                 borderColor: "white",
                 boxShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
+                "& svg": {
+                  color: "white !important",
+                },
+              }}
+              sx={{
+                "& svg": {
+                  color: "#00ff9d",
+                },
               }}
             >
               {t("contact.info.github")}
@@ -80,7 +88,7 @@ const ContactInfo = () => {
               href="https://www.linkedin.com/in/thibault-lenormand-b38b96268/"
               target="_blank"
               rel="noopener noreferrer"
-              leftIcon={<FaLinkedin color="#00ff9d" />}
+              leftIcon={<FaLinkedin />}
               variant="outline"
               color="brand.neon"
               borderColor="brand.neon"
@@ -90,12 +98,20 @@ const ContactInfo = () => {
                 color: "white",
                 borderColor: "white",
                 boxShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
+                "& svg": {
+                  color: "white !important",
+                },
+              }}
+              sx={{
+                "& svg": {
+                  color: "#00ff9d",
+                },
               }}
             >
               {t("contact.info.linkedin")}
             </Button>
             <Button
-              leftIcon={<FaTwitter color="#00ff9d" />}
+              leftIcon={<FaTwitter />}
               variant="outline"
               color="brand.neon"
               borderColor="brand.neon"
@@ -107,6 +123,14 @@ const ContactInfo = () => {
                 color: "white",
                 borderColor: "white",
                 boxShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
+                "& svg": {
+                  color: "white !important",
+                },
+              }}
+              sx={{
+                "& svg": {
+                  color: "#00ff9d",
+                },
               }}
             >
               {t("contact.info.twitter")}

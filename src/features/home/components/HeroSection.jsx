@@ -62,7 +62,7 @@ const HeroSection = () => {
             as="a"
             href="/path-to-cv.pdf"
             download
-            leftIcon={<FaDownload color="#00ff9d" />}
+            leftIcon={<FaDownload />}
             variant="outline"
             color="brand.neon"
             borderColor="brand.neon"
@@ -71,6 +71,14 @@ const HeroSection = () => {
               color: "white",
               borderColor: "white",
               boxShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
+              "& svg": {
+                color: "white !important",
+              },
+            }}
+            sx={{
+              "& svg": {
+                color: "#00ff9d",
+              },
             }}
           >
             {t("home.downloadCV")}
