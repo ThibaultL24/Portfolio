@@ -1,7 +1,7 @@
 export const projects = {
   title: "Projects",
   description:
-    "Commissions, products, experiments. A selection of sites and tools I designed, wrote, and shipped."
+    "Commissions, products, experiments. A selection of sites and tools I designed, wrote, and shipped.",
   list: {
     project1: {
       title: "Patte à Patte",
