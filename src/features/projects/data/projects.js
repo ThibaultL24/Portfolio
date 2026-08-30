@@ -4,6 +4,11 @@ import decentRepImg from "../../../assets/img/decentrep/img_decentrep.webp";
 import graphImg from "../../../assets/img/graph/graph1.png";
 import agentImg from "../../../assets/img/agent.gif";
 import playerMapImg from "../../../assets/img/agentplayermap.png";
+import camilleCover from "../../../assets/img/covers/camille.jpg";
+import kaironCover from "../../../assets/img/covers/kairon.jpg";
+import fenetreCover from "../../../assets/img/covers/fenetre.jpg";
+import trustbookCover from "../../../assets/img/covers/trustbook.jpg";
+import mmaCover from "../../../assets/img/covers/mma.jpg";
 import decentRepImg1 from "../../../assets/img/decentrep/decentrep1.png";
 import decentRepImg2 from "../../../assets/img/decentrep/decentrep2.png";
 import decentRepImg3 from "../../../assets/img/decentrep/decentrep3.png";
@@ -29,7 +34,7 @@ export const PROJECT_CATALOG = [
     motif: "orb",
     github: null,
     production: "https://www.laplaceluxopuncture.fr/",
-    imageSrc: null,
+    imageSrc: camilleCover,
     images: [],
   },
   {
@@ -55,7 +60,7 @@ export const PROJECT_CATALOG = [
     motif: "orb",
     github: "https://github.com/ThibaultL24/Kairon",
     production: "https://kairon-six.vercel.app",
-    imageSrc: null,
+    imageSrc: kaironCover,
     images: [],
   },
   {
@@ -68,7 +73,7 @@ export const PROJECT_CATALOG = [
     motif: "grid",
     github: "https://github.com/ThibaultL24/Proximo",
     production: "https://fenetre-ouverte.vercel.app",
-    imageSrc: null,
+    imageSrc: fenetreCover,
     images: [],
   },
   {
@@ -81,7 +86,7 @@ export const PROJECT_CATALOG = [
     motif: "grid",
     github: "https://github.com/ThibaultL24/TrustBook",
     production: "https://trust-book-tau.vercel.app",
-    imageSrc: null,
+    imageSrc: trustbookCover,
     images: [],
   },
   {
@@ -94,7 +99,7 @@ export const PROJECT_CATALOG = [
     motif: "octagon",
     github: "https://github.com/ThibaultL24/MMA_project",
     production: "https://mma-project.vercel.app",
-    imageSrc: null,
+    imageSrc: mmaCover,
     images: [],
   },
   {

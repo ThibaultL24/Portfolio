@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import profileImg from "../../../assets/img/accueil.jpg";
+import profileImg from "../../../assets/img/Thibault1.jpg";
 import { useTranslation } from "../../../hooks/useTranslation";
 
 const HeroSection = () => {
@@ -116,8 +116,8 @@ const HeroSection = () => {
               h="100%"
               backgroundImage={`url(${profileImg})`}
               backgroundSize="cover"
-              backgroundPosition="center 20%"
-              filter="saturate(0.75) contrast(1.05)"
+              backgroundPosition="50% 12%"
+              filter="grayscale(0.25) contrast(1.08) saturate(0.85)"
             />
             <Box
               position="absolute"

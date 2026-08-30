@@ -40,7 +40,7 @@ const SkillsSection = ({ skills }) => {
                     px={3}
                     py={1}
                   >
-                    {t(`about.skills.items.${skill.trim().toLowerCase()}`, skill)}
+                    {t(`about.skills.items.${skill.trim().toLowerCase().replace(/\./g, "")}`, skill)}
                   </Tag>
                 </WrapItem>
               ))}

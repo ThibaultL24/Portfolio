@@ -186,11 +186,10 @@ const CreationsContent = () => {
               borderColor="rgba(201,163,106,0.3)"
               maxW="90vw"
             >
-              <ModalHeader
-                color="brand.copper"
-                textAlign="center"
-              >
-                {t(`creations.visuals.titles.${selectedVisual?.titleKey}`)}
+              <ModalHeader color="brand.copper" textAlign="center">
+                {selectedVisual
+                  ? t(`creations.visuals.titles.${selectedVisual.titleKey}`)
+                  : ""}
               </ModalHeader>
               <ModalCloseButton
                 color="brand.copper"
@@ -309,7 +308,9 @@ const CreationsContent = () => {
           borderColor="rgba(201,163,106,0.3)"
         >
           <ModalHeader color="brand.copper">
-            {t(`creations.texts.entries.${selectedText?.entryKey}.title`)}
+            {selectedText
+              ? t(`creations.texts.entries.${selectedText.entryKey}.title`)
+              : ""}
           </ModalHeader>
           <ModalCloseButton
             color="brand.copper"
@@ -323,9 +324,11 @@ const CreationsContent = () => {
                   {t(`creations.texts.entries.${selectedText.entryKey}.intro`)}
                 </Text>
               )}
-            <Text whiteSpace="pre-wrap" color="gray.300">
-              {t(`creations.texts.entries.${selectedText?.entryKey}.content`)}
-            </Text>
+            {selectedText && (
+              <Text whiteSpace="pre-wrap" color="gray.300">
+                {t(`creations.texts.entries.${selectedText.entryKey}.content`)}
+              </Text>
+            )}
           </ModalBody>
         </ModalContent>
       </Modal>

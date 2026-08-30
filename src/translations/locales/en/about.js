@@ -30,7 +30,7 @@ export const about = {
       javascript: "JavaScript",
       typescript: "TypeScript",
       react: "React",
-      "next.js": "Next.js",
+      "nextjs": "Next.js",
       "tailwind css": "Tailwind CSS",
       "node.js": "Node.js",
       ruby: "Ruby",
