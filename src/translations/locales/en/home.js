@@ -1,9 +1,17 @@
 export const home = {
+  kicker: "Studio — Avignon",
   title: "Thibault Lenormand",
-  subtitle: "Full Stack Developer",
+  subtitle: "Full stack developer",
   description:
-    "I'm Thibault Lenormand, a full stack developer. I give equal importance to code, literature, drawing, design, and idea conception. I love understanding, creating, structuring. This site reflects part of my work and inspirations. Welcome.",
+    "I build sites and products with the same care I bring to writing: clarity, rhythm, material. From a practitioner’s cabinet to a visual studio, from a local gazette to a trust graph.",
+  ctaProjects: "See the work",
+  ctaContact: "Work together",
   downloadCV: "Download CV",
+  selected: {
+    kicker: "Selected",
+    title: "Recent projects",
+    more: "All projects",
+  },
   trust: {
     title: "They trusted me",
     intro: {

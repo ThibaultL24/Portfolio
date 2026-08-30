@@ -1,7 +1,7 @@
 export const projects = {
-  title: "PROJECTS",
+  title: "Projects",
   description:
-    "Discover a selection of my recent projects that showcase my approach and skills in architecture and design.",
+    "Commissions, products, experiments. A selection of sites and tools I designed, wrote, and shipped."
   list: {
     project1: {
       title: "Patte à Patte",
@@ -122,13 +122,127 @@ export const projects = {
         "Steven RATTON (Omiage)",
       ],
     },
+    project6: {
+      title: "Camille Luxopuncture",
+      description:
+        "Showcase site for Camille Laplace, luxotherapy and hypnosis practitioner in Avignon — detox program, testimonials, and booking.",
+      longDescription:
+        "Camille Luxopuncture is the website of Camille Laplace, a luxotherapy and hypnosis practitioner based in Avignon. The project gives a clear, luminous, reassuring presence to a gentle-health practice.\n\n" +
+        "The site highlights a 21-day remote detox program, in-cabinet sessions (infrared luxopuncture, hypnosis), patient testimonials, and a simple booking path — the first assessment is free.\n\n" +
+        "The brief was voice, not volume: softness, clarity, proof. Careful type, editorial rhythm, a gallery of reviews, quiet calls to action. Live at laplaceluxopuncture.fr.",
+      technologies: [
+        { name: "React", color: "cyan" },
+        { name: "Vite", color: "purple" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Vercel", color: "gray" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project7: {
+      title: "Corvus Studio",
+      description:
+        "One-page portfolio for an independent premium advertising visual studio — cosmic art direction, gallery, and admin.",
+      longDescription:
+        "Corvus Studio is the site of an independent studio making premium advertising visuals. The world mixes dark art direction, cosmic aesthetics, monumental type, and cyan/violet accents.\n\n" +
+        "It includes an immersive landing, a work marquee, a filterable gallery with project modal, pricing, creation fields, a studio portrait (Dylan Lacas), and a contact form.\n\n" +
+        "Built with Next.js 15, React 19, TypeScript, Tailwind and Framer Motion. An authenticated back-office (Auth.js + Vercel Blob) manages works, images and social links without redeploying.",
+      technologies: [
+        { name: "Next.js 15", color: "gray" },
+        { name: "React 19", color: "cyan" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Tailwind CSS", color: "teal" },
+        { name: "Framer Motion", color: "pink" },
+        { name: "Auth.js", color: "purple" },
+        { name: "Vercel Blob", color: "orange" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project8: {
+      title: "Kaïron",
+      description:
+        "Association site for “Un souffle d’espoir pour Kaïron” — story, HelloAsso donations, events, and content admin.",
+      longDescription:
+        "Kaïron is the website of the association “Un souffle d’espoir pour Kaïron”. It tells a child’s story, relays the association’s actions, and points to official HelloAsso donations.\n\n" +
+        "The site combines an emotional showcase — narrative, visuals, local events — with a content admin so the family can update copy, testimonies and figures without touching code.\n\n" +
+        "Stack: React, TypeScript, Vite, Tailwind, Framer Motion, Upstash Redis for dynamic content, deployed on Vercel.",
+      technologies: [
+        { name: "React", color: "cyan" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Vite", color: "purple" },
+        { name: "Tailwind CSS", color: "teal" },
+        { name: "Framer Motion", color: "pink" },
+        { name: "Upstash Redis", color: "red" },
+        { name: "Vercel", color: "gray" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project9: {
+      title: "Fenêtre Ouverte",
+      description:
+        "Local real-estate and commerce gazette — articles, merchants, subscriptions, and an editorial back-office.",
+      longDescription:
+        "Fenêtre Ouverte (Proximo) is a local gazette app: territorial news, real estate, nearby merchants, and a back-office to write, publish and track activity.\n\n" +
+        "The product mixes public reading (article cards, towns, merchants, PWA) with operational tools (editorial, analytics, commissions, Stripe subscriptions). The aim: give a field gazette a contemporary vitrine and a real working tool.\n\n" +
+        "React/TypeScript/Vite frontend, dedicated backend, Vercel deploy and containerized infrastructure.",
+      technologies: [
+        { name: "React", color: "cyan" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Vite", color: "purple" },
+        { name: "TanStack Query", color: "red" },
+        { name: "PWA", color: "orange" },
+        { name: "Stripe", color: "green" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project10: {
+      title: "TrustBook",
+      description:
+        "Circles mini-app: a social feed ranked by a trust graph instead of engagement.",
+      longDescription:
+        "TrustBook is a mini-app built for Circles Garage. The feed is not ranked by likes: it is ranked by explicit trust — direct relations, shared paths, communities, CRC boosts, and optional Intuition claims.\n\n" +
+        "Every card explains why it appears. One tap leads to a CRC action (tip, boost, trust). The project asks what a social network becomes when trust is an economic primitive, not a follow button.\n\n" +
+        "Next.js, TypeScript, Tailwind, Circles / Gnosis SDK. Live demo available.",
+      technologies: [
+        { name: "Next.js", color: "gray" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Tailwind CSS", color: "teal" },
+        { name: "Circles", color: "green" },
+        { name: "Gnosis", color: "orange" },
+        { name: "Intuition", color: "purple" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project11: {
+      title: "FMMAF — site proposal",
+      description:
+        "Visual redesign of the French MMA Federation website: sporting, readable, institutional.",
+      longDescription:
+        "A redesign proposal for the FMMAF website. The federation already has the content; the digital vitrine no longer matches MMA’s momentum in France (2020 delegation, 2024 high-level recognition).\n\n" +
+        "The mockups reuse existing copy to show a concrete before/after: readability, sporting identity, octagon textures, clear hierarchy. A “Neo-Fight UI” variant explores a more premium register — black, signal green, league structure.\n\n" +
+        "The prototype is live. Stack: Next.js, TypeScript, Tailwind.",
+      technologies: [
+        { name: "Next.js", color: "gray" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Tailwind CSS", color: "teal" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
   },
-  viewDetails: "View details →",
+  viewDetails: "Read the project",
+  featuredLabel: "Featured",
+  filters: {
+    all: "All",
+    commande: "Client",
+    produit: "Product",
+    web3: "Web3",
+  },
   details: {
-    technologies: "Technologies used",
-    links: "Project links",
+    technologies: "Stack",
+    links: "Links",
     production: "View site",
-    authors: "Project authors",
-    hackathon: "View on Hackathon Base",
+    authors: "With",
+    hackathon: "View hackathon",
+    year: "Year",
+    role: "Role",
   },
 };

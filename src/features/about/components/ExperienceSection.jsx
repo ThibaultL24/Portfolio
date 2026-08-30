@@ -1,95 +1,42 @@
-import { Box, Heading, Text, Icon, Grid, VStack } from "@chakra-ui/react";
-import { FaBriefcase } from "react-icons/fa";
-import NeonBeamDivider from "../../../shared/components/NeonBeamDivider";
-import NeonBeamDividerVertical from "../../../shared/components/NeonBeamDividerVertical";
+// src/features/about/components/ExperienceSection.jsx
+import { Box, Heading, Text, VStack, Flex } from "@chakra-ui/react";
+import { useTranslation } from "../../../hooks/useTranslation";
 
 const ExperienceSection = ({ experiences }) => {
+  const { t } = useTranslation();
+
   return (
-    <Box>
-      <Heading as="h2" size="lg" mb={8} display="flex" alignItems="center">
-        <Icon as={FaBriefcase} mr={3} color="white" />
-        EXPÉRIENCE
+    <Box py={6}>
+      <Heading as="h2" fontSize="3xl" mb={8}>
+        {t("about.skills.experienceTitle")}
       </Heading>
-
-      <VStack spacing={6} align="stretch">
+      <VStack spacing={0} align="stretch">
         {experiences.map((exp, index) => (
-          <Grid
+          <Flex
             key={index}
-            templateColumns={{ base: "1fr", md: "1fr 3fr" }}
+            direction={{ base: "column", md: "row" }}
             gap={6}
-            p={6}
-            position="relative"
-            borderRadius="lg"
-            overflow="hidden"
+            py={6}
+            borderTop="1px solid rgba(201,163,106,0.14)"
           >
-            {/* Neon en haut */}
-            <NeonBeamDivider
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                zIndex: 2,
-                borderTopLeftRadius: 12,
-                borderTopRightRadius: 12,
-              }}
-              height="2px"
-            />
-            {/* Neon en bas */}
-            <NeonBeamDivider
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                width: "100%",
-                zIndex: 2,
-                borderBottomLeftRadius: 12,
-                borderBottomRightRadius: 12,
-              }}
-              height="2px"
-            />
-            {/* Neon à gauche (vertical, vrai effet) */}
-            <NeonBeamDividerVertical
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                height: "100%",
-                zIndex: 2,
-                borderTopLeftRadius: 12,
-                borderBottomLeftRadius: 12,
-              }}
-              width="2px"
-            />
-            {/* Neon à droite (vertical, vrai effet) */}
-            <NeonBeamDividerVertical
-              style={{
-                position: "absolute",
-                top: 0,
-                right: 0,
-                height: "100%",
-                zIndex: 2,
-                borderTopRightRadius: 12,
-                borderBottomRightRadius: 12,
-              }}
-              width="2px"
-            />
+            <Text
+              minW="140px"
+              fontFamily="'IBM Plex Mono', monospace"
+              fontSize="sm"
+              color="brand.copper"
+            >
+              {exp.period}
+            </Text>
             <Box>
-              <Text fontWeight="bold" color="white">
-                {exp.period}
-              </Text>
-            </Box>
-
-            <Box>
-              <Heading as="h3" size="md" mb={2}>
+              <Heading as="h3" fontSize="xl" mb={1} color="brand.parchment">
                 {exp.title}
               </Heading>
-              <Text color="white" mb={3}>
+              <Text color="brand.copper" mb={2}>
                 {exp.company}
               </Text>
-              <Text>{exp.description}</Text>
+              <Text color="rgba(244,236,225,0.7)">{exp.description}</Text>
             </Box>
-          </Grid>
+          </Flex>
         ))}
       </VStack>
     </Box>

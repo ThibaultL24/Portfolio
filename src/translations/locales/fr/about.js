@@ -1,7 +1,8 @@
 export const about = {
-  title: "À PROPOS",
+  title: "À propos",
   description:
-    "Découvrez mon parcours, mes compétences et ma vision. Apprenez-en plus sur la personne derrière les projets.",
+    "Lettres, scène, puis le code. Un parcours de reconversion, et une façon de construire qui n’oublie pas les mots.",
+  kicker: "Parcours",
   profile: {
     title: "Profil",
     introduction: "Je m'appelle Thibault Lenormand.",
@@ -16,7 +17,9 @@ export const about = {
     downloadCV: "Télécharger le CV",
   },
   skills: {
-    title: "COMPÉTENCES",
+    title: "Compétences",
+    experienceTitle: "Expérience",
+    educationTitle: "Formation",
     categories: {
       "front-end": "Front-end",
       "back-end": "Back-end",
@@ -25,10 +28,13 @@ export const about = {
     items: {
       "html/css": "HTML/CSS",
       javascript: "JavaScript",
+      typescript: "TypeScript",
       react: "React",
+      "next.js": "Next.js",
       "tailwind css": "Tailwind CSS",
       "node.js": "Node.js",
       ruby: "Ruby",
+      rust: "Rust",
       sql: "SQL",
       docker: "Docker",
       figma: "Figma",

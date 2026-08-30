@@ -1,7 +1,8 @@
 export const creations = {
-  title: "CRÉATIONS",
+  title: "Créations",
+  kicker: "Carnets",
   description:
-    "Découvrez mes travaux créatifs, explorations visuelles, snippets de code et réflexions sur le design et le développement.",
+    "Dessins, textes, explorations. Ce qui n’entre pas dans une carte projet et qui compte quand même.",
   tabs: {
     visuals: "Visuels",
     code: "Code",

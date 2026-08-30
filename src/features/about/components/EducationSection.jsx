@@ -1,92 +1,39 @@
-import { Box, Heading, Text, Icon, Grid, VStack } from "@chakra-ui/react";
-import { FaGraduationCap } from "react-icons/fa";
-import NeonBeamDivider from "../../../shared/components/NeonBeamDivider";
-import NeonBeamDividerVertical from "../../../shared/components/NeonBeamDividerVertical";
+// src/features/about/components/EducationSection.jsx
+import { Box, Heading, Text, VStack, Flex } from "@chakra-ui/react";
+import { useTranslation } from "../../../hooks/useTranslation";
 
 const EducationSection = ({ education }) => {
+  const { t } = useTranslation();
+
   return (
-    <Box>
-      <Heading as="h2" size="lg" mb={8} display="flex" alignItems="center">
-        <Icon as={FaGraduationCap} mr={3} color="white" />
-        FORMATION
+    <Box py={6}>
+      <Heading as="h2" fontSize="3xl" mb={8}>
+        {t("about.skills.educationTitle")}
       </Heading>
-
-      <VStack spacing={6} align="stretch">
+      <VStack spacing={0} align="stretch">
         {education.map((edu, index) => (
-          <Grid
+          <Flex
             key={index}
-            templateColumns={{ base: "1fr", md: "1fr 3fr" }}
+            direction={{ base: "column", md: "row" }}
             gap={6}
-            p={6}
-            position="relative"
-            borderRadius="lg"
-            overflow="hidden"
+            py={6}
+            borderTop="1px solid rgba(201,163,106,0.14)"
           >
-            {/* Neon en haut */}
-            <NeonBeamDivider
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                zIndex: 2,
-                borderTopLeftRadius: 12,
-                borderTopRightRadius: 12,
-              }}
-              height="2px"
-            />
-            {/* Neon en bas */}
-            <NeonBeamDivider
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                width: "100%",
-                zIndex: 2,
-                borderBottomLeftRadius: 12,
-                borderBottomRightRadius: 12,
-              }}
-              height="2px"
-            />
-            {/* Neon à gauche (vertical, vrai effet) */}
-            <NeonBeamDividerVertical
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                height: "100%",
-                zIndex: 2,
-                borderTopLeftRadius: 12,
-                borderBottomLeftRadius: 12,
-              }}
-              width="2px"
-            />
-            {/* Neon à droite (vertical, vrai effet) */}
-            <NeonBeamDividerVertical
-              style={{
-                position: "absolute",
-                top: 0,
-                right: 0,
-                height: "100%",
-                zIndex: 2,
-                borderTopRightRadius: 12,
-                borderBottomRightRadius: 12,
-              }}
-              width="2px"
-            />
+            <Text
+              minW="140px"
+              fontFamily="'IBM Plex Mono', monospace"
+              fontSize="sm"
+              color="brand.copper"
+            >
+              {edu.period}
+            </Text>
             <Box>
-              <Text fontWeight="bold" color="white">
-                {edu.period}
-              </Text>
-            </Box>
-
-            <Box>
-              <Heading as="h3" size="md" mb={2}>
+              <Heading as="h3" fontSize="xl" mb={1} color="brand.parchment">
                 {edu.degree}
               </Heading>
-              <Text color="white">{edu.school}</Text>
+              <Text color="rgba(244,236,225,0.7)">{edu.school}</Text>
             </Box>
-          </Grid>
+          </Flex>
         ))}
       </VStack>
     </Box>

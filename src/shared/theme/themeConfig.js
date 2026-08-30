@@ -1,3 +1,6 @@
+// src/shared/theme/themeConfig.js
+import { COLORS, FONTS } from "./constants";
+
 export const themeConfig = (isOpenDyslexic) => ({
   config: {
     initialColorMode: "dark",
@@ -5,102 +8,78 @@ export const themeConfig = (isOpenDyslexic) => ({
   },
   colors: {
     brand: {
-      cardBg: "#0a0a0a",
-      border: "#A7BFAD",
-      neon: "#00ff9d",
-      neonGlow: "0 0 10px rgba(0, 255, 157, 0.5)",
+      ink: COLORS.INK,
+      cardBg: COLORS.CARD_BACKGROUND,
+      border: COLORS.BORDER,
+      neon: COLORS.COPPER,
+      copper: COLORS.COPPER,
+      copperHot: COLORS.COPPER_HOT,
+      moss: COLORS.MOSS,
+      parchment: COLORS.PARCHMENT,
+      neonGlow: COLORS.NEON_GLOW,
     },
   },
   fonts: {
-    heading: isOpenDyslexic
-      ? "'OpenDyslexic', sans-serif"
-      : "'Montserrat', sans-serif",
-    body: isOpenDyslexic
-      ? "'OpenDyslexic', sans-serif"
-      : "'Montserrat', sans-serif",
+    heading: isOpenDyslexic ? FONTS.OPENDYS : FONTS.DISPLAY,
+    body: isOpenDyslexic ? FONTS.OPENDYS : FONTS.BODY,
+    mono: FONTS.MONO,
   },
   styles: {
-    global: (props) => ({
+    global: {
       body: {
-        bg: "#0a0a0a",
-        color: "white",
-        fontFamily: isOpenDyslexic
-          ? "'OpenDyslexic', sans-serif"
-          : "'Montserrat', sans-serif",
+        bg: COLORS.INK,
+        color: COLORS.PARCHMENT,
+        fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.BODY,
         minHeight: "100vh",
-        width: "100vw",
+        width: "100%",
         overflowX: "hidden",
       },
-      // Styles globaux pour les titres
       "h1, h2, h3, h4, h5, h6, .section-title, .page-title": {
-        color: "#00ff9d",
-        fontWeight: "600",
-        letterSpacing: "tight",
-        textShadow: "0 0 10px rgba(0, 255, 157, 0.5)",
-        ...(!isOpenDyslexic && {
-          textShadow:
-            "0px 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 255, 157, 0.5)",
-        }),
+        color: COLORS.PARCHMENT,
+        fontWeight: "500",
+        letterSpacing: "-0.03em",
+        fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.DISPLAY,
+        textShadow: "none",
       },
-      // Styles globaux pour les paragraphes et textes
-      "p, span, div": {
-        color: "gray.400",
-      },
-      // Styles globaux pour les liens
-      "a:not(.chakra-button)": {
-        color: "brand.neon",
-        borderBottom: "1px solid brand.neon",
-        transition: "all 0.2s ease",
-        textShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
-        _hover: {
-          color: "white",
-          textDecoration: "none",
-          borderBottomColor: "white",
-          textShadow: "0 0 15px rgba(0, 255, 157, 0.5)",
-        },
-      },
-      // Styles pour les cartes
-      ".card": {
-        bg: "black",
-        borderColor: "brand.neon",
-        boxShadow: "0 0 15px rgba(0, 255, 157, 0.2)",
-        _hover: {
-          boxShadow: "0 0 20px rgba(0, 255, 157, 0.3)",
-        },
-      },
-      // Styles pour les inputs
-      "input, textarea, select": {
-        color: "white",
-        bg: "gray.800",
-        borderColor: "brand.neon",
-        boxShadow: "0 0 10px rgba(0, 255, 157, 0.2)",
-        _focus: {
-          borderColor: "brand.neon",
-          boxShadow: "0 0 0 1px brand.neon, 0 0 15px rgba(0, 255, 157, 0.4)",
-        },
+      a: {
+        color: "inherit",
       },
       "p.intro, .intro": {
-        color: "gray.400",
+        color: COLORS.PARCHMENT_MUTED,
         fontSize: "lg",
-        fontWeight: "medium",
+        fontWeight: "400",
+        lineHeight: "1.8",
       },
-    }),
+    },
   },
   components: {
     Button: {
       baseStyle: {
-        borderRadius: "8px",
+        borderRadius: "999px",
         fontWeight: "500",
+        letterSpacing: "0.04em",
       },
       variants: {
         solid: {
-          bg: "gray.700",
-          color: "brand.neon",
-          borderColor: "brand.neon",
-          boxShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
+          bg: COLORS.COPPER,
+          color: COLORS.INK,
           _hover: {
-            bg: "gray.600",
-            boxShadow: "0 0 15px rgba(0, 255, 157, 0.4)",
+            bg: COLORS.COPPER_HOT,
+          },
+        },
+        outline: {
+          borderColor: "rgba(201, 163, 106, 0.5)",
+          color: COLORS.COPPER,
+          _hover: {
+            bg: "rgba(201, 163, 106, 0.08)",
+            borderColor: COLORS.COPPER,
+          },
+        },
+        ghost: {
+          color: COLORS.PARCHMENT_MUTED,
+          _hover: {
+            bg: "rgba(244, 236, 225, 0.05)",
+            color: COLORS.PARCHMENT,
           },
         },
       },
@@ -108,13 +87,10 @@ export const themeConfig = (isOpenDyslexic) => ({
     Card: {
       baseStyle: {
         container: {
-          borderRadius: "12px",
+          borderRadius: "22px",
           overflow: "hidden",
-          borderColor: "brand.neon",
-          boxShadow: "0 0 15px rgba(0, 255, 157, 0.2)",
-          _hover: {
-            boxShadow: "0 0 20px rgba(0, 255, 157, 0.3)",
-          },
+          borderColor: COLORS.BORDER,
+          bg: COLORS.CARD_BACKGROUND,
         },
       },
     },

@@ -1,25 +1,15 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+// src/features/about/components/AboutHeader.jsx
+import SectionHeader from "../../../shared/ui/SectionHeader";
 import { useTranslation } from "../../../hooks/useTranslation";
-import NeonBeamDivider from "../../../shared/components/NeonBeamDivider";
 
 const AboutHeader = () => {
   const { t } = useTranslation();
-
   return (
-    <Box>
-      <Heading as="h1" size="2xl" mb={4}>
-        {t("about.title")}
-      </Heading>
-      <Text
-        className="intro"
-        fontSize="lg"
-        maxW="container.md"
-        color="gray.300"
-      >
-        {t("about.description")}
-      </Text>
-      <NeonBeamDivider mt={6} mb={2} />
-    </Box>
+    <SectionHeader
+      kicker={t("about.kicker")}
+      title={t("about.title")}
+      description={t("about.description")}
+    />
   );
 };
 

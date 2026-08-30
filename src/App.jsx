@@ -1,3 +1,4 @@
+// src/App.jsx
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
@@ -15,8 +16,6 @@ import { FontContext, LanguageContext } from "./shared/contexts";
 function App() {
   const [isOpenDyslexic, setIsOpenDyslexic] = useState(false);
   const [isEnglish, setIsEnglish] = useState(false);
-
-  // Création du thème en fonction de la police sélectionnée
   const theme = extendTheme(themeConfig(isOpenDyslexic));
 
   return (
@@ -39,10 +38,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/projects" element={<Projects />} />
-                <Route
-                  path="/projects/:projectId"
-                  element={<ProjectDetails />}
-                />
+                <Route path="/projects/:projectId" element={<ProjectDetails />} />
                 <Route path="/creations" element={<Creations />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />

@@ -1,3 +1,4 @@
+// src/shared/layout/Footer.jsx
 import { Box, Flex, Text, Link, HStack, Icon } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { useTranslation } from "../../hooks/useTranslation";
@@ -7,51 +8,44 @@ const Footer = () => {
 
   return (
     <Box
-      bg="rgba(0, 0, 0, 0.95)"
-      px={8}
+      as="footer"
+      px={{ base: 4, md: 8 }}
       w="100%"
-      boxShadow="0 0 20px rgba(0,255,157,0.15)"
-      borderTop="1px solid rgba(0,255,157,0.1)"
-      backdropFilter="blur(10px)"
+      borderTop="1px solid rgba(201,163,106,0.14)"
       mt="auto"
+      bg="rgba(14,12,10,0.9)"
     >
-      <Flex h={16} alignItems="center" justifyContent="space-between">
-        <Text color="brand.neon" textShadow="0 0 10px rgba(0, 255, 157, 0.5)">
-          © 2024 Thibault Lenormand
-        </Text>
-
+      <Flex
+        minH={16}
+        py={4}
+        alignItems="center"
+        justifyContent="space-between"
+        gap={4}
+        wrap="wrap"
+      >
         <Text
-          color="brand.neon"
-          textShadow="0 0 10px rgba(0, 255, 157, 0.5)"
-          ml="-20px"
+          fontFamily="'IBM Plex Mono', monospace"
+          fontSize="xs"
+          letterSpacing="0.08em"
+          color="brand.copper"
         >
+          © 2026 Thibault Lenormand
+        </Text>
+        <Text fontSize="sm" color="rgba(244,236,225,0.55)">
           {t("home.footer.rights")}
         </Text>
-
-        <HStack spacing={6}>
-          <Link
-            href="https://github.com/ThibaultL24"
-            isExternal
-            _hover={{ color: "brand.neon" }}
-            transition="color 0.3s ease"
-          >
-            <Icon as={FaGithub} boxSize={5} />
+        <HStack spacing={5}>
+          <Link href="https://github.com/ThibaultL24" isExternal>
+            <Icon as={FaGithub} boxSize={4} color="brand.parchment" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/thibault-lenormand-b38b96268/"
             isExternal
-            _hover={{ color: "brand.neon" }}
-            transition="color 0.3s ease"
           >
-            <Icon as={FaLinkedin} boxSize={5} />
+            <Icon as={FaLinkedin} boxSize={4} color="brand.parchment" />
           </Link>
-          <Link
-            href="https://x.com/ThibaultLENORM2"
-            isExternal
-            _hover={{ color: "brand.neon" }}
-            transition="color 0.3s ease"
-          >
-            <Icon as={FaTwitter} boxSize={5} />
+          <Link href="https://x.com/ThibaultLENORM2" isExternal>
+            <Icon as={FaTwitter} boxSize={4} color="brand.parchment" />
           </Link>
         </HStack>
       </Flex>

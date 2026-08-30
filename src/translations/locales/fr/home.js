@@ -1,9 +1,17 @@
 export const home = {
+  kicker: "Atelier — Avignon",
   title: "Thibault Lenormand",
-  subtitle: "Développeur Full Stack",
+  subtitle: "Développeur full stack",
   description:
-    "Je m'appelle Thibault Lenormand, développeur full stack. J'accorde autant d'importance au code qu'à la littérature, au dessin, au design ou à la conception d'idées. J'aime comprendre, créer, structurer. Ce site reflète une partie de mon travail et de mes inspirations. Bienvenue.",
+    "Je construis des sites et des produits avec la même exigence que j’écris : clarté, rythme, matière. Du site de cabinet au studio visuel, de la gazette locale au graphe de confiance.",
+  ctaProjects: "Voir les projets",
+  ctaContact: "Travailler ensemble",
   downloadCV: "Télécharger CV",
+  selected: {
+    kicker: "Sélection",
+    title: "Derniers projets",
+    more: "Tous les projets",
+  },
   trust: {
     title: "Ils m'ont fait confiance",
     intro: {

@@ -1,7 +1,8 @@
 export const contact = {
-  title: "CONTACT",
+  title: "Contact",
+  kicker: "Studio",
   description:
-    "Have a project in mind or an opportunity to discuss? Don't hesitate to contact me, I'd be happy to chat with you.",
+    "A site, a product, a text. Write to me — I reply from Avignon.",
   form: {
     title: "Send me a message",
     name: "Name",

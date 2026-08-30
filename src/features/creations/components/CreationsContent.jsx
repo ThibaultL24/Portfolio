@@ -99,30 +99,26 @@ const CreationsContent = () => {
       >
         <Tab
           _selected={{
-            color: "brand.neon",
-            borderColor: "brand.neon",
+            color: "brand.copper",
+            borderColor: "brand.copper",
             mb: "4px",
-            textShadow: "0 0 10px rgba(0, 255, 157, 0.5)",
           }}
-          color="gray.400"
+          color="rgba(244,236,225,0.55)"
           _hover={{
-            color: "brand.neon",
-            textShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
+            color: "brand.copper",
           }}
         >
           {t("creations.tabs.visuals")}
         </Tab>
         <Tab
           _selected={{
-            color: "brand.neon",
-            borderColor: "brand.neon",
+            color: "brand.copper",
+            borderColor: "brand.copper",
             mb: "4px",
-            textShadow: "0 0 10px rgba(0, 255, 157, 0.5)",
           }}
-          color="gray.400"
+          color="rgba(244,236,225,0.55)"
           _hover={{
-            color: "brand.neon",
-            textShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
+            color: "brand.copper",
           }}
         >
           {t("creations.tabs.texts")}
@@ -160,13 +156,12 @@ const CreationsContent = () => {
                       mt={2}
                       colorScheme="black"
                       variant="outline"
-                      borderColor="brand.neon"
-                      color="brand.neon"
+                      borderColor="brand.copper"
+                      color="brand.copper"
                       _hover={{
-                        bg: "black",
-                        color: "white",
-                        borderColor: "brand.neon",
-                        boxShadow: "0 0 10px #00ff9d99",
+                        bg: "transparent",
+                        color: "brand.parchment",
+                        borderColor: "brand.copperHot",
                       }}
                       onClick={() => handleVisualClick(item)}
                     >
@@ -185,23 +180,21 @@ const CreationsContent = () => {
           >
             <ModalOverlay />
             <ModalContent
-              bg="black"
-              color="gray.200"
-              border="2px solid"
-              borderColor="brand.neon"
-              boxShadow="0 0 30px 0 rgba(0,255,157,0.4)"
+              bg="#0e0c0a"
+              color="brand.parchment"
+              border="1px solid"
+              borderColor="rgba(201,163,106,0.3)"
               maxW="90vw"
             >
               <ModalHeader
-                color="brand.neon"
-                textShadow="0 0 10px #00ff9d, 0 0 20px #00ff9d"
+                color="brand.copper"
                 textAlign="center"
               >
                 {t(`creations.visuals.titles.${selectedVisual?.titleKey}`)}
               </ModalHeader>
               <ModalCloseButton
-                color="brand.neon"
-                _hover={{ bg: "gray.800", color: "white" }}
+                color="brand.copper"
+                _hover={{ bg: "whiteAlpha.100", color: "white" }}
                 onClick={() => setSelectedVisual(null)}
               />
               <ModalBody
@@ -222,7 +215,7 @@ const CreationsContent = () => {
                       maxWidth: "80vw",
                       maxHeight: "65vh",
                       objectFit: "contain",
-                      boxShadow: "0 0 30px #00ff9d33",
+                      boxShadow: "none",
                     }}
                   />
                 )}
@@ -245,23 +238,22 @@ const CreationsContent = () => {
                     cursor="pointer"
                     onClick={() => setSelectedCategory(category.id)}
                     bg="transparent"
-                    color={isSelected ? "brand.neon" : "white"}
-                    borderColor="brand.neon"
+                    color={isSelected ? "brand.copper" : "brand.parchment"}
+                    borderColor="rgba(201,163,106,0.4)"
                     fontWeight={isSelected ? "bold" : "normal"}
                     fontSize="md"
                     px={6}
                     py={2}
                     _hover={{
-                      color: "brand.neon",
-                      borderColor: "brand.neon",
-                      "& svg": { color: "var(--chakra-colors-brand-neon)" },
+                      color: "brand.copper",
+                      borderColor: "brand.copper",
                     }}
                     transition="all 0.2s"
                   >
                     {category.icon && (
                       <TagLeftIcon
                         as={category.icon}
-                        color={isSelected ? "brand.neon" : "white"}
+                        color={isSelected ? "brand.copper" : "brand.parchment"}
                       />
                     )}
                     <TagLabel>
@@ -311,21 +303,17 @@ const CreationsContent = () => {
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
         <ModalContent
-          bg="black"
-          color="gray.200"
-          border="2px solid"
-          borderColor="brand.neon"
-          boxShadow="0 0 30px 0 rgba(0,255,157,0.4)"
+          bg="#0e0c0a"
+          color="brand.parchment"
+          border="1px solid"
+          borderColor="rgba(201,163,106,0.3)"
         >
-          <ModalHeader
-            color="brand.neon"
-            textShadow="0 0 10px #00ff9d, 0 0 20px #00ff9d"
-          >
+          <ModalHeader color="brand.copper">
             {t(`creations.texts.entries.${selectedText?.entryKey}.title`)}
           </ModalHeader>
           <ModalCloseButton
-            color="brand.neon"
-            _hover={{ bg: "gray.800", color: "white" }}
+            color="brand.copper"
+            _hover={{ bg: "whiteAlpha.100", color: "white" }}
           />
           <ModalBody pb={6}>
             {selectedText &&

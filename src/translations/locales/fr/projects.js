@@ -1,7 +1,7 @@
 export const projects = {
-  title: "PROJETS",
+  title: "Projets",
   description:
-    "Découvrez une sélection de mes projets récents qui illustrent mon approche et mes compétences en architecture et design.",
+    "Commandes, produits, expérimentations. Une sélection de sites et d’outils que j’ai conçus, écrits et mis en ligne."
   list: {
     project1: {
       title: "Patte à Patte",
@@ -129,13 +129,127 @@ export const projects = {
         "Steven RATTON (Omiage)",
       ],
     },
+    project6: {
+      title: "Camille Luxopuncture",
+      description:
+        "Site vitrine pour Camille Laplace, luxothérapeute et hypnothérapeute à Avignon — programme détox, témoignages et prise de rendez-vous.",
+      longDescription:
+        "Camille Luxopuncture est le site de Camille Laplace, praticienne en luxothérapie et hypnose installée à Avignon. Le projet donne une présence claire, lumineuse et rassurante à un accompagnement de santé douce.\n\n" +
+        "Le site met en avant le programme détox 21 jours à distance, les séances au cabinet (luxopuncture par infrarouge, hypnose), les témoignages patients et un parcours de prise de rendez-vous simple — le premier bilan est offert.\n\n" +
+        "L’enjeu n’était pas d’empiler les pages, mais de traduire une voix : douceur, clarté, preuve. Typographie soignée, rythme éditorial, galerie d’avis et appels à l’action discrets. Le site est déployé en production sur laplaceluxopuncture.fr.",
+      technologies: [
+        { name: "React", color: "cyan" },
+        { name: "Vite", color: "purple" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Vercel", color: "gray" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project7: {
+      title: "Corvus Studio",
+      description:
+        "Portfolio one-page pour un studio indépendant de visuels publicitaires premium — univers cosmique, galerie et back-office.",
+      longDescription:
+        "Corvus Studio est le site d’un studio indépendant de création de visuels publicitaires. L’univers mêle direction artistique sombre, esthétique cosmique, typographie monumentale et touches cyan/violet.\n\n" +
+        "Le site présente une accueil immersive, un bandeau de réalisations, une galerie filtrable avec modale projet, une grille tarifaire, les domaines de création, le portrait du studio (Dylan Lacas) et un formulaire de contact.\n\n" +
+        "Côté technique : Next.js 15, React 19, TypeScript, Tailwind et Framer Motion. Un back-office authentifié (Auth.js + Vercel Blob) permet de gérer réalisations, images et réseaux sociaux sans redéploiement.",
+      technologies: [
+        { name: "Next.js 15", color: "gray" },
+        { name: "React 19", color: "cyan" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Tailwind CSS", color: "teal" },
+        { name: "Framer Motion", color: "pink" },
+        { name: "Auth.js", color: "purple" },
+        { name: "Vercel Blob", color: "orange" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project8: {
+      title: "Kaïron",
+      description:
+        "Site associatif pour « Un souffle d’espoir pour Kaïron » — histoire, dons HelloAsso, événements et administration de contenu.",
+      longDescription:
+        "Kaïron est le site de l’association « Un souffle d’espoir pour Kaïron ». Il raconte l’histoire d’un enfant, relaye les actions de l’association et oriente vers les dons officiels HelloAsso.\n\n" +
+        "Le site combine une vitrine émotionnelle — récit, visuels, événements locaux — et une administration de contenu (textes, témoignages, chiffres) pour que la famille puisse actualiser le site sans passer par le code.\n\n" +
+        "Stack : React, TypeScript, Vite, Tailwind, Framer Motion, Redis (Upstash) pour le contenu dynamique, déployé sur Vercel.",
+      technologies: [
+        { name: "React", color: "cyan" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Vite", color: "purple" },
+        { name: "Tailwind CSS", color: "teal" },
+        { name: "Framer Motion", color: "pink" },
+        { name: "Upstash Redis", color: "red" },
+        { name: "Vercel", color: "gray" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project9: {
+      title: "Fenêtre Ouverte",
+      description:
+        "Gazette locale immobilière et commerciale — articles, commerçants, abonnements et back-office éditorial.",
+      longDescription:
+        "Fenêtre Ouverte (Proximo) est une application de gazette locale : actualités de territoire, immobilier, commerçants de proximité et un back-office pour rédiger, publier et suivre l’activité.\n\n" +
+        "Le produit mêle lecture publique (cartes d’articles, communes, commerçants, PWA) et outils métier (rédaction, analytics, commissions, abonnements Stripe). L’enjeu : donner à une gazette de terrain une vitrine contemporaine et un outil de travail réel.\n\n" +
+        "Frontend React/TypeScript/Vite, backend dédié, déploiement Vercel et infrastructure conteneurisée.",
+      technologies: [
+        { name: "React", color: "cyan" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Vite", color: "purple" },
+        { name: "TanStack Query", color: "red" },
+        { name: "PWA", color: "orange" },
+        { name: "Stripe", color: "green" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project10: {
+      title: "TrustBook",
+      description:
+        "Mini-app Circles : un fil social classé par graphe de confiance plutôt que par l’engagement.",
+      longDescription:
+        "TrustBook est une mini-app conçue pour Circles Garage. Le fil n’est pas classé par likes : il est rangé par confiance explicite — relations directes, chemins communs, communautés partagées, boosts CRC, et éventuellement des claims Intuition.\n\n" +
+        "Chaque carte explique pourquoi elle apparaît. Un tap mène à une action CRC (tip, boost, trust). Le projet explore ce que devient un réseau social quand la confiance est un primitive économique, pas un bouton « follow ».\n\n" +
+        "Next.js, TypeScript, Tailwind, SDK Circles / Gnosis. Démo live disponible.",
+      technologies: [
+        { name: "Next.js", color: "gray" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Tailwind CSS", color: "teal" },
+        { name: "Circles", color: "green" },
+        { name: "Gnosis", color: "orange" },
+        { name: "Intuition", color: "purple" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project11: {
+      title: "FMMAF — proposition de site",
+      description:
+        "Refonte visuelle du site de la Fédération Française de MMA : direction sportive, lisible, institutionnelle.",
+      longDescription:
+        "Proposition de refonte du site de la FMMAF. L’enjeu : une fédération dont le contenu est déjà là, mais dont la vitrine numérique ne reflète plus la dynamique du MMA en France (délégation 2020, reconnaissance haut niveau 2024).\n\n" +
+        "Les maquettes reprennent les contenus existants pour montrer un avant/après concret : lisibilité, identité sportive, textures d’octogone, hiérarchie claire. Une variante « Neo-Fight UI » explore un registre plus premium — noir, vert signal, structure de ligue.\n\n" +
+        "Le prototype est consultable en ligne. Stack : Next.js, TypeScript, Tailwind.",
+      technologies: [
+        { name: "Next.js", color: "gray" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Tailwind CSS", color: "teal" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
   },
-  viewDetails: "Voir détails →",
+  viewDetails: "Lire le projet",
+  featuredLabel: "À la une",
+  filters: {
+    all: "Tout",
+    commande: "Commande",
+    produit: "Produit",
+    web3: "Web3",
+  },
   details: {
-    technologies: "Technologies utilisées",
-    links: "Liens du projet",
+    technologies: "Stack",
+    links: "Liens",
     production: "Voir le site",
-    authors: "Auteurs du projet",
-    hackathon: "Voir sur Hackathon Base",
+    authors: "Avec",
+    hackathon: "Voir le hackathon",
+    year: "Année",
+    role: "Rôle",
   },
 };

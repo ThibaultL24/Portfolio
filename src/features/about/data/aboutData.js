@@ -1,28 +1,40 @@
-// Compétences
+// src/features/about/data/aboutData.js
 export const skills = [
   {
     category: "Front-end",
-    items: ["HTML/CSS", "JavaScript", "React", "Tailwind CSS"],
+    items: ["HTML/CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
   },
   {
     category: "Back-end",
-    items: ["Node.js", "Ruby", "SQL", "Docker"],
+    items: ["Node.js", "Ruby", "Rust", "SQL", "Docker"],
   },
-  { category: "Outils", items: ["Figma", "Whimsical", "Github", "VS Code"] },
+  { category: "Outils", items: ["Figma", "Github", "VS Code"] },
 ];
 
-// Expériences
 export const experiences = [
   {
-    title: "Développeur Front-end",
-    company: "Agent",
-    period: "2024 - Présent",
+    title: "Développeur freelance",
+    company: "Atelier — Avignon",
+    period: "2025 — 2026",
     description:
-      "Développement de l'application Agent.",
+      "Sites et produits pour des indépendants et associations : Camille Luxopuncture, Corvus Studio, Kaïron, Fenêtre Ouverte.",
+  },
+  {
+    title: "Développeur full stack",
+    company: "Agent / Boss Fighters",
+    period: "2024 — 2025",
+    description:
+      "Backend Rails, frontend React, outils d’analyse pour une communauté de jeu web3.",
+  },
+  {
+    title: "Stage — Ambassadeur Dev",
+    company: "Intuition / THP Lab",
+    period: "2025",
+    description:
+      "Graphe sémantique 2D/3D/VR, assistant de recommandations DecentRep, protocole de confiance.",
   },
 ];
 
-// Formation
 export const education = [
   {
     degree: "Certification RNCP bac+2 Développement Web",
@@ -32,11 +44,11 @@ export const education = [
   {
     degree: "Licence en Lettres Modernes",
     school: "Université d'Avignon",
-    period: "2010 - 2013",
+    period: "2010 — 2013",
   },
   {
     degree: "Baccalauréat Littéraire",
-    school: "Lycée Gustave Jaume à Pierrelatte",
-    period: "2007 - 2010",
+    school: "Lycée Gustave Jaume, Pierrelatte",
+    period: "2007 — 2010",
   },
 ];

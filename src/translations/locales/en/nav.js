@@ -1,7 +1,7 @@
 export const nav = {
-  home: "HOME",
-  projects: "PROJECTS",
-  creations: "CREATIONS",
-  about: "ABOUT",
-  contact: "CONTACT",
+  home: "Home",
+  projects: "Projects",
+  creations: "Creations",
+  about: "About",
+  contact: "Contact",
 };

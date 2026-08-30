@@ -1,138 +1,113 @@
-import { Box, Flex, Button, Stack } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
-import { FontContext, LanguageContext } from "../contexts";
-import { useContext } from "react";
+// src/shared/layout/Navbar.jsx
+import {
+  Box,
+  Flex,
+  Button,
+  Stack,
+  IconButton,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerBody,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import LanguageToggle from "./LanguageToggle";
 import FontToggle from "./FontToggle";
+import BrandMark from "../ui/BrandMark";
 import { useTranslation } from "../../hooks/useTranslation";
 
 const Navbar = () => {
-  const { isOpenDyslexic } = useContext(FontContext);
-  const { isEnglish } = useContext(LanguageContext);
   const { t } = useTranslation();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const location = useLocation();
 
   const navLinks = [
     { to: "/", label: t("nav.home") },
-    { to: "/about", label: t("nav.about") },
     { to: "/projects", label: t("nav.projects") },
     { to: "/creations", label: t("nav.creations") },
+    { to: "/about", label: t("nav.about") },
     { to: "/contact", label: t("nav.contact") },
   ];
 
+  const isActive = (to) =>
+    to === "/" ? location.pathname === "/" : location.pathname.startsWith(to);
+
+  const linkButton = (link, onClick) => (
+    <Button
+      as={RouterLink}
+      to={link.to}
+      key={link.to}
+      onClick={onClick}
+      variant="ghost"
+      px={3}
+      h="auto"
+      py={2}
+      fontWeight="400"
+      fontSize="sm"
+      letterSpacing="0.08em"
+      textTransform="uppercase"
+      color={isActive(link.to) ? "brand.copper" : "brand.parchment"}
+      opacity={isActive(link.to) ? 1 : 0.72}
+      borderRadius="0"
+      borderBottom="1px solid"
+      borderColor={isActive(link.to) ? "brand.copper" : "transparent"}
+      _hover={{
+        bg: "transparent",
+        color: "brand.copper",
+        opacity: 1,
+      }}
+    >
+      {link.label}
+    </Button>
+  );
+
   return (
     <Box
-      bg="rgba(0, 0, 0, 0.95)"
-      px={8}
+      as="header"
+      px={{ base: 4, md: 8 }}
       position="fixed"
       w="100%"
       zIndex={1000}
       top={0}
       left={0}
-      boxShadow="0 0 20px rgba(0,255,157,0.15)"
-      borderBottom="1px solid rgba(0,255,157,0.1)"
-      backdropFilter="blur(10px)"
+      bg="rgba(14, 12, 10, 0.72)"
+      borderBottom="1px solid rgba(201,163,106,0.12)"
+      backdropFilter="blur(16px)"
     >
-      <Flex h={16} alignItems="center" justifyContent="space-between">
-        <Flex alignItems="center">
-          <Stack direction="row" spacing={7}>
-            {navLinks.map((link) => (
-              <RouterLink key={link.to} to={link.to}>
-                <Button
-                  variant="ghost"
-                  px={3}
-                  py={2}
-                  fontWeight="bold"
-                  fontSize="md"
-                  color="brand.neon"
-                  textShadow="0 0 10px rgba(0, 255, 157, 0.5)"
-                  transition="all 0.3s ease"
-                  _hover={{
-                    color: "brand.neon",
-                    textShadow: "0 0 15px rgba(0, 255, 157, 0.5)",
-                    transform: "translateY(-2px)",
-                    bg: "rgba(0,255,157,0.05)",
-                  }}
-                  _active={{
-                    color: "brand.neon",
-                    textShadow: "0 0 15px rgba(0, 255, 157, 0.5)",
-                    transform: "translateY(0)",
-                  }}
-                  className="nav-link"
-                  sx={{
-                    "&.active": {
-                      color: "brand.neon",
-                      textShadow: "0 0 15px rgba(0, 255, 157, 0.5)",
-                      bg: "rgba(0,255,157,0.05)",
-                      borderBottom: "2px solid brand.neon",
-                    },
-                  }}
-                  bg="transparent"
-                >
-                  {link.label}
-                </Button>
-              </RouterLink>
-            ))}
-          </Stack>
-        </Flex>
-        <Flex alignItems="center">
-          <Stack direction="row" spacing={7}>
-            <Button
-              as={LanguageToggle}
-              variant="ghost"
-              color="brand.neon"
-              textShadow="0 0 10px rgba(0, 255, 157, 0.5)"
-              _hover={{
-                color: "brand.neon",
-                textShadow: "0 0 15px rgba(0, 255, 157, 0.5)",
-                transform: "translateY(-2px)",
-                bg: "rgba(0,255,157,0.05)",
-              }}
-              _active={{
-                color: "brand.neon",
-                textShadow: "0 0 15px rgba(0, 255, 157, 0.5)",
-                transform: "translateY(0)",
-              }}
-            />
-            <Button
-              as={FontToggle}
-              variant="ghost"
-              color="brand.neon"
-              textShadow="0 0 10px rgba(0, 255, 157, 0.5)"
-              _hover={{
-                color: "brand.neon",
-                textShadow: "0 0 15px rgba(0, 255, 157, 0.5)",
-                transform: "translateY(-2px)",
-                bg: "rgba(0,255,157,0.05)",
-              }}
-              _active={{
-                color: "brand.neon",
-                textShadow: "0 0 15px rgba(0, 255, 157, 0.5)",
-                transform: "translateY(0)",
-              }}
-            />
-          </Stack>
+      <Flex h={16} alignItems="center" justifyContent="space-between" gap={4}>
+        <BrandMark />
+        <Stack
+          direction="row"
+          spacing={1}
+          display={{ base: "none", lg: "flex" }}
+        >
+          {navLinks.map((link) => linkButton(link))}
+        </Stack>
+        <Flex alignItems="center" gap={1}>
+          <LanguageToggle />
+          <FontToggle />
+          <IconButton
+            display={{ base: "inline-flex", lg: "none" }}
+            aria-label="Menu"
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            variant="ghost"
+            color="brand.parchment"
+            onClick={isOpen ? onClose : onOpen}
+          />
         </Flex>
       </Flex>
-      <style>{`
-        .nav-link {
-          position: relative;
-          overflow: hidden;
-        }
-        .nav-link::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          background: brand.neon;
-          transform: scaleX(0);
-          transition: transform 0.3s ease;
-        }
-        .nav-link:hover::after {
-          transform: scaleX(1);
-        }
-      `}</style>
+      <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+        <DrawerOverlay bg="rgba(14,12,10,0.6)" />
+        <DrawerContent bg="#0e0c0a" maxW="280px">
+          <DrawerBody pt={20}>
+            <Stack spacing={4} align="flex-start">
+              {navLinks.map((link) => linkButton(link, onClose))}
+            </Stack>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </Box>
   );
 };

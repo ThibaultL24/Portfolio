@@ -1,7 +1,9 @@
-import { Box, Text, Link } from "@chakra-ui/react";
+// src/shared/ui/ProjectCard.jsx
+import { Box, Text, Flex } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import Card from "./Card";
 import CardImage from "./CardImage";
+import ProjectCover from "./ProjectCover";
 import { useTranslation } from "../../hooks/useTranslation";
 
 const ProjectCard = ({
@@ -9,52 +11,65 @@ const ProjectCard = ({
   description,
   imageSrc,
   projectId,
-  github,
-  production,
+  year,
+  category,
+  accent,
+  motif,
+  featured = false,
 }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate(`/projects/${projectId}`);
-  };
-
   return (
-    <Card>
-      <Box pt={4}>
-        <CardImage src={imageSrc} alt={title} h="200px" w="100%" />
+    <Card
+      as="article"
+      cursor="pointer"
+      onClick={() => navigate(`/projects/${projectId}`)}
+      h="100%"
+    >
+      <Box h={featured ? "280px" : "200px"} overflow="hidden">
+        {imageSrc ? (
+          <CardImage src={imageSrc} alt={title} h="100%" w="100%" />
+        ) : (
+          <ProjectCover title={title} accent={accent} motif={motif} />
+        )}
       </Box>
-      <Box p={6}>
-        <Text as="h3" fontWeight="bold" fontSize="lg" mb={3}>
+      <Box p={{ base: 5, md: 6 }}>
+        <Flex
+          justify="space-between"
+          align="center"
+          mb={3}
+          fontFamily="'IBM Plex Mono', monospace"
+          fontSize="11px"
+          letterSpacing="0.18em"
+          textTransform="uppercase"
+          color="brand.copper"
+        >
+          <Text as="span">{year}</Text>
+          <Text as="span">{t(`projects.filters.${category}`, category)}</Text>
+        </Flex>
+        <Text
+          as="h3"
+          fontFamily="'Fraunces', serif"
+          fontWeight="500"
+          fontSize={featured ? "2xl" : "xl"}
+          mb={3}
+          color="brand.parchment"
+        >
           {title}
         </Text>
-        <Text fontSize="sm" mb={5} color="gray.300">
+        <Text fontSize="sm" mb={5} color="rgba(244,236,225,0.68)" noOfLines={3}>
           {description}
         </Text>
-        <Link
-          onClick={handleClick}
-          fontWeight="medium"
-          fontSize="sm"
-          display="inline-block"
-          position="relative"
-          cursor="pointer"
-          _after={{
-            content: '""',
-            position: "absolute",
-            width: "0%",
-            height: "1px",
-            bottom: "-2px",
-            left: "0",
-            transition: "width 0.3s ease",
-          }}
-          _hover={{
-            _after: {
-              width: "100%",
-            },
-          }}
+        <Text
+          fontFamily="'IBM Plex Mono', monospace"
+          fontSize="xs"
+          letterSpacing="0.14em"
+          textTransform="uppercase"
+          color="brand.copper"
         >
-          {t("projects.viewDetails")}
-        </Link>
+          {t("projects.viewDetails")} →
+        </Text>
       </Box>
     </Card>
   );
