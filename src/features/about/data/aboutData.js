@@ -17,7 +17,7 @@ export const experiences = [
     company: "Atelier — Avignon",
     period: "2025 — 2026",
     description:
-      "Sites et produits pour des indépendants et associations : Camille Luxopuncture, Corvus Studio, Kaïron, Fenêtre Ouverte.",
+      "Sites et produits pour des indépendants et associations : Camille Luxopuncture, Corvus Studio, Kaïron.",
   },
   {
     title: "Développeur full stack",

@@ -6,7 +6,6 @@ import agentImg from "../../../assets/img/agent.gif";
 import playerMapImg from "../../../assets/img/agentplayermap.png";
 import camilleCover from "../../../assets/img/covers/camille.jpg";
 import kaironCover from "../../../assets/img/covers/kairon.jpg";
-import fenetreCover from "../../../assets/img/covers/fenetre.jpg";
 import trustbookCover from "../../../assets/img/covers/trustbook.jpg";
 import mmaCover from "../../../assets/img/covers/mma.jpg";
 import decentRepImg1 from "../../../assets/img/decentrep/decentrep1.png";
@@ -61,19 +60,6 @@ export const PROJECT_CATALOG = [
     github: "https://github.com/ThibaultL24/Kairon",
     production: "https://kairon-six.vercel.app",
     imageSrc: kaironCover,
-    images: [],
-  },
-  {
-    id: 9,
-    key: "project9",
-    year: "2026",
-    category: "produit",
-    featured: false,
-    accent: "#c9a36a",
-    motif: "grid",
-    github: "https://github.com/ThibaultL24/Proximo",
-    production: "https://fenetre-ouverte.vercel.app",
-    imageSrc: fenetreCover,
     images: [],
   },
   {

@@ -176,24 +176,6 @@ export const projects = {
       ],
       authors: ["Thibault LENORMAND"],
     },
-    project9: {
-      title: "Fenêtre Ouverte",
-      description:
-        "Local real-estate and commerce gazette — articles, merchants, subscriptions, and an editorial back-office.",
-      longDescription:
-        "Fenêtre Ouverte (Proximo) is a local gazette app: territorial news, real estate, nearby merchants, and a back-office to write, publish and track activity.\n\n" +
-        "The product mixes public reading (article cards, towns, merchants, PWA) with operational tools (editorial, analytics, commissions, Stripe subscriptions). The aim: give a field gazette a contemporary vitrine and a real working tool.\n\n" +
-        "React/TypeScript/Vite frontend, dedicated backend, Vercel deploy and containerized infrastructure.",
-      technologies: [
-        { name: "React", color: "cyan" },
-        { name: "TypeScript", color: "blue" },
-        { name: "Vite", color: "purple" },
-        { name: "TanStack Query", color: "red" },
-        { name: "PWA", color: "orange" },
-        { name: "Stripe", color: "green" },
-      ],
-      authors: ["Thibault LENORMAND"],
-    },
     project10: {
       title: "TrustBook",
       description:
