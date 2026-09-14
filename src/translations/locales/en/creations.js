@@ -1,23 +1,27 @@
 export const creations = {
-  title: "CREATIONS",
+  title: "Notes",
+  kicker: "Optional",
   description:
-    "Discover my creative works, visual explorations, code snippets, and reflections on design and development.",
+    "Writing samples (game lore, craft notes). Personal essays stay in the repo, off the public shelf. Prospects should start with Projects and Contact.",
+  metaTitle: "Notes — Thibault Lenormand",
+  metaDescription:
+    "Professional writing samples. Client projects remain the core of the site.",
   tabs: {
     visuals: "Visuals",
     code: "Code",
     texts: "Texts",
   },
   visuals: {
-    description: "Visual explorations, UI/UX concepts, and design work.",
+    description: "Icons and mark for Patte à Patte.",
     titles: {
-      cat1: "Cat 1",
-      cat2: "Cat 2",
-      cat3: "Cat 3",
-      dog1: "Dog 1",
-      dog2: "Dog 2",
-      bird: "Bird",
-      patteAPatte: "Patte à Patte (logo)",
-      patte: "Patte (icon)",
+      cat1: "Icon — cat",
+      cat2: "Icon — cat",
+      cat3: "Icon — cat",
+      dog1: "Icon — dog",
+      dog2: "Icon — dog",
+      bird: "Icon — bird",
+      patteAPatte: "Mark — Patte à Patte",
+      patte: "Icon — paw",
       design1: "Design 1",
       creation1: "Creation 1",
     },
@@ -27,7 +31,8 @@ export const creations = {
     description: "Code snippets, experiments, and technical solutions.",
   },
   texts: {
-    description: "Reflections, ideas, and articles on design and development.",
+    description:
+      "Game lore (commission) and a craft note. Personal journals are not listed here.",
     readMore: "Read more",
     categories: {
       all: "All",

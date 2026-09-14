@@ -1,7 +1,11 @@
 export const contact = {
-  title: "CONTACT",
+  title: "Contact",
+  kicker: "Freelance",
   description:
-    "Vous avez un projet en tête ou une opportunité à discuter ? N'hésitez pas à me contacter, je serais ravi d'échanger avec vous.",
+    "Un site, un produit, une page d’offre. Écrivez-moi — réponse depuis Avignon.",
+  metaTitle: "Contact — Thibault Lenormand",
+  metaDescription:
+    "Discuter d’un site ou d’un produit avec Thibault Lenormand, freelance à Avignon. TJM indicatif 250–300 €.",
   form: {
     title: "Envoyez-moi un message",
     name: "Nom",
@@ -10,9 +14,9 @@ export const contact = {
     message: "Message",
     send: "Envoyer le message",
     success: {
-      title: "Message envoyé",
+      title: "Client mail ouvert",
       description:
-        "Merci pour votre message. Je vous répondrai dès que possible.",
+        "Votre application mail s’ouvre avec le message. Envoyez-le pour que je le reçoive.",
     },
     placeholders: {
       name: "Votre nom",
@@ -33,16 +37,16 @@ export const contact = {
   services: {
     title: "Mon offre",
     description:
-      "Développeur full stack passionné, j'accompagne entreprises, startups et indépendants dans la création de solutions web modernes, performantes et sur-mesure.",
+      "J’accompagne indépendants, studios et équipes produit sur des sites et outils web clairs, performants et prêts à convertir.",
     webDevelopment:
-      "Développement d'applications web (React, Node.js, Ruby on Rails...)",
+      "Développement d’applications web (React, Node.js, Ruby on Rails…)",
     portfolioCreation:
-      "Création de portfolios, sites vitrines, pages de vente, landing pages, plateformes communautaires",
+      "Sites vitrines, pages d’offre, landing pages, portfolios, plateformes",
     uiuxDesign: "Design UI/UX, intégration responsive et accessibilité",
     technicalConsulting:
       "Conseil technique, accompagnement produit, rédaction technique",
     writing:
-      "Rédaction d'articles, de textes de vente, de contenus éditoriaux (licence de lettres, qualité rédactionnelle professionnelle)",
-    pricing: "Tarifs sur devis. TJM indicatif : 250-300€.",
+      "Rédaction d’offre, contenus de site et textes produit.",
+    pricing: "Tarifs sur devis. TJM indicatif : 250–300 €.",
   },
 };

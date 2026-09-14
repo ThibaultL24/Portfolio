@@ -1,7 +1,8 @@
 export const nav = {
-  home: "ACCUEIL",
-  projects: "PROJETS",
-  creations: "CRÉATIONS",
-  about: "À PROPOS",
-  contact: "CONTACT",
+  home: "Accueil",
+  projects: "Projets",
+  creations: "Notes",
+  about: "À propos",
+  contact: "Contact",
+  menu: "Menu",
 };

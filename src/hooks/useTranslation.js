@@ -14,9 +14,11 @@ export const useTranslation = () => {
       if (value && value[k] !== undefined) {
         value = value[k];
       } else {
-        console.warn(
-          `Translation key "${key}" not found for language "${currentLanguage}"`
-        );
+        if (fallback === undefined) {
+          console.warn(
+            `Translation key "${key}" not found for language "${currentLanguage}"`
+          );
+        }
         return fallback !== undefined ? fallback : key;
       }
     }

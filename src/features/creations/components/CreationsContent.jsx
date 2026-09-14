@@ -1,3 +1,4 @@
+// src/features/creations/components/CreationsContent.jsx
 import {
   Box,
   Heading,
@@ -17,15 +18,10 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  HStack,
-  Tag,
-  TagLabel,
-  TagLeftIcon,
 } from "@chakra-ui/react";
 import Card from "../../../shared/ui/Card";
 import CardImage from "../../../shared/ui/CardImage";
 import { useState } from "react";
-import { FaBook, FaUser } from "react-icons/fa";
 import { useTranslation } from "../../../hooks/useTranslation";
 import NeonBeamDivider from "../../../shared/components/NeonBeamDivider";
 import patteAPatte from "../../../assets/img/patte/patte_a_patte.svg";
@@ -49,26 +45,14 @@ const visualData = [
 ];
 
 const textData = [
-  { id: 1, entryKey: "entry1", category: "perso" },
-  { id: 2, entryKey: "entry2", category: "litteraire" },
-  { id: 3, entryKey: "entry3", category: "litteraire" },
-  { id: 4, entryKey: "entry4", category: "perso" },
-  { id: 5, entryKey: "entry5", category: "perso" },
-  { id: 6, entryKey: "entry6", category: "histoire" },
-  { id: 7, entryKey: "entry7", category: "histoire" },
-];
-
-const categories = [
-  { id: "all", labelKey: "all", icon: null },
-  { id: "litteraire", labelKey: "literary", icon: FaBook },
-  { id: "histoire", labelKey: "history", icon: FaBook },
-  { id: "perso", labelKey: "personal", icon: FaUser },
+  { id: 6, entryKey: "entry6" },
+  { id: 7, entryKey: "entry7" },
+  { id: 2, entryKey: "entry2" },
 ];
 
 const CreationsContent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedText, setSelectedText] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedVisual, setSelectedVisual] = useState(null);
   const { t } = useTranslation();
 
@@ -86,10 +70,6 @@ const CreationsContent = () => {
     return text.substring(0, maxLength) + "...";
   };
 
-  const filteredTexts = textData.filter(
-    (text) => selectedCategory === "all" || text.category === selectedCategory
-  );
-
   return (
     <Tabs variant="line" colorScheme="gray">
       <TabList
@@ -99,38 +79,63 @@ const CreationsContent = () => {
       >
         <Tab
           _selected={{
-            color: "brand.neon",
-            borderColor: "brand.neon",
+            color: "brand.copper",
+            borderColor: "brand.copper",
             mb: "4px",
-            textShadow: "0 0 10px rgba(0, 255, 157, 0.5)",
           }}
-          color="gray.400"
+          color="rgba(244,236,225,0.55)"
           _hover={{
-            color: "brand.neon",
-            textShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
-          }}
-        >
-          {t("creations.tabs.visuals")}
-        </Tab>
-        <Tab
-          _selected={{
-            color: "brand.neon",
-            borderColor: "brand.neon",
-            mb: "4px",
-            textShadow: "0 0 10px rgba(0, 255, 157, 0.5)",
-          }}
-          color="gray.400"
-          _hover={{
-            color: "brand.neon",
-            textShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
+            color: "brand.copper",
           }}
         >
           {t("creations.tabs.texts")}
+        </Tab>
+        <Tab
+          _selected={{
+            color: "brand.copper",
+            borderColor: "brand.copper",
+            mb: "4px",
+          }}
+          color="rgba(244,236,225,0.55)"
+          _hover={{
+            color: "brand.copper",
+          }}
+        >
+          {t("creations.tabs.visuals")}
         </Tab>
       </TabList>
       <NeonBeamDivider my={2} />
 
       <TabPanels mt={8}>
+        {/* Panel Textes — vitrine only. Personal entries stay in locales, unused here. */}
+        <TabPanel p={0}>
+          <VStack spacing={8} align="stretch">
+            <Text fontSize="lg" color="gray.300">
+              {t("creations.texts.description")}
+            </Text>
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+              {textData.map((text) => (
+                <Card
+                  key={text.id}
+                  onClick={() => handleTextClick(text)}
+                  cursor="pointer"
+                >
+                  <Box p={4}>
+                    <Heading size="md" mb={2}>
+                      {t(`creations.texts.entries.${text.entryKey}.title`)}
+                    </Heading>
+                    <Text>
+                      {getExcerpt(
+                        t(`creations.texts.entries.${text.entryKey}.content`)
+                      )}
+                    </Text>
+                  </Box>
+                </Card>
+              ))}
+            </SimpleGrid>
+          </VStack>
+        </TabPanel>
+
         {/* Panel Visuels */}
         <TabPanel p={0}>
           <VStack spacing={8} align="stretch">
@@ -160,13 +165,12 @@ const CreationsContent = () => {
                       mt={2}
                       colorScheme="black"
                       variant="outline"
-                      borderColor="brand.neon"
-                      color="brand.neon"
+                      borderColor="brand.copper"
+                      color="brand.copper"
                       _hover={{
-                        bg: "black",
-                        color: "white",
-                        borderColor: "brand.neon",
-                        boxShadow: "0 0 10px #00ff9d99",
+                        bg: "transparent",
+                        color: "brand.parchment",
+                        borderColor: "brand.copperHot",
                       }}
                       onClick={() => handleVisualClick(item)}
                     >
@@ -185,23 +189,20 @@ const CreationsContent = () => {
           >
             <ModalOverlay />
             <ModalContent
-              bg="black"
-              color="gray.200"
-              border="2px solid"
-              borderColor="brand.neon"
-              boxShadow="0 0 30px 0 rgba(0,255,157,0.4)"
+              bg="#0e0c0a"
+              color="brand.parchment"
+              border="1px solid"
+              borderColor="rgba(201,163,106,0.3)"
               maxW="90vw"
             >
-              <ModalHeader
-                color="brand.neon"
-                textShadow="0 0 10px #00ff9d, 0 0 20px #00ff9d"
-                textAlign="center"
-              >
-                {t(`creations.visuals.titles.${selectedVisual?.titleKey}`)}
+              <ModalHeader color="brand.copper" textAlign="center">
+                {selectedVisual
+                  ? t(`creations.visuals.titles.${selectedVisual.titleKey}`)
+                  : ""}
               </ModalHeader>
               <ModalCloseButton
-                color="brand.neon"
-                _hover={{ bg: "gray.800", color: "white" }}
+                color="brand.copper"
+                _hover={{ bg: "whiteAlpha.100", color: "white" }}
                 onClick={() => setSelectedVisual(null)}
               />
               <ModalBody
@@ -222,7 +223,7 @@ const CreationsContent = () => {
                       maxWidth: "80vw",
                       maxHeight: "65vh",
                       objectFit: "contain",
-                      boxShadow: "0 0 30px #00ff9d33",
+                      boxShadow: "none",
                     }}
                   />
                 )}
@@ -230,102 +231,25 @@ const CreationsContent = () => {
             </ModalContent>
           </Modal>
         </TabPanel>
-
-        {/* Panel Textes */}
-        <TabPanel p={0}>
-          <VStack spacing={8} align="stretch">
-            <HStack spacing={4} wrap="wrap">
-              {categories.map((category) => {
-                const isSelected = selectedCategory === category.id;
-                return (
-                  <Tag
-                    key={category.id}
-                    size="lg"
-                    variant="outline"
-                    cursor="pointer"
-                    onClick={() => setSelectedCategory(category.id)}
-                    bg="transparent"
-                    color={isSelected ? "brand.neon" : "white"}
-                    borderColor="brand.neon"
-                    fontWeight={isSelected ? "bold" : "normal"}
-                    fontSize="md"
-                    px={6}
-                    py={2}
-                    _hover={{
-                      color: "brand.neon",
-                      borderColor: "brand.neon",
-                      "& svg": { color: "var(--chakra-colors-brand-neon)" },
-                    }}
-                    transition="all 0.2s"
-                  >
-                    {category.icon && (
-                      <TagLeftIcon
-                        as={category.icon}
-                        color={isSelected ? "brand.neon" : "white"}
-                      />
-                    )}
-                    <TagLabel>
-                      {(() => {
-                        const key = `creations.texts.categories.${category.labelKey}`;
-                        const translation = t(key);
-                        if (translation === key) {
-                          if (category.id === "litteraire") return "Littéraire";
-                          if (category.id === "histoire") return "Histoire";
-                          if (category.id === "perso") return "Personnel";
-                          if (category.id === "all") return "Tous";
-                          return category.labelKey;
-                        }
-                        return translation;
-                      })()}
-                    </TagLabel>
-                  </Tag>
-                );
-              })}
-            </HStack>
-
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
-              {filteredTexts.map((text) => (
-                <Card
-                  key={text.id}
-                  onClick={() => handleTextClick(text)}
-                  cursor="pointer"
-                >
-                  <Box p={4}>
-                    <Heading size="md" mb={2}>
-                      {t(`creations.texts.entries.${text.entryKey}.title`)}
-                    </Heading>
-                    <Text>
-                      {getExcerpt(
-                        t(`creations.texts.entries.${text.entryKey}.content`)
-                      )}
-                    </Text>
-                  </Box>
-                </Card>
-              ))}
-            </SimpleGrid>
-          </VStack>
-        </TabPanel>
       </TabPanels>
 
       {/* Modal pour afficher le texte complet */}
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
         <ModalContent
-          bg="black"
-          color="gray.200"
-          border="2px solid"
-          borderColor="brand.neon"
-          boxShadow="0 0 30px 0 rgba(0,255,157,0.4)"
+          bg="#0e0c0a"
+          color="brand.parchment"
+          border="1px solid"
+          borderColor="rgba(201,163,106,0.3)"
         >
-          <ModalHeader
-            color="brand.neon"
-            textShadow="0 0 10px #00ff9d, 0 0 20px #00ff9d"
-          >
-            {t(`creations.texts.entries.${selectedText?.entryKey}.title`)}
+          <ModalHeader color="brand.copper">
+            {selectedText
+              ? t(`creations.texts.entries.${selectedText.entryKey}.title`)
+              : ""}
           </ModalHeader>
           <ModalCloseButton
-            color="brand.neon"
-            _hover={{ bg: "gray.800", color: "white" }}
+            color="brand.copper"
+            _hover={{ bg: "whiteAlpha.100", color: "white" }}
           />
           <ModalBody pb={6}>
             {selectedText &&
@@ -335,9 +259,11 @@ const CreationsContent = () => {
                   {t(`creations.texts.entries.${selectedText.entryKey}.intro`)}
                 </Text>
               )}
-            <Text whiteSpace="pre-wrap" color="gray.300">
-              {t(`creations.texts.entries.${selectedText?.entryKey}.content`)}
-            </Text>
+            {selectedText && (
+              <Text whiteSpace="pre-wrap" color="gray.300">
+                {t(`creations.texts.entries.${selectedText.entryKey}.content`)}
+              </Text>
+            )}
           </ModalBody>
         </ModalContent>
       </Modal>

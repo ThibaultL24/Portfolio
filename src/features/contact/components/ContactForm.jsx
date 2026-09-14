@@ -1,3 +1,4 @@
+// src/features/contact/components/ContactForm.jsx
 import {
   Heading,
   VStack,
@@ -7,72 +8,67 @@ import {
   Textarea,
   Button,
   useToast,
-  useColorModeValue,
+  Box,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import NeonOutlineBox from "../../../shared/components/NeonOutlineBox";
+import { useTranslation } from "../../../hooks/useTranslation";
 
 const ContactForm = () => {
   const { t } = useTranslation();
-  const inputBg = useColorModeValue("gray.100", "gray.800");
-  const inputHoverBg = useColorModeValue("gray.200", "gray.700");
-  const inputFocusBg = useColorModeValue("gray.200", "gray.700");
-  const inputFocusBorder = useColorModeValue("brand.blueGreen", "gray.300");
-  const buttonBg = useColorModeValue("brand.blueGreen", "gray.800");
-  const buttonColor = useColorModeValue("white", "white");
-  const buttonHoverBg = useColorModeValue("brand.blueGreen", "gray.700");
-
+  const toast = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const toast = useToast();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    const body = encodeURIComponent(
+      `${formData.message}\n\n— ${formData.name} (${formData.email})`
+    );
+    const href = `mailto:thibault.lenormand24@gmail.com?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${body}`;
+    window.location.href = href;
+    toast({
+      title: t("contact.form.success.title"),
+      description: t("contact.form.success.description"),
+      status: "success",
+      duration: 4000,
+      isClosable: true,
+    });
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(false);
+  };
 
-    // Simuler l'envoi du formulaire
-    setTimeout(() => {
-      toast({
-        title: t("contact.form.success.title"),
-        description: t("contact.form.success.description"),
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-      });
-
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-
-      setIsSubmitting(false);
-    }, 1500);
+  const fieldStyle = {
+    bg: "rgba(20,17,14,0.8)",
+    borderColor: "rgba(201,163,106,0.25)",
+    color: "brand.parchment",
+    _hover: { borderColor: "brand.copper" },
+    _focus: { borderColor: "brand.copper", boxShadow: "0 0 0 1px #c9a36a" },
   };
 
   return (
-    <NeonOutlineBox borderRadius={12} p={8}>
+    <Box
+      p={8}
+      border="1px solid rgba(201,163,106,0.18)"
+      borderRadius="22px"
+      bg="rgba(20,17,14,0.7)"
+    >
       <VStack spacing={6} as="form" onSubmit={handleSubmit}>
-        <Heading as="h2" size="lg" alignSelf="flex-start">
+        <Heading as="h2" fontSize="2xl" alignSelf="flex-start">
           {t("contact.form.title")}
         </Heading>
-
         <FormControl id="name" isRequired>
           <FormLabel>{t("contact.form.name")}</FormLabel>
           <Input
@@ -80,13 +76,9 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder={t("contact.form.placeholders.name")}
-            variant="filled"
-            bg={inputBg}
-            _hover={{ bg: inputHoverBg }}
-            _focus={{ bg: inputFocusBg, borderColor: inputFocusBorder }}
+            {...fieldStyle}
           />
         </FormControl>
-
         <FormControl id="email" isRequired>
           <FormLabel>{t("contact.form.email")}</FormLabel>
           <Input
@@ -95,13 +87,9 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             placeholder={t("contact.form.placeholders.email")}
-            variant="filled"
-            bg={inputBg}
-            _hover={{ bg: inputHoverBg }}
-            _focus={{ bg: inputFocusBg, borderColor: inputFocusBorder }}
+            {...fieldStyle}
           />
         </FormControl>
-
         <FormControl id="subject" isRequired>
           <FormLabel>{t("contact.form.subject")}</FormLabel>
           <Input
@@ -109,13 +97,9 @@ const ContactForm = () => {
             value={formData.subject}
             onChange={handleChange}
             placeholder={t("contact.form.placeholders.subject")}
-            variant="filled"
-            bg={inputBg}
-            _hover={{ bg: inputHoverBg }}
-            _focus={{ bg: inputFocusBg, borderColor: inputFocusBorder }}
+            {...fieldStyle}
           />
         </FormControl>
-
         <FormControl id="message" isRequired>
           <FormLabel>{t("contact.form.message")}</FormLabel>
           <Textarea
@@ -123,33 +107,16 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             placeholder={t("contact.form.placeholders.message")}
-            variant="filled"
-            bg={inputBg}
-            _hover={{ bg: inputHoverBg }}
-            _focus={{ bg: inputFocusBg, borderColor: inputFocusBorder }}
-            minH="150px"
+            minH="140px"
             resize="vertical"
+            {...fieldStyle}
           />
         </FormControl>
-
-        <Button
-          type="submit"
-          variant="outline"
-          color="brand.neon"
-          borderColor="brand.neon"
-          _hover={{
-            bg: "transparent",
-            color: "white",
-            borderColor: "white",
-            boxShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
-          }}
-          isLoading={isSubmitting}
-          loadingText={t("contact.form.sending")}
-        >
+        <Button type="submit" variant="solid" alignSelf="flex-start" isLoading={isSubmitting}>
           {t("contact.form.send")}
         </Button>
       </VStack>
-    </NeonOutlineBox>
+    </Box>
   );
 };
 

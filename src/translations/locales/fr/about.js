@@ -1,22 +1,28 @@
 export const about = {
-  title: "À PROPOS",
+  title: "À propos",
   description:
-    "Découvrez mon parcours, mes compétences et ma vision. Apprenez-en plus sur la personne derrière les projets.",
+    "Développeur full stack & copywriter à Avignon. Sites, produits et textes qui font avancer une offre.",
+  metaTitle: "À propos — Thibault Lenormand",
+  metaDescription:
+    "Parcours de Thibault Lenormand, développeur full stack & copywriter freelance à Avignon.",
+  kicker: "Parcours",
   profile: {
     title: "Profil",
-    introduction: "Je m'appelle Thibault Lenormand.",
+    introduction: "Je m’appelle Thibault Lenormand.",
     experience:
-      "Pendant plus de dix ans, mon parcours a été guidé par les mots, la scène et la création : une licence en lettres modernes à la faculté d'Avignon, deux années au conservatoire de théâtre et aux Cours Florent, des expériences riches en animation, en vente, et en restauration — autant de métiers de lien, de rythme et d'observation.",
+      "Je construis des sites et des produits web, et j’écris les textes qui vont avec — pages d’offre, contenus de site, rédaction produit.",
     transition:
-      'Puis l\'envie de construire différemment s\'est imposée. Créer, oui — mais cette fois à travers des projets numériques. Pouvoir donner vie à mes idées, concrétiser celles des autres. J\'ai donc entamé une reconversion vers le développement web, en suivant deux blocs de formation au sein de The Hacking Project : le parcours "Full Stack", puis le bloc diplômant "Développeur Web", soit six mois intensifs de code, et deux stages de deux mois.',
+      "Formation full stack à The Hacking Project, puis commandes clients et collaborations produit, notamment autour d’Intuition. Avant le code : lettres modernes et théâtre. Ce bagage sert surtout à une chose : des interfaces et des textes clairs, utiles, sans jargon inutile.",
     current:
-      "Aujourd'hui, je conçois des applications, j'écris du code propre et lisible, et je continue de cultiver une curiosité pour les idées, les usages, les mots et l'humain.",
+      "Aujourd’hui je travaille en freelance depuis Avignon : conception, développement, rédaction.",
     conclusion:
-      "Ce portfolio est le reflet de ce croisement : entre la rigueur du code et l'expressivité de l'écriture. Bienvenue dans mon univers.",
+      "Si vous avez un site, une offre ou un produit à faire avancer, écrivez-moi.",
     downloadCV: "Télécharger le CV",
   },
   skills: {
-    title: "COMPÉTENCES",
+    title: "Compétences",
+    experienceTitle: "Expérience",
+    educationTitle: "Formation",
     categories: {
       "front-end": "Front-end",
       "back-end": "Back-end",
@@ -25,10 +31,13 @@ export const about = {
     items: {
       "html/css": "HTML/CSS",
       javascript: "JavaScript",
+      typescript: "TypeScript",
       react: "React",
+      nextjs: "Next.js",
       "tailwind css": "Tailwind CSS",
       "node.js": "Node.js",
       ruby: "Ruby",
+      rust: "Rust",
       sql: "SQL",
       docker: "Docker",
       figma: "Figma",

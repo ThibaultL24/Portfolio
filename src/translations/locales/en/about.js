@@ -1,22 +1,28 @@
 export const about = {
-  title: "ABOUT",
+  title: "About",
   description:
-    "Discover my journey, skills, and vision. Learn more about the person behind the projects.",
+    "Full stack developer & copywriter in Avignon. Sites, products, and copy that move an offer forward.",
+  metaTitle: "About — Thibault Lenormand",
+  metaDescription:
+    "Background of Thibault Lenormand, full stack developer and copywriter freelance in Avignon.",
+  kicker: "Background",
   profile: {
     title: "Profile",
     introduction: "My name is Thibault Lenormand.",
     experience:
-      "For over ten years, my path was guided by words, stage, and creation: a degree in modern literature from Avignon University, two years at the theater conservatory and Cours Florent, rich experiences in animation, sales, and catering — all professions of connection, rhythm, and observation.",
+      "I build websites and web products, and I write the copy that goes with them — offer pages, site content, product writing.",
     transition:
-      'Then the desire to build differently emerged. Create, yes — but this time through digital projects. To bring my ideas to life, to materialize others\'. I therefore started a career transition to web development, following two training blocks at The Hacking Project: the "Full Stack" program, then the "Web Developer" diploma block, totaling six intensive months of coding and two two-month internships.',
+      "Full stack training at The Hacking Project, then client work and product collaborations, including around Intuition. Before code: modern literature and theater. That background mainly shows up as clear interfaces and clear writing — useful, without unnecessary jargon.",
     current:
-      "Today, I design applications, write clean and readable code, and continue to cultivate curiosity for ideas, uses, words, and humanity.",
+      "Today I work as a freelancer from Avignon: design, development, and copy.",
     conclusion:
-      "This portfolio reflects this intersection: between the rigor of code and the expressiveness of writing. Welcome to my universe.",
+      "If you have a site, an offer, or a product to move forward, write to me.",
     downloadCV: "Download CV",
   },
   skills: {
-    title: "SKILLS",
+    title: "Skills",
+    experienceTitle: "Experience",
+    educationTitle: "Education",
     categories: {
       "front-end": "Front-end",
       "back-end": "Back-end",
@@ -25,10 +31,13 @@ export const about = {
     items: {
       "html/css": "HTML/CSS",
       javascript: "JavaScript",
+      typescript: "TypeScript",
       react: "React",
+      nextjs: "Next.js",
       "tailwind css": "Tailwind CSS",
       "node.js": "Node.js",
       ruby: "Ruby",
+      rust: "Rust",
       sql: "SQL",
       docker: "Docker",
       figma: "Figma",

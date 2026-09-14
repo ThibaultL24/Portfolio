@@ -1,23 +1,27 @@
 export const creations = {
-  title: "CRÉATIONS",
+  title: "Notes",
+  kicker: "Optionnel",
   description:
-    "Découvrez mes travaux créatifs, explorations visuelles, snippets de code et réflexions sur le design et le développement.",
+    "Échantillons d’écriture (lore jeu, notes de craft). Les textes personnels restent dans le dépôt, hors vitrine. Le parcours prospect passe par Projets et Contact.",
+  metaTitle: "Notes — Thibault Lenormand",
+  metaDescription:
+    "Échantillons d’écriture professionnelle. Le cœur du site reste les projets clients.",
   tabs: {
     visuals: "Visuels",
     code: "Code",
     texts: "Textes",
   },
   visuals: {
-    description: "Explorations visuelles, concepts UI/UX et travaux de design.",
+    description: "Pictos et marque pour Patte à Patte.",
     titles: {
-      cat1: "Chat 1",
-      cat2: "Chat 2",
-      cat3: "Chat 3",
-      dog1: "Chien 1",
-      dog2: "Chien 2",
-      bird: "Oiseau",
-      patteAPatte: "Patte à Patte (logo)",
-      patte: "Patte (icône)",
+      cat1: "Picto — chat",
+      cat2: "Picto — chat",
+      cat3: "Picto — chat",
+      dog1: "Picto — chien",
+      dog2: "Picto — chien",
+      bird: "Picto — oiseau",
+      patteAPatte: "Marque — Patte à Patte",
+      patte: "Picto — patte",
       design1: "Design 1",
       creation1: "Création 1",
     },
@@ -28,7 +32,7 @@ export const creations = {
   },
   texts: {
     description:
-      "Réflexions, idées et articles sur le design et le développement.",
+      "Lore de jeu (commande) et une note de craft. Les journaux personnels ne sont pas listés ici.",
     readMore: "Lire la suite",
     categories: {
       all: "Tous",

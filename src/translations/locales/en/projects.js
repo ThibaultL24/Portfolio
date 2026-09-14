@@ -1,22 +1,24 @@
 export const projects = {
-  title: "PROJECTS",
+  title: "Projects",
+  kicker: "Proof",
   description:
-    "Discover a selection of my recent projects that showcase my approach and skills in architecture and design.",
+    "Shipped sites and products for independents, studios, and teams. Filters: client, product, web3.",
+  metaTitle: "Projects — Thibault Lenormand",
+  metaDescription:
+    "Showcase sites, web products, and tools shipped by Thibault Lenormand, freelance developer in Avignon.",
   list: {
     project1: {
       title: "Patte à Patte",
       description:
-        "Final project at The Hacking Project - Community platform for exchanging, selling, and finding pet services. A dynamic community for pet lovers across France.",
-      longDescription:
-        "Patte à Patte is my final project at The Hacking Project. It's a community platform I developed with two other students, allowing pet owners to exchange services and accessories.\n\n" +
-        "The concept is simple yet effective: create a trusted community where pet owners can help each other. The platform offers several key features:\n\n" +
-        "• A pet-sitting system between individuals, allowing users to find trusted pet-sitters nearby\n" +
-        "• A marketplace for pet accessories and products, where members can sell or buy second-hand items\n" +
-        "• A recommendation and review system to ensure service quality\n" +
-        "• Geolocation to easily find services and members nearby\n" +
-        "• An integrated messaging system to facilitate exchanges\n\n" +
-        "The project was built with Ruby on Rails and deployed on Fly.io. The user interface was designed with Tailwind CSS for a smooth and responsive experience, while JavaScript was used for dynamic interactions. The PostgreSQL database ensures efficient management of user data and transactions.\n\n" +
-        "The community aspect is at the heart of the project, with a detailed profile system allowing members to introduce themselves and share their experience with animals. The platform encourages mutual aid and solidarity between pet owners, while offering a practical and economical solution for pet-sitting services and accessory purchases.",
+        "Platform to exchange, sell, and find pet services — sitting, classifieds, messaging.",
+      brief: {
+        forWho: "Pet owners who want to help each other (sitting, gear) without a generic marketplace.",
+        problem: "Finding a nearby sitter or second-hand accessory, with a minimum of trust between individuals.",
+        delivered:
+          "Community platform: profiles, sitting, classifieds, reviews, geolocation, messaging. Built in a team (Rails, PostgreSQL, Tailwind).",
+        result: "End-of-training product, deployed on Fly.io. Proof of a full cycle (design, back, front).",
+      },
+      context: "Built at The Hacking Project with Alexandre Tedesco and Manon Esquerre.",
       technologies: [
         { name: "Ruby on Rails", color: "red" },
         { name: "PostgreSQL", color: "blue" },
@@ -30,32 +32,43 @@ export const projects = {
     project2: {
       title: "i7n Graph of Intuition",
       description:
-        "Visualization of semantic data in 2D, 3D and VR for the Intuition trust protocol.",
-      longDescription:
-        "The Intuition protocol aims to resolve the paradox of trust in decentralized systems. It proposes an intuitive and verifiable layer of trust, using decentralized identifiers (DIDs) and verifiable credentials (VCs) to structure identity data and enable nuanced trust assessments. The ultimate goal is to create a semantic and community trust graph.",
+        "Explore the Intuition trust graph in 2D, 3D, and VR — filters, node details, navigation.",
+      brief: {
+        forWho: "Intuition teams and contributors who need to read a semantic graph too dense for a table.",
+        problem: "On-chain identities, claims, and relations stay unreadable without a usable network view.",
+        delivered:
+          "Visualization app (2D / 3D / VR): zoom, history, filters, detail panel, Three.js / react-force-graph.",
+        result: "Internal / demo explorer for the graph. Starting point of a longer Intuition collaboration.",
+      },
+      context: "Started as a THP internship, continued as product work.",
       technologies: [
-        { name: "React", color: "blue" },
-        { name: "react-force-graph", color: "green" },
-        { name: "three-spritetext", color: "purple" },
+        { name: "React", color: "cyan" },
+        { name: "Three.js", color: "blue" },
+        { name: "WebGL", color: "purple" },
+        { name: "VR", color: "green" },
+        { name: "TypeScript", color: "blue" },
+        { name: "react-force-graph", color: "orange" },
+        { name: "three-spritetext", color: "pink" },
       ],
       authors: [
-        "Thibault Bobichon",
-        "Alexandre Tedesco",
-        "Maxime Lodato",
-        "Sacha Godel",
-        "Thomas Bobichon",
+        "Thibault LENORMAND",
+        "Alexandre TEDESCO",
+        "Maxime LODATO",
+        "Sacha GODEL",
+        "Thomas BOBICHON",
       ],
     },
     project3: {
       title: "DecentRep",
       description:
-        "AI assistant for creating professional recommendations as semantic triples, integrated with the Intuition protocol.",
-      longDescription:
-        "DecentRep is an innovative web application that enables the creation and management of professional recommendations in the form of 'semantic triples' (Subject, Predicate, Object), using AI to enrich and structure information.\n\n" +
-        "The application uses artificial intelligence to transform descriptive texts into structured semantic triples, making it easier to create clear and verifiable professional recommendations. For example, a recommendation like 'Elon Musk is CEO of Tesla' is structured as a triple: Subject (Elon Musk), Predicate (is CEO of), Object (Tesla).\n\n" +
-        "The project integrates with the Intuition protocol, contributing to the creation of a decentralized reputation network where recommendations are verifiable and immutable. This approach helps combat misinformation and creates a more transparent and reliable trust system.\n\n" +
-        "Built with React and Vite, the application offers a modern and responsive user interface thanks to TailwindCSS. The code architecture is well-structured, with a clear separation of responsibilities between components. The project uses TypeScript to ensure code robustness and Axios for API communication.\n\n" +
-        "A few months after developing DecentRep, Microsoft Research released a similar project called Claimify, validating the innovative approach taken in this project.",
+        "AI assistant to write professional recommendations as semantic triples.",
+      brief: {
+        forWho: "People and teams who need structured professional recommendations, reusable on-chain.",
+        problem: "Free text is neither verifiable nor queryable. You need subject–relation–object without writing RDF by hand.",
+        delivered:
+          "React app: input, AI extraction into triples, clear display. Intuition protocol hook-in.",
+        result: "Usable prototype. Approach close to later claim-extraction work (e.g. Claimify).",
+      },
       technologies: [
         { name: "React", color: "cyan" },
         { name: "TypeScript", color: "blue" },
@@ -66,20 +79,18 @@ export const projects = {
         { name: "ESLint", color: "yellow" },
       ],
       authors: ["Thibault LENORMAND"],
-      links: {
-        claimify:
-          "https://www.microsoft.com/en-us/research/blog/claimify-extracting-high-quality-claims-from-language-model-outputs/",
-      },
     },
     project4: {
       title: "Agent",
       description:
-        "Open-source platform designed to optimize the experience of Boss Fighters players. It provides analytical and management tools, enabling players, streamers, and investors to make informed in-game decisions.",
-      longDescription:
-        "Agent is an open-source platform designed to optimize the experience of Boss Fighters players. This project originated from an original idea by Steven Ratton (Omiage), who brought together a passionate team to develop it over several months.\n\n" +
-        "Boss Fighters is a web3 asymmetric multiplayer action game where a player in virtual reality embodies a giant boss facing a team of PC fighters. This free-to-play game combines strategy, humor, and physical interactions in futuristic arenas, offering an immersive and competitive experience.\n\n" +
-        "As the lead developer, I was responsible for the entire backend and a significant portion of the frontend, working closely with Alexandre Tedesco and Omiage to create a complete and performant solution.\n\n" +
-        "Discover the platform presentation by Merlin, leader of the Alchemists guild and project partner, who will guide you through Agent's various features.",
+        "Analytics and ops platform for Boss Fighters players, streamers, and investors.",
+      brief: {
+        forWho: "Boss Fighters players, streamers, and investors who need numbers and tools, not a forum.",
+        problem: "Useful data is scattered. Hard to decide (roster, economy, content) without a dedicated back-office.",
+        delivered:
+          "Open-source platform: Rails backend (auth, Stripe, mail), React front. Role: main backend + part of the front.",
+        result: "Live product (agent-bossfighters.com), used around the game.",
+      },
       technologies: [
         { name: "Ruby on Rails 8.0", color: "red" },
         { name: "PostgreSQL", color: "blue" },
@@ -102,12 +113,15 @@ export const projects = {
     project5: {
       title: "Agent Player Map",
       description:
-        "Web3 solution developed during the Base Batch hackathon, enabling game studios to visualize and analyze their community data using Intuition technology.",
-      longDescription:
-        "Agent Player Map is an innovative solution developed during the Base Batch hackathon to address game studios' needs for collaborative development.\n\n" +
-        "The project aims to solve a major problem: the lack of web3 solutions allowing studios to provide information transparency to their gaming community and collect their feedback and desires.\n\n" +
-        "Our solution combines web2 tools for understanding, decision support, and content creation with an innovative web3 tool 'Player Map' using Intuition technology. This interactive map allows the community to create and build the game's Intuition Graph, providing complete transparency on data and facilitating feedback collection for the studio.\n\n" +
-        "Developed as a reusable open-source library, the project can be easily integrated via a simple 'npm install player-map' in any application.",
+        "Community map for game studios: player graph, feedback, transparency — npm library.",
+      brief: {
+        forWho: "Game studios that want to show and read their community (not only a closed Discord).",
+        problem: "Few simple web3 tools to expose a player graph and collect usable feedback.",
+        delivered:
+          "Player Map: React/TypeScript lib (Wagmi, Intuition, Base), npm install, meant to drop into an existing app.",
+        result: "Base Batch hackathon prototype, reusable as a library.",
+      },
+      context: "Base Batch hackathon, with Alexandre Tedesco and Steven Ratton.",
       technologies: [
         { name: "React", color: "cyan" },
         { name: "TypeScript", color: "blue" },
@@ -122,13 +136,157 @@ export const projects = {
         "Steven RATTON (Omiage)",
       ],
     },
+    project6: {
+      title: "Camille Luxopuncture",
+      description:
+        "Showcase site for a luxotherapy and hypnosis practice in Avignon — offer, proof, booking.",
+      brief: {
+        forWho: "Camille Laplace, luxotherapist and hypnotherapist in Avignon.",
+        problem:
+          "Explain uncommon treatments, the 21-day detox program, and booking — without looking amateur or using jargon.",
+        delivered:
+          "Showcase site: care journey, remote program, testimonials, CTA (first assessment free). Offer structure and copy included.",
+        result: "Live at laplaceluxopuncture.fr. LinkedIn recommendation, April 2026.",
+      },
+      technologies: [
+        { name: "React", color: "cyan" },
+        { name: "Vite", color: "purple" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Vercel", color: "gray" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project7: {
+      title: "Corvus Studio",
+      description:
+        "One-page site for an advertising visual studio — gallery, pricing, contact, admin.",
+      brief: {
+        forWho: "Dylan Lacas / CORVUS Studio, premium advertising visuals.",
+        problem:
+          "No site matching the art direction, and no way to update work and images without a redeploy.",
+        delivered:
+          "One-pager: work, filterable gallery, pricing, contact. Authenticated admin (Auth.js, Vercel Blob) for content.",
+        result: "Live at corvus-studio.fr. LinkedIn recommendation, September 2026.",
+      },
+      technologies: [
+        { name: "Next.js 15", color: "gray" },
+        { name: "React 19", color: "cyan" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Tailwind CSS", color: "teal" },
+        { name: "Framer Motion", color: "pink" },
+        { name: "Auth.js", color: "purple" },
+        { name: "Vercel Blob", color: "orange" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project8: {
+      title: "Kaïron",
+      description:
+        "Association site: story, actions, HelloAsso donations, and content admin.",
+      brief: {
+        forWho: "The association “Un souffle d’espoir pour Kaïron” and the family.",
+        problem:
+          "Tell the story, relay local actions, and send people to official donations — without a developer for every update.",
+        delivered:
+          "Public site (story, events, HelloAsso) + admin (copy, testimonials, figures) via Redis / Vercel.",
+        result: "Production site (Vercel), content editable by the association.",
+      },
+      technologies: [
+        { name: "React", color: "cyan" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Vite", color: "purple" },
+        { name: "Tailwind CSS", color: "teal" },
+        { name: "Framer Motion", color: "pink" },
+        { name: "Upstash Redis", color: "red" },
+        { name: "Vercel", color: "gray" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project12: {
+      title: "Intuition Ideation Skill",
+      description:
+        "Skill and Hunch dapp: from a product idea to a GitHub PR and an on-chain attestation.",
+      brief: {
+        forWho: "Intuition contributors, including non-developers, who want to publish an idea in the ecosystem.",
+        problem:
+          "The path idea → GitHub catalog → on-chain graph is fragmented, and jargon (atoms, triples) gets in the way.",
+        delivered:
+          "Cursor/Claude skill in five steps + Hunch dapp (search, AI, PR, attestation). Same journey, two surfaces.",
+        result: "Public skill (intuition-box) and live dapp: ideation.intuition.box.",
+      },
+      technologies: [
+        { name: "Cursor Skills", color: "orange" },
+        { name: "Claude", color: "yellow" },
+        { name: "Intuition Protocol", color: "cyan" },
+        { name: "GitHub", color: "gray" },
+        { name: "Next.js", color: "gray" },
+        { name: "wagmi", color: "purple" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project10: {
+      title: "TrustBook",
+      description:
+        "Social feed ranked by a Circles trust graph, not by engagement.",
+      brief: {
+        forWho: "Circles users and teams testing a feed where trust has an economic cost.",
+        problem: "Like-ranked feeds don’t explain why a post appears, and don’t lead to a CRC action.",
+        delivered:
+          "Mini-app: ranking by relations, paths, communities, CRC boosts; each card explains its rank; tip / boost / trust.",
+        result: "Live demo (Vercel) for Circles Garage.",
+      },
+      technologies: [
+        { name: "Next.js", color: "gray" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Tailwind CSS", color: "teal" },
+        { name: "Circles", color: "green" },
+        { name: "Gnosis", color: "orange" },
+        { name: "Intuition", color: "purple" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project11: {
+      title: "FMMAF — site proposal",
+      description:
+        "Redesign proposal for the French MMA Federation site: readable, institutional, sporting.",
+      brief: {
+        forWho: "FMMAF (proposal — not an official shipped site).",
+        problem:
+          "The content exists; the site no longer matches MMA’s momentum in France (delegation, high-level recognition).",
+        delivered:
+          "Next.js prototype: hierarchy, sporting identity, before/after on existing copy, a more premium variant.",
+        result: "Prototype online (mma-project.vercel.app).",
+      },
+      technologies: [
+        { name: "Next.js", color: "gray" },
+        { name: "TypeScript", color: "blue" },
+        { name: "Tailwind CSS", color: "teal" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
   },
-  viewDetails: "View details →",
+  viewDetails: "View project",
+  featuredLabel: "Featured",
+  filters: {
+    all: "All",
+    commande: "Client",
+    produit: "Product",
+    web3: "Web3",
+  },
   details: {
-    technologies: "Technologies used",
-    links: "Project links",
+    technologies: "Stack",
+    links: "Links",
     production: "View site",
-    authors: "Project authors",
-    hackathon: "View on Hackathon Base",
+    dapp: "View the dapp",
+    portal: "View the portal",
+    authors: "With",
+    hackathon: "View hackathon",
+    year: "Year",
+    role: "Role",
+    forWho: "For whom",
+    problem: "Problem",
+    delivered: "Shipped",
+    result: "Outcome",
+    context: "Context",
   },
 };

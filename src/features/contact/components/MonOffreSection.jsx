@@ -1,51 +1,33 @@
-import { Box, Heading, Text, VStack, HStack, Icon } from "@chakra-ui/react";
-import { FaCheckCircle } from "react-icons/fa";
+// src/features/contact/components/MonOffreSection.jsx
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import { useTranslation } from "../../../hooks/useTranslation";
 
 const MonOffreSection = () => {
   const { t } = useTranslation();
+  const items = [
+    "webDevelopment",
+    "portfolioCreation",
+    "uiuxDesign",
+    "technicalConsulting",
+    "writing",
+  ];
 
   return (
-    <Box py={0} px={2}>
-      <Heading as="h2" size="lg" mb={4} color="brand.neon">
+    <Box>
+      <Heading as="h2" fontSize="2xl" mb={4}>
         {t("contact.services.title")}
       </Heading>
-      <Text fontSize="lg" color="gray.300" mb={6}>
+      <Text fontSize="lg" color="rgba(244,236,225,0.72)" mb={6}>
         {t("contact.services.description")}
       </Text>
-      <VStack spacing={4} align="start" mb={4}>
-        <HStack>
-          <Icon as={FaCheckCircle} color="brand.neon" />
-          <Text fontSize="md" color="gray.300">
-            {t("contact.services.webDevelopment")}
+      <VStack spacing={3} align="start" mb={6}>
+        {items.map((key) => (
+          <Text key={key} color="rgba(244,236,225,0.8)" pl={3} borderLeft="2px solid" borderColor="brand.copper">
+            {t(`contact.services.${key}`)}
           </Text>
-        </HStack>
-        <HStack>
-          <Icon as={FaCheckCircle} color="brand.neon" />
-          <Text fontSize="md" color="gray.300">
-            {t("contact.services.portfolioCreation")}
-          </Text>
-        </HStack>
-        <HStack>
-          <Icon as={FaCheckCircle} color="brand.neon" />
-          <Text fontSize="md" color="gray.300">
-            {t("contact.services.uiuxDesign")}
-          </Text>
-        </HStack>
-        <HStack>
-          <Icon as={FaCheckCircle} color="brand.neon" />
-          <Text fontSize="md" color="gray.300">
-            {t("contact.services.technicalConsulting")}
-          </Text>
-        </HStack>
-        <HStack>
-          <Icon as={FaCheckCircle} color="brand.neon" />
-          <Text fontSize="md" color="gray.300">
-            {t("contact.services.writing")}
-          </Text>
-        </HStack>
+        ))}
       </VStack>
-      <Text fontSize="md" color="gray.400">
+      <Text fontSize="sm" color="brand.copper">
         {t("contact.services.pricing")}
       </Text>
     </Box>

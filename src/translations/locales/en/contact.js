@@ -1,7 +1,11 @@
 export const contact = {
-  title: "CONTACT",
+  title: "Contact",
+  kicker: "Freelance",
   description:
-    "Have a project in mind or an opportunity to discuss? Don't hesitate to contact me, I'd be happy to chat with you.",
+    "A site, a product, an offer page. Write to me — I reply from Avignon.",
+  metaTitle: "Contact — Thibault Lenormand",
+  metaDescription:
+    "Talk about a site or product with Thibault Lenormand, freelancer in Avignon. Indicative day rate €250–300.",
   form: {
     title: "Send me a message",
     name: "Name",
@@ -10,9 +14,9 @@ export const contact = {
     message: "Message",
     send: "Send message",
     success: {
-      title: "Message sent",
+      title: "Mail client opened",
       description:
-        "Thank you for your message. I will get back to you as soon as possible.",
+        "Your mail app opens with the message. Send it so I actually receive it.",
     },
     placeholders: {
       name: "Your name",
@@ -31,18 +35,18 @@ export const contact = {
     twitter: "Twitter",
   },
   services: {
-    title: "My Services",
+    title: "What I offer",
     description:
-      "Passionate full stack developer, I help companies, startups, and freelancers create modern, high-performance, and tailor-made web solutions.",
+      "I help freelancers, studios, and product teams ship clear, fast web sites and tools that are ready to convert.",
     webDevelopment:
-      "Web application development (React, Node.js, Ruby on Rails...)",
+      "Web application development (React, Node.js, Ruby on Rails…)",
     portfolioCreation:
-      "Creation of portfolios, showcase websites, sales pages, landing pages, community platforms",
+      "Showcase sites, offer pages, landing pages, portfolios, platforms",
     uiuxDesign: "UI/UX design, responsive integration, and accessibility",
     technicalConsulting:
       "Technical consulting, product support, technical writing",
     writing:
-      "Writing articles, sales copy, editorial content (literature degree, professional writing skills)",
-    pricing: "Pricing on request. Indicative daily rate: 250-300€.",
+      "Offer copy, site content, and product writing.",
+    pricing: "Pricing on request. Indicative daily rate: €250–300.",
   },
 };

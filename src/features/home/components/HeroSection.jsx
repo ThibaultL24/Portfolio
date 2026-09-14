@@ -1,3 +1,4 @@
+// src/features/home/components/HeroSection.jsx
 import {
   Box,
   Flex,
@@ -8,144 +9,111 @@ import {
   Icon,
   Link,
   Button,
+  SimpleGrid,
 } from "@chakra-ui/react";
-import { FaDownload, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import profileImg from "../../../assets/img/accueil.jpg";
+import { Link as RouterLink } from "react-router-dom";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import profileImg from "../../../assets/img/Thibault1.jpg";
 import { useTranslation } from "../../../hooks/useTranslation";
 
 const HeroSection = () => {
   const { t } = useTranslation();
+  const offers = t("home.offer.items");
 
   return (
-    <Box position="relative" minH="80vh" bg="#0a0a0a" overflow="hidden">
-      <VStack
-        align="flex-start"
-        spacing={8}
-        maxW={{ base: "100%", md: "65%" }}
-        p={{ base: 8, md: 20 }}
-        position="relative"
-        zIndex={2}
-      >
-        <Heading
-          as="h1"
-          fontSize={{ base: "4xl", md: "6xl" }}
-          fontWeight="bold"
-          lineHeight="1.2"
-        >
-          {t("home.title")}
-          <Text
-            as="span"
-            display="block"
-            color="gray.400"
-            mt={2}
-            fontSize={{ base: "2xl", md: "4xl" }}
-            fontFamily="'Roboto Mono', monospace"
-            letterSpacing="0.1em"
-            textTransform="uppercase"
+    <Box as="section" aria-labelledby="hero-heading" overflow="hidden">
+      <Flex direction={{ base: "column", lg: "row" }} align="center" gap={{ base: 8, lg: 12 }}>
+        <VStack align="flex-start" spacing={6} flex="1.15" py={{ base: 8, md: 12 }} zIndex={2}>
+          <HStack spacing={3} align="center">
+            <Box w="28px" h="2px" bg="brand.ember" />
+            <Text
+              fontFamily="'IBM Plex Mono', monospace"
+              fontSize="xs"
+              letterSpacing="0.28em"
+              textTransform="uppercase"
+              color="brand.copper"
+            >
+              {t("home.kicker")}
+            </Text>
+          </HStack>
+          <Heading
+            as="h1"
+            id="hero-heading"
+            fontSize={{ base: "3xl", md: "5xl" }}
+            fontWeight="500"
+            lineHeight="1.08"
+            letterSpacing="-0.03em"
+            color="brand.parchment"
           >
-            {t("home.subtitle")}
+            {t("home.title")}
+            <Text
+              as="span"
+              display="block"
+              mt={3}
+              fontSize={{ base: "lg", md: "2xl" }}
+              fontWeight="400"
+              letterSpacing="-0.02em"
+              color="brand.ember"
+            >
+              {t("home.titleRole")}
+            </Text>
+          </Heading>
+          <Text fontSize={{ base: "md", md: "lg" }} color="rgba(244,236,225,0.8)" maxW="580px" lineHeight="1.75">
+            {t("home.description")}
           </Text>
-        </Heading>
+          <HStack spacing={4} pt={1} wrap="wrap">
+            <Button as={RouterLink} to="/contact" variant="solid" size="lg">
+              {t("home.ctaContact")}
+            </Button>
+            <Button as={RouterLink} to="/projects" variant="outline" size="lg">
+              {t("home.ctaProjects")}
+            </Button>
+          </HStack>
+          {Array.isArray(offers) && (
+            <SimpleGrid columns={{ base: 1, sm: 3 }} spacing={4} pt={4} w="100%">
+              {offers.map((item) => (
+                <Box key={item.title}>
+                  <Text fontFamily="'IBM Plex Mono', monospace" fontSize="xs" letterSpacing="0.12em" textTransform="uppercase" color="brand.copper" mb={1}>
+                    {item.title}
+                  </Text>
+                  <Text fontSize="sm" color="rgba(244,236,225,0.68)">
+                    {item.text}
+                  </Text>
+                </Box>
+              ))}
+            </SimpleGrid>
+          )}
+          <HStack spacing={5} pt={1}>
+            <Link href="https://github.com/ThibaultL24" isExternal aria-label="GitHub">
+              <Icon as={FaGithub} w={5} h={5} />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/thibault-lenormand-b38b96268/"
+              isExternal
+              aria-label="LinkedIn"
+            >
+              <Icon as={FaLinkedin} w={5} h={5} />
+            </Link>
+            <Link href="https://x.com/ThibaultLENORM2" isExternal aria-label="X">
+              <Icon as={FaTwitter} w={5} h={5} />
+            </Link>
+          </HStack>
+        </VStack>
 
-        <Text
-          fontSize="lg"
-          color="gray.300"
-          maxW="700px"
-          lineHeight="1.8"
-          letterSpacing="0.3px"
-        >
-          {t("home.description")}
-        </Text>
-
-        <HStack spacing={6} pt={4}>
-          <Button
-            as="a"
-            href="/path-to-cv.pdf"
-            download
-            leftIcon={<FaDownload />}
-            variant="outline"
-            color="brand.neon"
-            borderColor="brand.neon"
-            _hover={{
-              bg: "transparent",
-              color: "white",
-              borderColor: "white",
-              boxShadow: "0 0 10px rgba(0, 255, 157, 0.3)",
-              "& svg": {
-                color: "white !important",
-              },
-            }}
-            sx={{
-              "& svg": {
-                color: "#00ff9d",
-              },
-            }}
-          >
-            {t("home.downloadCV")}
-          </Button>
-        </HStack>
-
-        <HStack spacing={6}>
-          <Link
-            href="https://github.com/ThibaultL24"
-            isExternal
-            _hover={{ color: "gray.300" }}
-          >
-            <Icon as={FaGithub} w={6} h={6} />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/thibault-lenormand-b38b96268/"
-            isExternal
-            _hover={{ color: "gray.300" }}
-          >
-            <Icon as={FaLinkedin} w={6} h={6} />
-          </Link>
-          <Link
-            href="https://x.com/ThibaultLENORM2"
-            isExternal
-            _hover={{ color: "gray.300" }}
-          >
-            <Icon as={FaTwitter} w={6} h={6} />
-          </Link>
-        </HStack>
-      </VStack>
-
-      {/* Image */}
-      <Box
-        position="absolute"
-        top={0}
-        right={0}
-        width={{ base: "100%", md: "55%" }}
-        height="100%"
-        zIndex={1}
-        overflow="hidden"
-      >
-        {/* Fond sombre dégradé */}
-        <Box
-          position="absolute"
-          top={0}
-          left={0}
-          width="120%"
-          height="100%"
-          bgGradient="linear(to-r, #0a0a0a 0%, transparent 100%)"
-          zIndex={2}
-        />
-
-        {/* Image */}
-        <Box
-          position="absolute"
-          top={0}
-          right={0}
-          width="100%"
-          height="100%"
-          backgroundImage={`url(${profileImg})`}
-          backgroundSize="cover"
-          backgroundPosition="right center"
-          backgroundRepeat="no-repeat"
-          filter="brightness(75%)"
-          opacity={0.85}
-        />
-      </Box>
+        <Box flex="0.85" w="100%" maxW={{ lg: "420px" }}>
+          <Box
+            as="img"
+            src={profileImg}
+            alt="Thibault Lenormand"
+            w="100%"
+            h={{ base: "320px", md: "420px" }}
+            objectFit="cover"
+            objectPosition="50% 12%"
+            borderRadius="16px"
+            border="1px solid rgba(212,137,74,0.28)"
+          />
+        </Box>
+      </Flex>
     </Box>
   );
 };
