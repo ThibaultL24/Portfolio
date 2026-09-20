@@ -1,10 +1,10 @@
 export const home = {
-  kicker: "Thibault Lenormand · Avignon",
-  title: "Sites and products\nthat hold up.",
-  subtitle: "For independents, practices, and studios.",
+  kicker: "Avignon",
+  title: "Thibault Lenormand\nFull-stack Web Dev",
+  subtitle: "React · Rails · Python — web3 specialist",
   description:
-    "I design, build, and ship. From a simple site to a working tool, with the same care I bring to writing.",
-  offers: ["Sites", "Products", "Writing"],
+    "I design, build, and ship. From a simple site to a working tool.",
+  offers: ["React", "Rails", "Python", "Web3"],
   ctaProjects: "See the work",
   ctaContact: "Start a project",
   downloadCV: "Download CV",
