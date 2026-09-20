@@ -9,16 +9,16 @@ export const themeConfig = (isOpenDyslexic) => ({
   semanticTokens: {
     colors: {
       "brand.ink": { default: "#1c1814", _dark: "#f4f4f2" },
-      "brand.paper": { default: "#efe6d8", _dark: "#050505" },
-      "brand.cardBg": { default: "#f7f0e6", _dark: "#111113" },
+      "brand.paper": { default: "#e7d7c3", _dark: "#050505" },
+      "brand.cardBg": { default: "#f3e8d8", _dark: "#111113" },
       "brand.muted": { default: "#5c564f", _dark: "rgba(244,244,242,0.64)" },
       "brand.line": { default: "rgba(28,24,20,0.12)", _dark: "rgba(255,255,255,0.12)" },
-      "brand.nav": { default: "rgba(239,230,216,0.9)", _dark: "rgba(5,5,5,0.88)" },
+      "brand.nav": { default: "rgba(231,215,195,0.92)", _dark: "rgba(5,5,5,0.88)" },
       "brand.cyan": { default: "#2f9e90", _dark: "#5eead4" },
       "brand.cyanBright": { default: "#3cb5a6", _dark: "#8affef" },
       "brand.night": { default: "#1c1814", _dark: "#050505" },
       "brand.copper": { default: "#2f9e90", _dark: "#5eead4" },
-      "brand.parchment": { default: "#efe6d8", _dark: "#050505" },
+      "brand.parchment": { default: "#e7d7c3", _dark: "#050505" },
     },
   },
   colors: {
@@ -49,7 +49,7 @@ export const themeConfig = (isOpenDyslexic) => ({
       const isDark = props.colorMode === "dark";
       return {
         body: {
-          bg: isDark ? "#050505" : "#efe6d8",
+          bg: isDark ? "#050505" : "#e7d7c3",
           color: isDark ? "#f4f4f2" : "#1c1814",
           fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.BODY,
           minHeight: "100vh",
