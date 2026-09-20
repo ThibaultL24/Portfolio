@@ -4,8 +4,8 @@ export const COLORS = {
   INK_LIFT: "#1a1a1a",
   INK_SOFT: "#2a2a2a",
   NIGHT: "#0a0a0a",
-  PAPER: "#f2f2f2",
-  PARCHMENT: "#f2f2f2",
+  PAPER: "#e2e2e2",
+  PARCHMENT: "#e2e2e2",
   PARCHMENT_MUTED: "#6b6b6b",
   CYAN: "#c4102e",
   CYAN_BRIGHT: "#e11d48",
@@ -20,7 +20,7 @@ export const COLORS = {
   NEON_GLOW: "none",
   NEON_GLOW_STRONG: "none",
   NEON_GLOW_WEAK: "none",
-  BACKGROUND: "#f2f2f2",
+  BACKGROUND: "#e2e2e2",
   CARD_BACKGROUND: "#ffffff",
 };
 

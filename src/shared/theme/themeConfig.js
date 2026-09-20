@@ -9,16 +9,16 @@ export const themeConfig = (isOpenDyslexic) => ({
   semanticTokens: {
     colors: {
       "brand.ink": { default: "#111111", _dark: "#f2f2f2" },
-      "brand.paper": { default: "#f2f2f2", _dark: "#0a0a0a" },
-      "brand.cardBg": { default: "#ffffff", _dark: "#161616" },
+      "brand.paper": { default: "#e2e2e2", _dark: "#0a0a0a" },
+      "brand.cardBg": { default: "#f6f6f6", _dark: "#161616" },
       "brand.muted": { default: "#6b6b6b", _dark: "rgba(242,242,242,0.62)" },
-      "brand.line": { default: "rgba(17,17,17,0.12)", _dark: "rgba(255,255,255,0.14)" },
-      "brand.nav": { default: "rgba(242,242,242,0.92)", _dark: "rgba(10,10,10,0.9)" },
+      "brand.line": { default: "rgba(17,17,17,0.14)", _dark: "rgba(255,255,255,0.14)" },
+      "brand.nav": { default: "rgba(226,226,226,0.92)", _dark: "rgba(10,10,10,0.9)" },
       "brand.cyan": { default: "#c4102e", _dark: "#ef4444" },
       "brand.cyanBright": { default: "#e11d48", _dark: "#fb7185" },
       "brand.night": { default: "#111111", _dark: "#0a0a0a" },
       "brand.copper": { default: "#c4102e", _dark: "#ef4444" },
-      "brand.parchment": { default: "#f2f2f2", _dark: "#0a0a0a" },
+      "brand.parchment": { default: "#e2e2e2", _dark: "#0a0a0a" },
     },
   },
   colors: {
@@ -49,7 +49,7 @@ export const themeConfig = (isOpenDyslexic) => ({
       const isDark = props.colorMode === "dark";
       return {
         body: {
-          bg: isDark ? "#0a0a0a" : "#f2f2f2",
+          bg: isDark ? "#0a0a0a" : "#e2e2e2",
           color: isDark ? "#f2f2f2" : "#111111",
           fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.BODY,
           minHeight: "100vh",

@@ -49,11 +49,11 @@ const Navbar = () => {
       fontSize="sm"
       letterSpacing="0"
       textTransform="none"
-      color={isActive(link.to) ? "brand.cyan" : "brand.ink"}
+      color="brand.ink"
       borderRadius="0"
       borderBottom="1px solid"
-      borderColor={isActive(link.to) ? "brand.cyan" : "transparent"}
-      _hover={{ bg: "transparent", color: "brand.cyan" }}
+      borderColor={isActive(link.to) ? "brand.ink" : "transparent"}
+      _hover={{ bg: "transparent", opacity: 0.62 }}
     >
       {link.label}
     </Button>

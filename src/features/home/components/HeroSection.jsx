@@ -30,6 +30,12 @@ const HeroSection = () => {
       position="relative"
       overflow="hidden"
     >
+      <Box
+        position="absolute"
+        inset={0}
+        pointerEvents="none"
+        bg="radial-gradient(ellipse at 22% 35%, rgba(255,255,255,0.55) 0%, transparent 46%), radial-gradient(ellipse at 82% 18%, rgba(17,17,17,0.08) 0%, transparent 48%)"
+      />
       <Flex
         direction={{ base: "column", lg: "row" }}
         align="center"
@@ -130,20 +136,31 @@ const HeroSection = () => {
           maxW={{ base: "420px", lg: "none" }}
           alignSelf={{ base: "center", lg: "stretch" }}
         >
-          <Box
-            h={{ base: "420px", md: "520px", lg: "100%" }}
-            minH={{ lg: "560px" }}
-            overflow="hidden"
-            borderRadius="24px"
-            bg="brand.paper"
-          >
+          <Box position="relative" h={{ base: "420px", md: "520px", lg: "100%" }} minH={{ lg: "560px" }}>
             <Box
-              w="100%"
-              h="100%"
-              backgroundImage={`url(${profileImg})`}
-              backgroundSize="cover"
-              backgroundPosition="50% 12%"
+              position="absolute"
+              inset="18px -14px -14px 18px"
+              bg="brand.ink"
+              opacity={0.1}
+              borderRadius="24px"
             />
+            <Box
+              position="relative"
+              h="100%"
+              overflow="hidden"
+              borderRadius="24px"
+              border="1px solid"
+              borderColor="brand.line"
+              boxShadow="0 28px 60px rgba(17,17,17,0.12)"
+            >
+              <Box
+                w="100%"
+                h="100%"
+                backgroundImage={`url(${profileImg})`}
+                backgroundSize="cover"
+                backgroundPosition="50% 12%"
+              />
+            </Box>
           </Box>
         </Box>
       </Flex>
