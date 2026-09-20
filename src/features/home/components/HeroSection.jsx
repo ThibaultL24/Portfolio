@@ -158,7 +158,7 @@ const HeroSection = () => {
                 h="100%"
                 backgroundImage={`url(${profileImg})`}
                 backgroundSize="cover"
-                backgroundPosition="50% 12%"
+                backgroundPosition="50% 22%"
               />
             </Box>
           </Box>

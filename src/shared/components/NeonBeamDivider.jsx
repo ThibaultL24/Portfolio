@@ -1,7 +1,7 @@
 // src/shared/components/NeonBeamDivider.jsx
 import { Box } from "@chakra-ui/react";
 
-const NeonBeamDivider = ({ height = "2px", color = "#c4102e", ...props }) => (
+const NeonBeamDivider = ({ height = "2px", color = "#2f7ec9", ...props }) => (
   <Box w="72px" h={height} bg={color} {...props} />
 );
 

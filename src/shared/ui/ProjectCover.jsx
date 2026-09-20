@@ -9,7 +9,7 @@ const ProjectCover = ({ title, accent = "#111111", motif = "orb" }) => {
       <Box
         position="absolute"
         inset="0"
-        background={`radial-gradient(circle at 30% 20%, ${accent}55, transparent 42%), radial-gradient(circle at 80% 80%, #c4102e22, transparent 50%)`}
+        background={`radial-gradient(circle at 30% 20%, ${accent}55, transparent 42%), radial-gradient(circle at 80% 80%, #2f7ec922, transparent 50%)`}
       />
       {motif === "orb" && (
         <Box

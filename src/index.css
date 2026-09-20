@@ -7,9 +7,9 @@
   --night: #111111;
   --paper: #e2e2e2;
   --white: #ffffff;
-  --cyan: #c4102e;
-  --cyan-bright: #e11d48;
-  --rust: #c45c3e;
+  --cyan: #2f7ec9;
+  --cyan-bright: #4a9ae6;
+  --rust: #2f7ec9;
   --font-title: "Syne", sans-serif;
   --font-subtitle: "Outfit", sans-serif;
   --font-body: "Manrope", system-ui, sans-serif;
@@ -29,8 +29,8 @@
   --night: #0a0a0a;
   --paper: #0a0a0a;
   --white: #161616;
-  --cyan: #ef4444;
-  --cyan-bright: #fb7185;
+  --cyan: #6eb4f0;
+  --cyan-bright: #8cc4f5;
   color-scheme: dark;
   color: var(--ink);
 }
@@ -68,7 +68,7 @@ a {
 }
 
 ::selection {
-  background: #c4102e;
+  background: #2f7ec9;
   color: #ffffff;
 }
 
