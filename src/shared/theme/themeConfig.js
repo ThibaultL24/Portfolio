@@ -41,10 +41,10 @@ export const themeConfig = (isOpenDyslexic) => ({
       },
       "h1, h2, h3, h4, h5, h6, .section-title, .page-title": {
         color: "inherit",
-        fontWeight: "500",
-        letterSpacing: "0.01em",
+        fontWeight: "400",
+        letterSpacing: "-0.02em",
         fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.DISPLAY,
-        textTransform: "uppercase",
+        textTransform: "none",
         textShadow: "none",
       },
       a: {
@@ -62,16 +62,16 @@ export const themeConfig = (isOpenDyslexic) => ({
   components: {
     Button: {
       baseStyle: {
-        borderRadius: "0",
+        borderRadius: "999px",
         fontWeight: "600",
-        letterSpacing: "0.12em",
-        textTransform: "uppercase",
+        letterSpacing: "0.01em",
+        textTransform: "none",
         fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.BODY,
       },
       variants: {
         solid: {
           bg: COLORS.CYAN,
-          color: COLORS.NIGHT,
+          color: "#ffffff",
           _hover: {
             bg: COLORS.CYAN_BRIGHT,
           },
@@ -96,7 +96,7 @@ export const themeConfig = (isOpenDyslexic) => ({
     Card: {
       baseStyle: {
         container: {
-          borderRadius: "0",
+          borderRadius: "16px",
           overflow: "hidden",
           borderColor: COLORS.BORDER,
           bg: COLORS.CARD_BACKGROUND,

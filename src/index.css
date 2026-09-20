@@ -1,16 +1,17 @@
 /* src/index.css */
 @import url("https://fonts.cdnfonts.com/css/opendyslexic");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Michroma&family=Teko:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Manrope:wght@400;500;600;700&family=Syne:wght@400;500;600;700&display=swap");
 
 :root {
-  --ink: #111318;
-  --night: #050505;
-  --paper: #f4f4f2;
-  --cyan: #4eead5;
-  --cyan-bright: #70fff0;
-  --magenta: #d100ff;
-  font-family: "Inter", system-ui, sans-serif;
-  line-height: 1.6;
+  --ink: #1a1816;
+  --night: #1a1816;
+  --paper: #f6f1ea;
+  --white: #ffffff;
+  --cyan: #2f9e90;
+  --cyan-bright: #3cb5a6;
+  --rust: #c45c3e;
+  font-family: "Manrope", system-ui, sans-serif;
+  line-height: 1.65;
   font-weight: 400;
   color-scheme: light;
   color: var(--ink);
@@ -53,8 +54,8 @@ a {
 }
 
 ::selection {
-  background: var(--cyan);
-  color: var(--night);
+  background: rgba(47, 158, 144, 0.22);
+  color: var(--ink);
 }
 
 .font-opendyslexic p,
@@ -67,45 +68,7 @@ a {
 .font-inter h1,
 .font-inter h2,
 .font-inter h3 {
-  font-family: "Teko", sans-serif;
-}
-
-.grid-overlay {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 2;
-  opacity: 0.12;
-  background-image: linear-gradient(rgba(17, 19, 24, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(17, 19, 24, 0.035) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(circle at 50% 0%, black, transparent 70%);
-}
-
-.sketch-frame {
-  position: relative;
-}
-
-.sketch-frame::after {
-  content: "";
-  position: absolute;
-  inset: -6px -8px;
-  border: 3px solid rgba(17, 19, 24, 0.88);
-  transform: rotate(-0.8deg);
-  pointer-events: none;
-}
-
-.sketch-frame.is-light::after {
-  border-color: rgba(244, 244, 242, 0.92);
-}
-
-.sketch-frame.is-light::before {
-  content: "";
-  position: absolute;
-  inset: -12px -2px;
-  border: 1px solid rgba(209, 0, 255, 0.55);
-  transform: rotate(1.1deg);
-  pointer-events: none;
+  font-family: "Libre Bodoni", Georgia, serif;
 }
 
 @media (max-width: 768px) {

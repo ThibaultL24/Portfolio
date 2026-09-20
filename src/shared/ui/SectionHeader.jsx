@@ -5,11 +5,10 @@ const SectionHeader = ({ kicker, title, description }) => (
   <Box mb={{ base: 10, md: 14 }}>
     {kicker && (
       <Text
-        fontFamily="'Michroma', sans-serif"
-        fontSize="9px"
-        letterSpacing="0.3em"
-        textTransform="uppercase"
+        fontSize="sm"
+        letterSpacing="0.08em"
         color="brand.cyan"
+        fontWeight="600"
         mb={3}
       >
         {kicker}
@@ -17,12 +16,11 @@ const SectionHeader = ({ kicker, title, description }) => (
     )}
     <Heading
       as="h1"
-      fontSize={{ base: "5xl", md: "7xl" }}
-      fontWeight="500"
-      letterSpacing="0.02em"
+      fontSize={{ base: "4xl", md: "6xl" }}
+      fontWeight="400"
+      letterSpacing="-0.03em"
       mb={4}
       color="brand.ink"
-      textTransform="uppercase"
     >
       {title}
     </Heading>
@@ -31,7 +29,7 @@ const SectionHeader = ({ kicker, title, description }) => (
         {description}
       </Text>
     )}
-    <Box mt={8} h="2px" w="72px" bg="brand.cyan" />
+    <Box mt={8} h="1px" w="56px" bg="brand.cyan" />
   </Box>
 );
 

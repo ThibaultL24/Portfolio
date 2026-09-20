@@ -54,13 +54,13 @@ const ContactForm = () => {
     bg: "white",
     borderColor: "rgba(17,19,24,0.18)",
     color: "brand.ink",
-    borderRadius: "0",
+    borderRadius: "10px",
     _hover: { borderColor: "brand.cyan" },
-    _focus: { borderColor: "brand.cyan", boxShadow: "0 0 0 1px #4eead5" },
+    _focus: { borderColor: "brand.cyan", boxShadow: "0 0 0 1px #2f9e90" },
   };
 
   return (
-    <Box p={8} border="1px solid rgba(17,19,24,0.14)" bg="white">
+    <Box p={8} border="1px solid rgba(26,24,22,0.08)" bg="white" borderRadius="16px">
       <VStack spacing={6} as="form" onSubmit={handleSubmit}>
         <Heading as="h2" fontSize="2xl" alignSelf="flex-start">
           {t("contact.form.title")}

@@ -11,27 +11,27 @@ const Footer = () => {
       as="footer"
       px={{ base: 4, md: 8 }}
       w="100%"
-      borderTop="1px solid rgba(255,255,255,0.12)"
+      borderTop="1px solid rgba(26,24,22,0.08)"
       mt="auto"
-      bg="#050505"
-      color="white"
+      bg="white"
+      color="brand.ink"
     >
-      <Flex minH={16} py={4} alignItems="center" justifyContent="space-between" gap={4} wrap="wrap">
-        <Text fontFamily="'Michroma', sans-serif" fontSize="9px" letterSpacing="0.16em" color="brand.cyan">
+      <Flex minH={16} py={5} alignItems="center" justifyContent="space-between" gap={4} wrap="wrap">
+        <Text fontSize="sm" color="brand.ink">
           © 2026 Thibault Lenormand
         </Text>
-        <Text fontSize="sm" color="rgba(244,244,242,0.6)">
+        <Text fontSize="sm" color="brand.ink" opacity={0.55}>
           {t("home.footer.rights")}
         </Text>
         <HStack spacing={5}>
           <Link href="https://github.com/ThibaultL24" isExternal>
-            <Icon as={FaGithub} boxSize={4} color="white" />
+            <Icon as={FaGithub} boxSize={4} />
           </Link>
           <Link href="https://www.linkedin.com/in/thibault-lenormand-b38b96268/" isExternal>
-            <Icon as={FaLinkedin} boxSize={4} color="white" />
+            <Icon as={FaLinkedin} boxSize={4} />
           </Link>
           <Link href="https://x.com/ThibaultLENORM2" isExternal>
-            <Icon as={FaTwitter} boxSize={4} color="white" />
+            <Icon as={FaTwitter} boxSize={4} />
           </Link>
         </HStack>
       </Flex>

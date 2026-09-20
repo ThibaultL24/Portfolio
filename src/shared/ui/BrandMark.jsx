@@ -8,30 +8,28 @@ const BrandMark = () => (
     to="/"
     display="flex"
     alignItems="baseline"
-    gap={3}
-    _hover={{ opacity: 0.82 }}
+    gap={2}
+    _hover={{ opacity: 0.72 }}
   >
     <Text
       as="span"
-      fontFamily="'Teko', sans-serif"
-      fontSize="3xl"
+      fontFamily="'Libre Bodoni', Georgia, serif"
+      fontSize="2xl"
       lineHeight="1"
-      color="brand.cyan"
-      letterSpacing="0.04em"
-      textTransform="uppercase"
+      color="brand.ink"
+      fontStyle="italic"
     >
-      TL
+      Thibault
     </Text>
     <Text
       as="span"
       display={{ base: "none", md: "inline" }}
-      fontFamily="'Michroma', sans-serif"
-      fontSize="9px"
-      letterSpacing="0.28em"
-      textTransform="uppercase"
-      color="white"
+      fontFamily="'Manrope', sans-serif"
+      fontSize="sm"
+      color="brand.ink"
+      opacity={0.5}
     >
-      Studio
+      Lenormand
     </Text>
   </Box>
 );

@@ -1,15 +1,15 @@
 // src/shared/ui/ProjectCover.jsx
 import { Box, Text } from "@chakra-ui/react";
 
-const ProjectCover = ({ title, accent = "#4eead5", motif = "orb" }) => {
+const ProjectCover = ({ title, accent = "#2f9e90", motif = "orb" }) => {
   const letter = title?.charAt(0) || "·";
 
   return (
-    <Box position="relative" h="100%" minH="220px" overflow="hidden" bg="#050505">
+    <Box position="relative" h="100%" minH="220px" overflow="hidden" bg="#1a1816">
       <Box
         position="absolute"
         inset="0"
-        background={`radial-gradient(circle at 30% 20%, ${accent}55, transparent 42%), radial-gradient(circle at 80% 80%, #d100ff22, transparent 50%)`}
+        background={`radial-gradient(circle at 30% 20%, ${accent}44, transparent 42%), radial-gradient(circle at 80% 80%, #c45c3e22, transparent 50%)`}
       />
       {motif === "orb" && (
         <Box
@@ -19,7 +19,7 @@ const ProjectCover = ({ title, accent = "#4eead5", motif = "orb" }) => {
           borderRadius="full"
           border="1px solid"
           borderColor={accent}
-          opacity={0.45}
+          opacity={0.4}
           top="18%"
           right="8%"
         />
@@ -30,7 +30,7 @@ const ProjectCover = ({ title, accent = "#4eead5", motif = "orb" }) => {
           inset="18% 12%"
           backgroundImage={`linear-gradient(${accent}33 1px, transparent 1px), linear-gradient(90deg, ${accent}33 1px, transparent 1px)`}
           backgroundSize="28px 28px"
-          opacity={0.5}
+          opacity={0.4}
         />
       )}
       {motif === "octagon" && (
@@ -42,7 +42,7 @@ const ProjectCover = ({ title, accent = "#4eead5", motif = "orb" }) => {
           left="18%"
           border={`1px solid ${accent}`}
           transform="rotate(22deg)"
-          opacity={0.5}
+          opacity={0.45}
         />
       )}
       {motif === "constellation" && (
@@ -56,10 +56,10 @@ const ProjectCover = ({ title, accent = "#4eead5", motif = "orb" }) => {
         position="absolute"
         bottom={3}
         left={5}
-        fontFamily="'Teko', sans-serif"
+        fontFamily="'Libre Bodoni', Georgia, serif"
         fontSize="7xl"
         color={accent}
-        opacity={0.35}
+        opacity={0.4}
         lineHeight="1"
       >
         {letter}

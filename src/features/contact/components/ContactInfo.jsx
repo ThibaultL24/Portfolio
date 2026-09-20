@@ -19,7 +19,7 @@ const ContactInfo = () => {
       </Heading>
       <VStack spacing={6} align="flex-start" w="full">
         <HStack spacing={4}>
-          <Box p={3} border="1px solid rgba(17,19,24,0.18)">
+          <Box p={3} border="1px solid rgba(26,24,22,0.12)" borderRadius="12px" bg="white">
             <Icon as={FaEnvelope} w={4} h={4} color="brand.cyan" />
           </Box>
           <VStack align="flex-start" spacing={0}>
@@ -30,7 +30,7 @@ const ContactInfo = () => {
           </VStack>
         </HStack>
         <HStack spacing={4}>
-          <Box p={3} border="1px solid rgba(17,19,24,0.18)">
+          <Box p={3} border="1px solid rgba(26,24,22,0.12)" borderRadius="12px" bg="white">
             <Icon as={FaMapMarkerAlt} w={4} h={4} color="brand.cyan" />
           </Box>
           <VStack align="flex-start" spacing={0}>

@@ -19,17 +19,10 @@ const FeaturedWork = () => {
         wrap="wrap"
       >
         <Box>
-          <Text
-            fontFamily="'Michroma', sans-serif"
-            fontSize="9px"
-            letterSpacing="0.3em"
-            textTransform="uppercase"
-            color="brand.cyan"
-            mb={2}
-          >
+          <Text fontSize="sm" letterSpacing="0.08em" color="brand.cyan" fontWeight="600" mb={2}>
             {t("home.selected.kicker")}
           </Text>
-          <Heading as="h2" fontSize={{ base: "4xl", md: "6xl" }} fontWeight="500" color="brand.ink">
+          <Heading as="h2" fontSize={{ base: "4xl", md: "5xl" }} fontWeight="400" color="brand.ink">
             {t("home.selected.title")}
           </Heading>
         </Box>

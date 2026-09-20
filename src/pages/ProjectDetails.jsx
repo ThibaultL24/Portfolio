@@ -64,11 +64,10 @@ const ProjectDetails = () => {
           <HStack
             spacing={4}
             mb={4}
-            fontFamily="'Michroma', sans-serif"
-            fontSize="xs"
-            letterSpacing="0.2em"
-            textTransform="uppercase"
-            color="brand.copper"
+            fontSize="sm"
+            letterSpacing="0.06em"
+            color="brand.cyan"
+            fontWeight="600"
           >
             <Text as="span">{meta.year}</Text>
             <Text as="span">{t(`projects.filters.${meta.category}`)}</Text>
@@ -81,7 +80,7 @@ const ProjectDetails = () => {
           </Text>
         </Box>
 
-        <Box overflow="hidden" border="1px solid rgba(17,19,24,0.14)" bg="white">
+        <Box overflow="hidden" border="1px solid rgba(26,24,22,0.08)" bg="white" borderRadius="16px">
           {meta.youtube ? (
             <AspectRatio ratio={16 / 9}>
               <iframe src={meta.youtube} title={`${title} demo`} allowFullScreen />
@@ -133,12 +132,12 @@ const ProjectDetails = () => {
                 <Tag
                   key={index}
                   size="lg"
-                  borderRadius="0"
+                  borderRadius="999px"
                   px={4}
                   py={2}
                   bg="white"
                   color="brand.ink"
-                  border="1px solid rgba(17,19,24,0.18)"
+                  border="1px solid rgba(26,24,22,0.14)"
                 >
                   {tech.name}
                 </Tag>

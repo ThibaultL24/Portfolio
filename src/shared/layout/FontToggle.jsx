@@ -10,10 +10,10 @@ const FontToggle = () => {
     <Button
       onClick={toggleFont}
       variant="ghost"
-      color="brand.cyan"
+      color="brand.ink"
       size="sm"
-      fontFamily="'Michroma', sans-serif"
-      _hover={{ bg: "transparent", color: "brand.cyanBright" }}
+      fontWeight="600"
+      _hover={{ bg: "transparent", color: "brand.cyan" }}
       title="OpenDyslexic"
     >
       {isOpenDyslexic ? "A" : "Aa"}

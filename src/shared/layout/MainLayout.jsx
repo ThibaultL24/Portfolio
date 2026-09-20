@@ -18,7 +18,6 @@ const MainLayout = ({ children }) => {
       className={isOpenDyslexic ? "font-opendyslexic" : "font-inter"}
       lang={isEnglish ? "en" : "fr"}
     >
-      <div className="grid-overlay" />
       <Navbar />
       <Box as="main" pt={{ base: "64px", md: "80px" }} flex="1" position="relative" zIndex={1}>
         {children}

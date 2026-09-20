@@ -10,11 +10,10 @@ const LanguageToggle = () => {
     <Button
       onClick={toggleLanguage}
       variant="ghost"
-      color="brand.cyan"
+      color="brand.ink"
       size="sm"
-      fontFamily="'Michroma', sans-serif"
-      letterSpacing="0.16em"
-      _hover={{ bg: "transparent", color: "brand.cyanBright" }}
+      fontWeight="600"
+      _hover={{ bg: "transparent", color: "brand.cyan" }}
     >
       {isEnglish ? "FR" : "EN"}
     </Button>

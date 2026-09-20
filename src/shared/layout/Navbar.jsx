@@ -44,15 +44,15 @@ const Navbar = () => {
       px={3}
       h="auto"
       py={2}
-      fontWeight="700"
-      fontSize="11px"
-      letterSpacing="0.26em"
-      textTransform="uppercase"
-      color={isActive(link.to) ? "brand.cyan" : "white"}
+      fontWeight={isActive(link.to) ? "600" : "500"}
+      fontSize="sm"
+      letterSpacing="0"
+      textTransform="none"
+      color={isActive(link.to) ? "brand.cyan" : "brand.ink"}
       borderRadius="0"
       borderBottom="1px solid"
       borderColor={isActive(link.to) ? "brand.cyan" : "transparent"}
-      _hover={{ bg: "transparent", color: "brand.cyanBright" }}
+      _hover={{ bg: "transparent", color: "brand.cyan" }}
     >
       {link.label}
     </Button>
@@ -67,8 +67,8 @@ const Navbar = () => {
       zIndex={1000}
       top={0}
       left={0}
-      bg="rgba(5,5,5,0.88)"
-      borderBottom="1px solid rgba(255,255,255,0.12)"
+      bg="rgba(246,241,234,0.9)"
+      borderBottom="1px solid rgba(26,24,22,0.08)"
       backdropFilter="blur(16px)"
     >
       <Flex h={{ base: 16, md: 20 }} alignItems="center" justifyContent="space-between" gap={4}>
@@ -84,14 +84,14 @@ const Navbar = () => {
             aria-label="Menu"
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             variant="ghost"
-            color="white"
+            color="brand.ink"
             onClick={isOpen ? onClose : onOpen}
           />
         </Flex>
       </Flex>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
-        <DrawerOverlay bg="rgba(5,5,5,0.6)" />
-        <DrawerContent bg="#050505" maxW="280px">
+        <DrawerOverlay bg="rgba(26,24,22,0.28)" />
+        <DrawerContent bg="brand.paper" maxW="280px">
           <DrawerBody pt={20}>
             <Stack spacing={4} align="flex-start">
               {navLinks.map((link) => linkButton(link, onClose))}

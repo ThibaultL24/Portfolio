@@ -179,8 +179,8 @@ const CreationsContent = () => {
               bg="white"
               color="brand.ink"
               border="1px solid"
-              borderColor="rgba(17,19,24,0.14)"
-              borderRadius="0"
+              borderColor="rgba(26,24,22,0.08)"
+              borderRadius="16px"
               maxW="90vw"
             >
               <ModalHeader color="brand.ink" textAlign="center">
@@ -235,8 +235,8 @@ const CreationsContent = () => {
                     onClick={() => setSelectedCategory(category.id)}
                     bg={isSelected ? "brand.cyan" : "white"}
                     color={isSelected ? "brand.night" : "brand.ink"}
-                    borderColor="rgba(17,19,24,0.18)"
-                    borderRadius="0"
+                    borderColor="rgba(26,24,22,0.14)"
+                    borderRadius="999px"
                     fontWeight={isSelected ? "bold" : "normal"}
                     fontSize="md"
                     px={6}
@@ -303,8 +303,8 @@ const CreationsContent = () => {
           bg="white"
           color="brand.ink"
           border="1px solid"
-          borderColor="rgba(17,19,24,0.14)"
-          borderRadius="0"
+          borderColor="rgba(26,24,22,0.08)"
+          borderRadius="16px"
         >
           <ModalHeader color="brand.ink">
             {selectedText

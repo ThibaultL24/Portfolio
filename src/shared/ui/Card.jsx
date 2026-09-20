@@ -5,12 +5,12 @@ const Card = ({
   children,
   hoverEffect = true,
   showShadow = true,
-  borderRadius = "0",
+  borderRadius = "16px",
   ...rest
 }) => {
   const baseStyles = {
     className: "card",
-    border: "1px solid rgba(17,19,24,0.14)",
+    border: "1px solid rgba(26,24,22,0.08)",
     bg: "white",
     color: "brand.ink",
     borderRadius,
@@ -20,14 +20,14 @@ const Card = ({
     ...rest,
   };
 
-  const shadowStyles = showShadow ? { boxShadow: "0 14px 36px rgba(17,19,24,0.08)" } : {};
+  const shadowStyles = showShadow ? { boxShadow: "0 16px 36px rgba(26,24,22,0.06)" } : {};
 
   const hoverStyles = hoverEffect
     ? {
         _hover: {
           borderColor: "brand.cyan",
           transform: "translateY(-4px)",
-          boxShadow: "0 18px 40px rgba(17,19,24,0.12)",
+          boxShadow: "0 20px 44px rgba(26,24,22,0.1)",
           ...rest._hover,
         },
       }
