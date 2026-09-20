@@ -44,8 +44,8 @@ const ProjectCard = ({
         </Flex>
         <Text
           as="h3"
-          fontFamily="'Libre Bodoni', Georgia, serif"
-          fontWeight="400"
+          fontFamily="'Outfit', sans-serif"
+          fontWeight="500"
           fontSize={featured ? "2xl" : "xl"}
           mb={2}
           color="brand.ink"

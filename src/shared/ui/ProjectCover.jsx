@@ -56,7 +56,7 @@ const ProjectCover = ({ title, accent = "#2f9e90", motif = "orb" }) => {
         position="absolute"
         bottom={3}
         left={5}
-        fontFamily="'Libre Bodoni', Georgia, serif"
+        fontFamily="'Syne', sans-serif"
         fontSize="7xl"
         color={accent}
         opacity={0.4}

@@ -25,7 +25,7 @@ export const themeConfig = (isOpenDyslexic) => ({
     },
   },
   fonts: {
-    heading: isOpenDyslexic ? FONTS.OPENDYS : FONTS.DISPLAY,
+    heading: isOpenDyslexic ? FONTS.OPENDYS : FONTS.SUBTITLE,
     body: isOpenDyslexic ? FONTS.OPENDYS : FONTS.BODY,
     mono: FONTS.MONO,
   },
@@ -39,13 +39,24 @@ export const themeConfig = (isOpenDyslexic) => ({
         width: "100%",
         overflowX: "hidden",
       },
-      "h1, h2, h3, h4, h5, h6, .section-title, .page-title": {
+      "h1, .page-title, .font-title": {
         color: "inherit",
-        fontWeight: "400",
-        letterSpacing: "-0.02em",
+        fontWeight: "600",
+        letterSpacing: "-0.03em",
         fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.DISPLAY,
         textTransform: "none",
         textShadow: "none",
+      },
+      "h2, h3, h4, h5, h6, .section-title, .font-subtitle": {
+        color: "inherit",
+        fontWeight: "500",
+        letterSpacing: "-0.02em",
+        fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.SUBTITLE,
+        textTransform: "none",
+        textShadow: "none",
+      },
+      "p, li, .font-body": {
+        fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.BODY,
       },
       a: {
         color: "inherit",
@@ -56,6 +67,7 @@ export const themeConfig = (isOpenDyslexic) => ({
         fontWeight: "400",
         lineHeight: "1.75",
         textTransform: "none",
+        fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.BODY,
       },
     },
   },

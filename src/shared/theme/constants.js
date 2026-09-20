@@ -46,10 +46,11 @@ export const BORDER_RADIUS = {
 };
 
 export const FONTS = {
-  DISPLAY: "'Libre Bodoni', Georgia, serif",
+  DISPLAY: "'Syne', sans-serif",
+  SUBTITLE: "'Outfit', sans-serif",
   BODY: "'Manrope', system-ui, sans-serif",
-  MONO: "'Manrope', system-ui, sans-serif",
-  ACCENT: "'Syne', sans-serif",
+  MONO: "'Outfit', sans-serif",
+  ACCENT: "'Outfit', sans-serif",
   MONTSE: "'Manrope', system-ui, sans-serif",
   OPENDYS: "'OpenDyslexic', sans-serif",
 };

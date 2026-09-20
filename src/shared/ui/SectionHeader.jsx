@@ -5,6 +5,8 @@ const SectionHeader = ({ kicker, title, description }) => (
   <Box mb={{ base: 10, md: 14 }}>
     {kicker && (
       <Text
+        className="font-subtitle"
+        fontFamily="'Outfit', sans-serif"
         fontSize="sm"
         letterSpacing="0.08em"
         color="brand.cyan"
@@ -16,8 +18,9 @@ const SectionHeader = ({ kicker, title, description }) => (
     )}
     <Heading
       as="h1"
+      fontFamily="'Syne', sans-serif"
       fontSize={{ base: "4xl", md: "6xl" }}
-      fontWeight="400"
+      fontWeight="600"
       letterSpacing="-0.03em"
       mb={4}
       color="brand.ink"

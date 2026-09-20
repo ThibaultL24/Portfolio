@@ -26,10 +26,10 @@ const TrustSection = () => {
     <Box py={{ base: 8, md: 12 }} w="100%">
       <Flex direction={{ base: "column", md: "row" }} align="flex-start" gap={12}>
         <Box flex="1">
-          <Text fontSize="sm" letterSpacing="0.08em" color="brand.cyan" fontWeight="600" mb={3}>
+          <Text className="font-subtitle" fontFamily="'Outfit', sans-serif" fontSize="sm" letterSpacing="0.08em" color="brand.cyan" fontWeight="600" mb={3}>
             Intuition
           </Text>
-          <Heading as="h2" fontSize={{ base: "4xl", md: "5xl" }} fontWeight="400" mb={8} color="brand.ink">
+          <Heading as="h2" fontFamily="'Outfit', sans-serif" fontSize={{ base: "4xl", md: "5xl" }} fontWeight="500" mb={8} color="brand.ink">
             {t("home.trust.title")}
           </Heading>
           <VStack align="flex-start" spacing={6}>

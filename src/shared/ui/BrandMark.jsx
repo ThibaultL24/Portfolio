@@ -13,18 +13,18 @@ const BrandMark = () => (
   >
     <Text
       as="span"
-      fontFamily="'Libre Bodoni', Georgia, serif"
+      fontFamily="'Syne', sans-serif"
       fontSize="2xl"
       lineHeight="1"
       color="brand.ink"
-      fontStyle="italic"
+      fontWeight="700"
     >
       Thibault
     </Text>
     <Text
       as="span"
       display={{ base: "none", md: "inline" }}
-      fontFamily="'Manrope', sans-serif"
+      fontFamily="'Outfit', sans-serif"
       fontSize="sm"
       color="brand.ink"
       opacity={0.5}

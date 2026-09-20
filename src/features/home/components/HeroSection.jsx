@@ -35,6 +35,8 @@ const HeroSection = () => {
       >
         <VStack align="flex-start" spacing={6} flex="1" maxW={{ lg: "56%" }}>
           <Text
+            className="font-subtitle"
+            fontFamily="'Outfit', sans-serif"
             fontSize="sm"
             letterSpacing="0.08em"
             color="brand.cyan"
@@ -44,18 +46,26 @@ const HeroSection = () => {
           </Text>
           <Heading
             as="h1"
+            fontFamily="'Syne', sans-serif"
             fontSize={{ base: "5xl", md: "7xl", xl: "8xl" }}
-            fontWeight="400"
+            fontWeight="600"
             lineHeight="0.95"
             letterSpacing="-0.03em"
             color="brand.ink"
           >
             Thibault
-            <Text as="span" display="block" fontStyle="italic" color="brand.cyan">
+            <Text as="span" display="block" color="brand.cyan">
               Lenormand
             </Text>
           </Heading>
-          <Text fontSize={{ base: "xl", md: "2xl" }} color="brand.ink" opacity={0.72}>
+          <Text
+            className="font-subtitle"
+            fontFamily="'Outfit', sans-serif"
+            fontSize={{ base: "xl", md: "2xl" }}
+            color="brand.ink"
+            opacity={0.72}
+            fontWeight="500"
+          >
             {t("home.subtitle")}
           </Text>
           <Text fontSize={{ base: "md", md: "lg" }} color="brand.ink" opacity={0.7} maxW="540px" lineHeight="1.8">
