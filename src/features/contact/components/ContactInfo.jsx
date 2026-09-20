@@ -37,7 +37,7 @@ const ContactInfo = () => {
             <Text fontSize="sm" color="brand.muted">
               {t("contact.info.location")}
             </Text>
-            <Text color="brand.ink">Avignon, France</Text>
+            <Text color="brand.ink">{t("contact.info.place")}</Text>
           </VStack>
         </HStack>
       </VStack>

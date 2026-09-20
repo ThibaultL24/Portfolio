@@ -2,7 +2,7 @@ export const contact = {
   title: "Contact",
   kicker: "Atelier",
   description:
-    "Un site, un produit, un texte. Écrivez-moi — je réponds depuis Avignon.",
+    "Un site, un produit, un texte. Écrivez-moi — je travaille en full remote.",
   form: {
     title: "Envoyez-moi un message",
     name: "Nom",
@@ -26,6 +26,7 @@ export const contact = {
     title: "Coordonnées",
     email: "Email",
     location: "Localisation",
+    place: "Full remote",
     socialMedia: "Réseaux sociaux",
     github: "GitHub",
     linkedin: "LinkedIn",

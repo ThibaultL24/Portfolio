@@ -1,5 +1,5 @@
 export const home = {
-  kicker: "Avignon",
+  kicker: "Full remote",
   title: "Thibault Lenormand\nFull-stack Web Dev",
   subtitle: "React · Rails · Python — web3 specialist",
   description:

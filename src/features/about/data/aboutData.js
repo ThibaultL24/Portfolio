@@ -14,7 +14,7 @@ export const skills = [
 export const experiences = [
   {
     title: "Développeur freelance",
-    company: "Atelier — Avignon",
+    company: "Atelier — Full remote",
     period: "2025 — 2026",
     description:
       "Sites et produits pour des indépendants et associations : Camille Luxopuncture, Corvus Studio, Kaïron.",
