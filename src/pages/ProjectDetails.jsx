@@ -66,7 +66,7 @@ const ProjectDetails = () => {
             mb={4}
             fontSize="sm"
             letterSpacing="0.06em"
-            color="brand.muted"
+            color="brand.cyan"
             fontWeight="600"
           >
             <Text as="span">{meta.year}</Text>

@@ -36,7 +36,7 @@ const ProjectCard = ({
           mb={3}
           fontSize="xs"
           letterSpacing="0.06em"
-          color="brand.muted"
+          color="brand.cyan"
           fontWeight="600"
         >
           <Text as="span">{year}</Text>
@@ -55,7 +55,7 @@ const ProjectCard = ({
         <Text fontSize="sm" mb={5} color="brand.ink" opacity={0.68} noOfLines={3}>
           {description}
         </Text>
-        <Text fontSize="sm" fontWeight="600" color="brand.ink">
+        <Text fontSize="sm" fontWeight="600" color="brand.cyan">
           {t("projects.viewDetails")} →
         </Text>
       </Box>

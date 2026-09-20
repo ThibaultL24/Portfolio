@@ -100,10 +100,10 @@ export const themeConfig = (isOpenDyslexic) => ({
       },
       variants: {
         solid: {
-          bg: "brand.ink",
-          color: "brand.paper",
+          bg: "brand.cyan",
+          color: "#ffffff",
           _hover: {
-            bg: "brand.cyan",
+            bg: "brand.cyanBright",
             color: "#ffffff",
           },
         },

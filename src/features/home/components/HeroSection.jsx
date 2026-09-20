@@ -42,7 +42,7 @@ const HeroSection = () => {
             fontFamily="'Outfit', sans-serif"
             fontSize="sm"
             letterSpacing="0.08em"
-            color="brand.muted"
+            color="brand.cyan"
             fontWeight="600"
           >
             {t("home.kicker")}
@@ -61,6 +61,7 @@ const HeroSection = () => {
               Lenormand
             </Text>
           </Heading>
+          <Box h="2px" w="48px" bg="brand.cyan" />
           <Text
             className="font-subtitle"
             fontFamily="'Outfit', sans-serif"

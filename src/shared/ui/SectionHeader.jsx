@@ -9,7 +9,7 @@ const SectionHeader = ({ kicker, title, description }) => (
         fontFamily="'Outfit', sans-serif"
         fontSize="sm"
         letterSpacing="0.08em"
-        color="brand.muted"
+        color="brand.cyan"
         fontWeight="600"
         mb={3}
       >
@@ -32,7 +32,7 @@ const SectionHeader = ({ kicker, title, description }) => (
         {description}
       </Text>
     )}
-    <Box mt={8} h="1px" w="56px" bg="brand.cyan" />
+    <Box mt={8} h="2px" w="48px" bg="brand.cyan" />
   </Box>
 );
 
