@@ -119,8 +119,8 @@ a {
 }
 
 .chakra-ui-dark .pedro-photo {
-  mix-blend-mode: soft-light;
-  filter: grayscale(1) contrast(1.18);
+  mix-blend-mode: normal;
+  filter: grayscale(1) contrast(1.08) brightness(0.88);
 }
 
 .focus-field > * {
