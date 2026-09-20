@@ -176,10 +176,10 @@ const CreationsContent = () => {
           >
             <ModalOverlay />
             <ModalContent
-              bg="white"
+              bg="brand.cardBg"
               color="brand.ink"
               border="1px solid"
-              borderColor="rgba(26,24,22,0.08)"
+              borderColor="brand.line"
               borderRadius="16px"
               maxW="90vw"
             >
@@ -233,9 +233,9 @@ const CreationsContent = () => {
                     variant="outline"
                     cursor="pointer"
                     onClick={() => setSelectedCategory(category.id)}
-                    bg={isSelected ? "brand.cyan" : "white"}
+                    bg={isSelected ? "brand.cyan" : "brand.cardBg"}
                     color={isSelected ? "brand.night" : "brand.ink"}
-                    borderColor="rgba(26,24,22,0.14)"
+                    borderColor="brand.line"
                     borderRadius="999px"
                     fontWeight={isSelected ? "bold" : "normal"}
                     fontSize="md"
@@ -300,10 +300,10 @@ const CreationsContent = () => {
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
         <ModalContent
-          bg="white"
+          bg="brand.cardBg"
           color="brand.ink"
           border="1px solid"
-          borderColor="rgba(26,24,22,0.08)"
+          borderColor="brand.line"
           borderRadius="16px"
         >
           <ModalHeader color="brand.ink">

@@ -10,7 +10,7 @@ const FeaturedWork = () => {
   const featured = PROJECT_CATALOG.filter((project) => project.featured);
 
   return (
-    <Box py={{ base: 12, md: 20 }} bg="white" mx={{ base: -4, md: -8, lg: -16 }} px={{ base: 4, md: 8, lg: 16 }}>
+    <Box py={{ base: 12, md: 20 }} bg="brand.cardBg" mx={{ base: -4, md: -8, lg: -16 }} px={{ base: 4, md: 8, lg: 16 }}>
       <Flex
         justify="space-between"
         align={{ base: "flex-start", md: "end" }}

@@ -6,7 +6,7 @@ const AnimatedBackground = () => (
       position: "fixed",
       inset: 0,
       zIndex: -1,
-      background: "#f6f1ea",
+      background: "var(--paper)",
     }}
   />
 );

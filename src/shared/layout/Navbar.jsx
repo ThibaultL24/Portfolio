@@ -15,6 +15,7 @@ import { Link as RouterLink, useLocation } from "react-router-dom";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import LanguageToggle from "./LanguageToggle";
 import FontToggle from "./FontToggle";
+import ThemeToggle from "./ThemeToggle";
 import BrandMark from "../ui/BrandMark";
 import { useTranslation } from "../../hooks/useTranslation";
 
@@ -67,8 +68,9 @@ const Navbar = () => {
       zIndex={1000}
       top={0}
       left={0}
-      bg="rgba(246,241,234,0.9)"
-      borderBottom="1px solid rgba(26,24,22,0.08)"
+      bg="brand.nav"
+      borderBottom="1px solid"
+      borderColor="brand.line"
       backdropFilter="blur(16px)"
     >
       <Flex h={{ base: 16, md: 20 }} alignItems="center" justifyContent="space-between" gap={4}>
@@ -79,6 +81,7 @@ const Navbar = () => {
         <Flex alignItems="center" gap={1}>
           <LanguageToggle />
           <FontToggle />
+          <ThemeToggle />
           <IconButton
             display={{ base: "inline-flex", lg: "none" }}
             aria-label="Menu"

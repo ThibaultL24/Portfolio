@@ -11,9 +11,10 @@ const Footer = () => {
       as="footer"
       px={{ base: 4, md: 8 }}
       w="100%"
-      borderTop="1px solid rgba(26,24,22,0.08)"
+      borderTop="1px solid"
+      borderColor="brand.line"
       mt="auto"
-      bg="white"
+      bg="brand.cardBg"
       color="brand.ink"
     >
       <Flex minH={16} py={5} alignItems="center" justifyContent="space-between" gap={4} wrap="wrap">

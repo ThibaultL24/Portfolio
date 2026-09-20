@@ -12,7 +12,7 @@ const SkillsSection = ({ skills }) => {
       </Heading>
       <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={6}>
         {skills.map((skillGroup) => (
-          <Box key={skillGroup.category} p={6} border="1px solid rgba(26,24,22,0.08)" bg="white" borderRadius="16px">
+          <Box key={skillGroup.category} p={6} border="1px solid" borderColor="brand.line" bg="brand.cardBg" borderRadius="16px">
             <Text
               fontSize="sm"
               letterSpacing="0.06em"
@@ -27,7 +27,8 @@ const SkillsSection = ({ skills }) => {
                 <WrapItem key={skill}>
                   <Tag
                     bg="transparent"
-                    border="1px solid rgba(26,24,22,0.14)"
+                    border="1px solid"
+                    borderColor="brand.line"
                     color="brand.ink"
                     borderRadius="999px"
                     px={3}

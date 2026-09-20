@@ -8,7 +8,7 @@ const NeonOutlineBox = ({ children, borderRadius = 0, p = 6, ...props }) => (
     overflow="hidden"
     p={p}
     border="1px solid rgba(17,19,24,0.14)"
-    bg="white"
+    bg="brand.cardBg"
     {...props}
   >
     <Box position="relative" zIndex={3} borderRadius={borderRadius}>

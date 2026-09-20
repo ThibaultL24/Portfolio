@@ -80,7 +80,7 @@ const ProjectDetails = () => {
           </Text>
         </Box>
 
-        <Box overflow="hidden" border="1px solid rgba(26,24,22,0.08)" bg="white" borderRadius="16px">
+        <Box overflow="hidden" border="1px solid" borderColor="brand.line" bg="brand.cardBg" borderRadius="16px">
           {meta.youtube ? (
             <AspectRatio ratio={16 / 9}>
               <iframe src={meta.youtube} title={`${title} demo`} allowFullScreen />
@@ -135,9 +135,10 @@ const ProjectDetails = () => {
                   borderRadius="999px"
                   px={4}
                   py={2}
-                  bg="white"
+                  bg="brand.cardBg"
                   color="brand.ink"
-                  border="1px solid rgba(26,24,22,0.14)"
+                  border="1px solid"
+                  borderColor="brand.line"
                 >
                   {tech.name}
                 </Tag>

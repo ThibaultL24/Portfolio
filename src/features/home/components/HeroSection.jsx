@@ -20,18 +20,29 @@ const HeroSection = () => {
 
   return (
     <Box
-      bg="white"
+      bg="brand.paper"
       color="brand.ink"
       mx={{ base: -4, md: -8, lg: -16 }}
       px={{ base: 4, md: 8, lg: 16 }}
       position="relative"
+      overflow="hidden"
     >
+      <Box
+        display="none"
+        _dark={{ display: "block" }}
+        position="absolute"
+        inset={0}
+        background="radial-gradient(circle at 78% 18%, rgba(94,234,212,0.16), transparent 30%), radial-gradient(circle at 12% 82%, rgba(167,139,250,0.12), transparent 26%)"
+        pointerEvents="none"
+      />
       <Flex
         direction={{ base: "column", lg: "row" }}
         align="center"
         minH={{ lg: "78vh" }}
         gap={{ base: 10, lg: 16 }}
         py={{ base: 10, md: 16 }}
+        position="relative"
+        zIndex={1}
       >
         <VStack align="flex-start" spacing={6} flex="1" maxW={{ lg: "56%" }}>
           <Text

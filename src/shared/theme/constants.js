@@ -1,11 +1,11 @@
 // src/shared/theme/constants.js
 export const COLORS = {
-  INK: "#1a1816",
+  INK: "#111111",
   INK_LIFT: "#2a2622",
   INK_SOFT: "#3d3832",
-  NIGHT: "#1a1816",
-  PAPER: "#f6f1ea",
-  PARCHMENT: "#f6f1ea",
+  NIGHT: "#050505",
+  PAPER: "#ffffff",
+  PARCHMENT: "#ffffff",
   PARCHMENT_MUTED: "#6a635b",
   CYAN: "#2f9e90",
   CYAN_BRIGHT: "#3cb5a6",
@@ -13,14 +13,14 @@ export const COLORS = {
   COPPER: "#2f9e90",
   COPPER_HOT: "#3cb5a6",
   MOSS: "#2f9e90",
-  TEXT_PRIMARY: "#1a1816",
+  TEXT_PRIMARY: "#111111",
   TEXT_SECONDARY: "#5c564f",
-  BORDER: "rgba(26, 24, 22, 0.12)",
+  BORDER: "rgba(17, 17, 17, 0.1)",
   NEON: "#2f9e90",
   NEON_GLOW: "none",
   NEON_GLOW_STRONG: "none",
   NEON_GLOW_WEAK: "none",
-  BACKGROUND: "#f6f1ea",
+  BACKGROUND: "#ffffff",
   CARD_BACKGROUND: "#ffffff",
 };
 

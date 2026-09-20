@@ -6,7 +6,7 @@ const CardImage = ({ src, alt, zoomEffect = false, ...rest }) => (
     src={src}
     alt={alt}
     objectFit="cover"
-    bg="white"
+    bg="brand.cardBg"
     transition="transform 0.5s ease"
     borderTopRadius="inherit"
     {...(zoomEffect && {

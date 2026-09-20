@@ -10,8 +10,9 @@ const Card = ({
 }) => {
   const baseStyles = {
     className: "card",
-    border: "1px solid rgba(26,24,22,0.08)",
-    bg: "white",
+    border: "1px solid",
+    borderColor: "brand.line",
+    bg: "brand.cardBg",
     color: "brand.ink",
     borderRadius,
     transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s",
@@ -20,14 +21,16 @@ const Card = ({
     ...rest,
   };
 
-  const shadowStyles = showShadow ? { boxShadow: "0 16px 36px rgba(26,24,22,0.06)" } : {};
+  const shadowStyles = showShadow
+    ? { boxShadow: { default: "0 16px 36px rgba(17,17,17,0.06)", _dark: "none" } }
+    : {};
 
   const hoverStyles = hoverEffect
     ? {
         _hover: {
           borderColor: "brand.cyan",
           transform: "translateY(-4px)",
-          boxShadow: "0 20px 44px rgba(26,24,22,0.1)",
+          boxShadow: { default: "0 20px 44px rgba(17,17,17,0.1)", _dark: "none" },
           ...rest._hover,
         },
       }
