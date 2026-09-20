@@ -9,7 +9,7 @@ const BrandMark = () => (
     display="flex"
     alignItems="baseline"
     gap={2}
-    _hover={{ opacity: 0.72 }}
+    _hover={{ opacity: 0.86 }}
   >
     <Text
       as="span"
@@ -26,8 +26,7 @@ const BrandMark = () => (
       display={{ base: "none", md: "inline" }}
       fontFamily="'Outfit', sans-serif"
       fontSize="sm"
-      color="brand.ink"
-      opacity={0.5}
+      color="brand.cyan"
     >
       Lenormand
     </Text>

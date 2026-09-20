@@ -53,7 +53,7 @@ const Navbar = () => {
       borderRadius="0"
       borderBottom="1px solid"
       borderColor={isActive(link.to) ? "brand.ink" : "transparent"}
-      _hover={{ bg: "transparent", opacity: 0.62 }}
+      _hover={{ bg: "transparent", color: "brand.cyan" }}
     >
       {link.label}
     </Button>
