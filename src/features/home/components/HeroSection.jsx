@@ -61,7 +61,14 @@ const HeroSection = () => {
           >
             {titleLead}
             {titlePunch && (
-              <Text as="span" display="block" color="brand.cyan">
+              <Text
+                as="span"
+                display="block"
+                color="brand.cyan"
+                fontSize={{ base: "2xl", md: "4xl", xl: "5xl" }}
+                letterSpacing="-0.02em"
+                mt={2}
+              >
                 {titlePunch}
               </Text>
             )}
