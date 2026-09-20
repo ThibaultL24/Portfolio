@@ -113,16 +113,6 @@ a {
   opacity: 0.2;
 }
 
-.pedro-photo {
-  filter: grayscale(1) contrast(1.12);
-  mix-blend-mode: multiply;
-}
-
-.chakra-ui-dark .pedro-photo {
-  mix-blend-mode: normal;
-  filter: grayscale(1) contrast(1.08) brightness(0.88);
-}
-
 .focus-field > * {
   transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
 }
@@ -155,10 +145,5 @@ a {
   .focus-field:hover > * {
     filter: none;
     opacity: 1;
-  }
-  .pedro-photo,
-  .chakra-ui-dark .pedro-photo {
-    filter: none;
-    mix-blend-mode: normal;
   }
 }

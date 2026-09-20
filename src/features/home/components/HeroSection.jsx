@@ -109,7 +109,6 @@ const HeroSection = () => {
             bg="brand.paper"
           >
             <Box
-              className="pedro-photo"
               w="100%"
               h="100%"
               backgroundImage={`url(${profileImg})`}
