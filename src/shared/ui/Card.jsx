@@ -15,7 +15,7 @@ const Card = ({
     bg: "brand.cardBg",
     color: "brand.ink",
     borderRadius,
-    transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s",
+    transition: "border-color 0.2s ease",
     w: "100%",
     overflow: "hidden",
     ...rest,
@@ -28,9 +28,7 @@ const Card = ({
   const hoverStyles = hoverEffect
     ? {
         _hover: {
-          borderColor: "brand.cyan",
-          transform: "translateY(-4px)",
-          boxShadow: { default: "0 20px 44px rgba(17,17,17,0.1)", _dark: "none" },
+          borderColor: "brand.ink",
           ...rest._hover,
         },
       }

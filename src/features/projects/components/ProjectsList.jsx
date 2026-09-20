@@ -28,6 +28,7 @@ const ProjectsList = () => {
         ))}
       </HStack>
       <Grid
+        className="focus-field"
         templateColumns={{
           base: "1fr",
           md: "repeat(2, 1fr)",

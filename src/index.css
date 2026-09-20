@@ -98,6 +98,45 @@ a {
   font-family: var(--font-subtitle);
 }
 
+.film-grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  opacity: 0.16;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.chakra-ui-dark .film-grain {
+  mix-blend-mode: overlay;
+  opacity: 0.2;
+}
+
+.pedro-photo {
+  filter: grayscale(1) contrast(1.12);
+  mix-blend-mode: multiply;
+}
+
+.chakra-ui-dark .pedro-photo {
+  mix-blend-mode: soft-light;
+  filter: grayscale(1) contrast(1.18);
+}
+
+.focus-field > * {
+  transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
+}
+
+.focus-field:hover > * {
+  filter: blur(3px);
+  opacity: 0.42;
+}
+
+.focus-field:hover > *:hover {
+  filter: none;
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 16px;
@@ -112,5 +151,14 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  .focus-field:hover > * {
+    filter: none;
+    opacity: 1;
+  }
+  .pedro-photo,
+  .chakra-ui-dark .pedro-photo {
+    filter: none;
+    mix-blend-mode: normal;
   }
 }

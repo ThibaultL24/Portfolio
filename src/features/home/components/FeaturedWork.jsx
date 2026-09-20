@@ -30,7 +30,7 @@ const FeaturedWork = () => {
           {t("home.selected.more")}
         </Button>
       </Flex>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6}>
+      <SimpleGrid className="focus-field" columns={{ base: 1, md: 3 }} spacing={6}>
         {featured.map((project) => (
           <ProjectCard
             key={project.id}

@@ -19,7 +19,7 @@ const ProfileSection = () => {
     <Grid templateColumns={{ base: "1fr", md: "1fr 1.6fr" }} gap={10} py={4}>
       <GridItem>
         <Card hoverEffect={false}>
-          <CardImage src={profileImg} alt="Thibault Lenormand" w="full" />
+          <CardImage className="pedro-photo" src={profileImg} alt="Thibault Lenormand" w="full" />
         </Card>
       </GridItem>
       <GridItem>
