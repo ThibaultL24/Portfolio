@@ -1,11 +1,12 @@
 export const home = {
-  kicker: "Avignon · Full stack",
-  title: "Thibault Lenormand",
-  subtitle: "Développeur full stack",
+  kicker: "Thibault Lenormand · Avignon",
+  title: "Des sites et des produits\nqui se tiennent.",
+  subtitle: "Pour indépendants, cabinets et studios.",
   description:
-    "Je construis des sites et des produits avec la même exigence que j’écris : clarté, rythme, matière. Du site de cabinet au studio visuel, de la gazette locale au graphe de confiance.",
-  ctaProjects: "Voir les projets",
-  ctaContact: "Travailler ensemble",
+    "Je conçois, développe et mets en ligne. Du site vitrine à l’outil métier, avec le même soin que j’écris.",
+  offers: ["Sites", "Produits", "Textes"],
+  ctaProjects: "Voir le travail",
+  ctaContact: "Parler d’un projet",
   downloadCV: "Télécharger CV",
   selected: {
     kicker: "Sélection",

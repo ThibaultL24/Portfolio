@@ -17,6 +17,9 @@ import { useTranslation } from "../../../hooks/useTranslation";
 
 const HeroSection = () => {
   const { t } = useTranslation();
+  const title = t("home.title");
+  const [titleLead, titlePunch] = String(title).split("\n");
+  const offers = t("home.offers");
 
   return (
     <Box
@@ -36,7 +39,7 @@ const HeroSection = () => {
         position="relative"
         zIndex={1}
       >
-        <VStack align="flex-start" spacing={6} flex="1" maxW={{ lg: "56%" }}>
+        <VStack align="flex-start" spacing={6} flex="1" maxW={{ lg: "58%" }}>
           <Text
             className="font-subtitle"
             fontFamily="'Outfit', sans-serif"
@@ -50,24 +53,24 @@ const HeroSection = () => {
           <Heading
             as="h1"
             fontFamily="'Syne', sans-serif"
-            fontSize={{ base: "5xl", md: "7xl", xl: "8xl" }}
+            fontSize={{ base: "4xl", md: "6xl", xl: "7xl" }}
             fontWeight="600"
-            lineHeight="0.95"
+            lineHeight="0.98"
             letterSpacing="-0.03em"
             color="brand.ink"
           >
-            Thibault
-            <Text as="span" display="block">
-              Lenormand
-            </Text>
+            {titleLead}
+            {titlePunch && (
+              <Text as="span" display="block" color="brand.cyan">
+                {titlePunch}
+              </Text>
+            )}
           </Heading>
-          <Box h="2px" w="48px" bg="brand.cyan" />
           <Text
             className="font-subtitle"
             fontFamily="'Outfit', sans-serif"
             fontSize={{ base: "xl", md: "2xl" }}
             color="brand.ink"
-            opacity={0.72}
             fontWeight="500"
           >
             {t("home.subtitle")}
@@ -75,12 +78,30 @@ const HeroSection = () => {
           <Text fontSize={{ base: "md", md: "lg" }} color="brand.ink" opacity={0.7} maxW="540px" lineHeight="1.8">
             {t("home.description")}
           </Text>
-          <HStack spacing={4} pt={2} wrap="wrap">
-            <Button as={RouterLink} to="/projects" variant="solid" size="lg">
-              {t("home.ctaProjects")}
-            </Button>
-            <Button as={RouterLink} to="/contact" variant="outline" size="lg">
+          {Array.isArray(offers) && (
+            <HStack spacing={2} wrap="wrap">
+              {offers.map((offer) => (
+                <Text
+                  key={offer}
+                  px={3}
+                  py={1}
+                  border="1px solid"
+                  borderColor="brand.line"
+                  borderRadius="999px"
+                  fontSize="sm"
+                  fontWeight="600"
+                >
+                  {offer}
+                </Text>
+              ))}
+            </HStack>
+          )}
+          <HStack spacing={4} pt={1} wrap="wrap">
+            <Button as={RouterLink} to="/contact" variant="solid" size="lg">
               {t("home.ctaContact")}
+            </Button>
+            <Button as={RouterLink} to="/projects" variant="outline" size="lg">
+              {t("home.ctaProjects")}
             </Button>
           </HStack>
           <HStack spacing={5} pt={1}>
