@@ -27,7 +27,6 @@ import CardImage from "../../../shared/ui/CardImage";
 import { useState } from "react";
 import { FaBook, FaUser } from "react-icons/fa";
 import { useTranslation } from "../../../hooks/useTranslation";
-import NeonBeamDivider from "../../../shared/components/NeonBeamDivider";
 import patteAPatte from "../../../assets/img/patte/patte_a_patte.svg";
 import patte from "../../../assets/img/patte/patte.svg";
 import oiseau from "../../../assets/img/patte/oiseau.svg";
@@ -92,43 +91,42 @@ const CreationsContent = () => {
 
   return (
     <Tabs variant="line" colorScheme="gray">
-      <TabList
-        sx={{
-          borderBottom: "none",
-        }}
-      >
+      <TabList borderBottom="none">
         <Tab
+          borderBottom="none"
           _selected={{
-            color: "brand.cyan",
-            borderColor: "brand.cyan",
-            mb: "4px",
+            color: "brand.ink",
+            fontWeight: "600",
+            borderColor: "transparent",
+            opacity: 1,
           }}
           color="brand.ink"
           opacity={0.55}
           _hover={{
-            color: "brand.cyan",
+            color: "brand.ink",
             opacity: 1,
           }}
         >
           {t("creations.tabs.visuals")}
         </Tab>
         <Tab
+          borderBottom="none"
           _selected={{
-            color: "brand.cyan",
-            borderColor: "brand.cyan",
-            mb: "4px",
+            color: "brand.ink",
+            fontWeight: "600",
+            borderColor: "transparent",
+            opacity: 1,
           }}
           color="brand.ink"
           opacity={0.55}
           _hover={{
-            color: "brand.cyan",
+            color: "brand.ink",
             opacity: 1,
           }}
         >
           {t("creations.tabs.texts")}
         </Tab>
       </TabList>
-      <NeonBeamDivider my={2} />
 
       <TabPanels mt={8}>
         {/* Panel Visuels */}
