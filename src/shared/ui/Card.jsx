@@ -5,32 +5,29 @@ const Card = ({
   children,
   hoverEffect = true,
   showShadow = true,
-  borderRadius = "22px",
+  borderRadius = "0",
   ...rest
 }) => {
   const baseStyles = {
     className: "card",
-    border: "1px solid rgba(201,163,106,0.16)",
-    bg: "rgba(20, 17, 14, 0.86)",
-    color: "brand.parchment",
+    border: "1px solid rgba(17,19,24,0.14)",
+    bg: "white",
+    color: "brand.ink",
     borderRadius,
-    transition:
-      "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease, border-color 0.3s",
+    transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s",
     w: "100%",
     overflow: "hidden",
     ...rest,
   };
 
-  const shadowStyles = showShadow
-    ? { boxShadow: "0 18px 50px rgba(0,0,0,0.28)" }
-    : {};
+  const shadowStyles = showShadow ? { boxShadow: "0 14px 36px rgba(17,19,24,0.08)" } : {};
 
   const hoverStyles = hoverEffect
     ? {
         _hover: {
-          borderColor: "rgba(201,163,106,0.45)",
-          transform: "translateY(-6px)",
-          boxShadow: "0 28px 70px rgba(201,163,106,0.12)",
+          borderColor: "brand.cyan",
+          transform: "translateY(-4px)",
+          boxShadow: "0 18px 40px rgba(17,19,24,0.12)",
           ...rest._hover,
         },
       }

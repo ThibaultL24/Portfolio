@@ -1,20 +1,19 @@
 /* src/index.css */
 @import url("https://fonts.cdnfonts.com/css/opendyslexic");
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Michroma&family=Teko:wght@400;500;600;700&display=swap");
 
 :root {
-  --ink: #0e0c0a;
-  --ink-lift: #171410;
-  --parchment: #f4ece1;
-  --parchment-muted: #c9bfb0;
-  --copper: #c9a36a;
-  --copper-hot: #e4c48a;
-  --moss: #7d9b8c;
-  font-family: "Outfit", system-ui, sans-serif;
+  --ink: #111318;
+  --night: #050505;
+  --paper: #f4f4f2;
+  --cyan: #4eead5;
+  --cyan-bright: #70fff0;
+  --magenta: #d100ff;
+  font-family: "Inter", system-ui, sans-serif;
   line-height: 1.6;
   font-weight: 400;
-  color-scheme: dark;
-  color: var(--parchment);
+  color-scheme: light;
+  color: var(--ink);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -44,7 +43,7 @@ html {
 body {
   min-width: 100%;
   min-height: 100vh;
-  background: var(--ink);
+  background: var(--paper);
 }
 
 a {
@@ -54,8 +53,8 @@ a {
 }
 
 ::selection {
-  background: rgba(201, 163, 106, 0.35);
-  color: var(--parchment);
+  background: var(--cyan);
+  color: var(--night);
 }
 
 .font-opendyslexic p,
@@ -65,20 +64,48 @@ a {
   word-spacing: 2px;
 }
 
-.font-montserrat,
-.font-outfit {
-  letter-spacing: 0.01em;
-  line-height: 1.65;
+.font-inter h1,
+.font-inter h2,
+.font-inter h3 {
+  font-family: "Teko", sans-serif;
 }
 
-.grain-overlay {
+.grid-overlay {
   pointer-events: none;
   position: fixed;
   inset: 0;
   z-index: 2;
-  opacity: 0.09;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.12;
+  background-image: linear-gradient(rgba(17, 19, 24, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 19, 24, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at 50% 0%, black, transparent 70%);
+}
+
+.sketch-frame {
+  position: relative;
+}
+
+.sketch-frame::after {
+  content: "";
+  position: absolute;
+  inset: -6px -8px;
+  border: 3px solid rgba(17, 19, 24, 0.88);
+  transform: rotate(-0.8deg);
+  pointer-events: none;
+}
+
+.sketch-frame.is-light::after {
+  border-color: rgba(244, 244, 242, 0.92);
+}
+
+.sketch-frame.is-light::before {
+  content: "";
+  position: absolute;
+  inset: -12px -2px;
+  border: 1px solid rgba(209, 0, 255, 0.55);
+  transform: rotate(1.1deg);
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {

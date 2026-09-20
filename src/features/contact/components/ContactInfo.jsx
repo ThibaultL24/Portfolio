@@ -14,65 +14,41 @@ const ContactInfo = () => {
 
   return (
     <VStack spacing={8} align="flex-start">
-      <Heading as="h2" fontSize="2xl">
+      <Heading as="h2" fontSize="3xl" color="brand.ink">
         {t("contact.info.title")}
       </Heading>
       <VStack spacing={6} align="flex-start" w="full">
         <HStack spacing={4}>
-          <Box p={3} border="1px solid rgba(201,163,106,0.25)" borderRadius="full">
-            <Icon as={FaEnvelope} w={4} h={4} color="brand.copper" />
+          <Box p={3} border="1px solid rgba(17,19,24,0.18)">
+            <Icon as={FaEnvelope} w={4} h={4} color="brand.cyan" />
           </Box>
           <VStack align="flex-start" spacing={0}>
-            <Text fontSize="sm" color="brand.copper">
+            <Text fontSize="sm" color="brand.cyan">
               {t("contact.info.email")}
             </Text>
-            <Text color="brand.parchment">thibault.lenormand24@gmail.com</Text>
+            <Text color="brand.ink">thibault.lenormand24@gmail.com</Text>
           </VStack>
         </HStack>
         <HStack spacing={4}>
-          <Box p={3} border="1px solid rgba(201,163,106,0.25)" borderRadius="full">
-            <Icon as={FaMapMarkerAlt} w={4} h={4} color="brand.copper" />
+          <Box p={3} border="1px solid rgba(17,19,24,0.18)">
+            <Icon as={FaMapMarkerAlt} w={4} h={4} color="brand.cyan" />
           </Box>
           <VStack align="flex-start" spacing={0}>
-            <Text fontSize="sm" color="brand.copper">
+            <Text fontSize="sm" color="brand.cyan">
               {t("contact.info.location")}
             </Text>
-            <Text color="brand.parchment">Avignon, France</Text>
+            <Text color="brand.ink">Avignon, France</Text>
           </VStack>
         </HStack>
       </VStack>
       <HStack spacing={3} wrap="wrap">
-        <Button
-          as="a"
-          href="https://github.com/ThibaultL24"
-          target="_blank"
-          rel="noreferrer"
-          leftIcon={<FaGithub />}
-          variant="outline"
-          size="sm"
-        >
+        <Button as="a" href="https://github.com/ThibaultL24" target="_blank" rel="noreferrer" leftIcon={<FaGithub />} variant="outline" size="sm">
           GitHub
         </Button>
-        <Button
-          as="a"
-          href="https://www.linkedin.com/in/thibault-lenormand-b38b96268/"
-          target="_blank"
-          rel="noreferrer"
-          leftIcon={<FaLinkedin />}
-          variant="outline"
-          size="sm"
-        >
+        <Button as="a" href="https://www.linkedin.com/in/thibault-lenormand-b38b96268/" target="_blank" rel="noreferrer" leftIcon={<FaLinkedin />} variant="outline" size="sm">
           LinkedIn
         </Button>
-        <Button
-          as="a"
-          href="https://x.com/ThibaultLENORM2"
-          target="_blank"
-          rel="noreferrer"
-          leftIcon={<FaTwitter />}
-          variant="outline"
-          size="sm"
-        >
+        <Button as="a" href="https://x.com/ThibaultLENORM2" target="_blank" rel="noreferrer" leftIcon={<FaTwitter />} variant="outline" size="sm">
           X
         </Button>
       </HStack>

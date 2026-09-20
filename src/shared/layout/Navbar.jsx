@@ -44,20 +44,15 @@ const Navbar = () => {
       px={3}
       h="auto"
       py={2}
-      fontWeight="400"
-      fontSize="sm"
-      letterSpacing="0.08em"
+      fontWeight="700"
+      fontSize="11px"
+      letterSpacing="0.26em"
       textTransform="uppercase"
-      color={isActive(link.to) ? "brand.copper" : "brand.parchment"}
-      opacity={isActive(link.to) ? 1 : 0.72}
+      color={isActive(link.to) ? "brand.cyan" : "white"}
       borderRadius="0"
       borderBottom="1px solid"
-      borderColor={isActive(link.to) ? "brand.copper" : "transparent"}
-      _hover={{
-        bg: "transparent",
-        color: "brand.copper",
-        opacity: 1,
-      }}
+      borderColor={isActive(link.to) ? "brand.cyan" : "transparent"}
+      _hover={{ bg: "transparent", color: "brand.cyanBright" }}
     >
       {link.label}
     </Button>
@@ -72,17 +67,13 @@ const Navbar = () => {
       zIndex={1000}
       top={0}
       left={0}
-      bg="rgba(14, 12, 10, 0.72)"
-      borderBottom="1px solid rgba(201,163,106,0.12)"
+      bg="rgba(5,5,5,0.88)"
+      borderBottom="1px solid rgba(255,255,255,0.12)"
       backdropFilter="blur(16px)"
     >
-      <Flex h={16} alignItems="center" justifyContent="space-between" gap={4}>
+      <Flex h={{ base: 16, md: 20 }} alignItems="center" justifyContent="space-between" gap={4}>
         <BrandMark />
-        <Stack
-          direction="row"
-          spacing={1}
-          display={{ base: "none", lg: "flex" }}
-        >
+        <Stack direction="row" spacing={1} display={{ base: "none", lg: "flex" }}>
           {navLinks.map((link) => linkButton(link))}
         </Stack>
         <Flex alignItems="center" gap={1}>
@@ -93,14 +84,14 @@ const Navbar = () => {
             aria-label="Menu"
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             variant="ghost"
-            color="brand.parchment"
+            color="white"
             onClick={isOpen ? onClose : onOpen}
           />
         </Flex>
       </Flex>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
-        <DrawerOverlay bg="rgba(14,12,10,0.6)" />
-        <DrawerContent bg="#0e0c0a" maxW="280px">
+        <DrawerOverlay bg="rgba(5,5,5,0.6)" />
+        <DrawerContent bg="#050505" maxW="280px">
           <DrawerBody pt={20}>
             <Stack spacing={4} align="flex-start">
               {navLinks.map((link) => linkButton(link, onClose))}

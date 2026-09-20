@@ -7,7 +7,7 @@ const EducationSection = ({ education }) => {
 
   return (
     <Box py={6}>
-      <Heading as="h2" fontSize="3xl" mb={8}>
+      <Heading as="h2" fontSize="4xl" mb={8} color="brand.ink">
         {t("about.skills.educationTitle")}
       </Heading>
       <VStack spacing={0} align="stretch">
@@ -17,21 +17,18 @@ const EducationSection = ({ education }) => {
             direction={{ base: "column", md: "row" }}
             gap={6}
             py={6}
-            borderTop="1px solid rgba(201,163,106,0.14)"
+            borderTop="1px solid rgba(17,19,24,0.12)"
           >
-            <Text
-              minW="140px"
-              fontFamily="'IBM Plex Mono', monospace"
-              fontSize="sm"
-              color="brand.copper"
-            >
+            <Text minW="140px" fontFamily="'Michroma', sans-serif" fontSize="10px" color="brand.cyan">
               {edu.period}
             </Text>
             <Box>
-              <Heading as="h3" fontSize="xl" mb={1} color="brand.parchment">
+              <Heading as="h3" fontSize="2xl" mb={1} color="brand.ink">
                 {edu.degree}
               </Heading>
-              <Text color="rgba(244,236,225,0.7)">{edu.school}</Text>
+              <Text color="brand.ink" opacity={0.7}>
+                {edu.school}
+              </Text>
             </Box>
           </Flex>
         ))}

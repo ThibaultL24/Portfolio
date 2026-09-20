@@ -27,56 +27,41 @@ const TrustSection = () => {
       <Flex direction={{ base: "column", md: "row" }} align="flex-start" gap={12}>
         <Box flex="1">
           <Text
-            fontFamily="'IBM Plex Mono', monospace"
-            fontSize="xs"
-            letterSpacing="0.28em"
+            fontFamily="'Michroma', sans-serif"
+            fontSize="9px"
+            letterSpacing="0.3em"
             textTransform="uppercase"
-            color="brand.copper"
+            color="brand.cyan"
             mb={3}
           >
             Intuition
           </Text>
-          <Heading as="h2" fontSize={{ base: "3xl", md: "4xl" }} mb={8}>
+          <Heading as="h2" fontSize={{ base: "4xl", md: "5xl" }} mb={8} color="brand.ink">
             {t("home.trust.title")}
           </Heading>
           <VStack align="flex-start" spacing={6}>
             <Text className="intro" fontSize="lg">
-              {t("home.trust.intro.part1")} <b>Intuition</b>{" "}
-              {t("home.trust.intro.part2")}
-              <Badge
-                mx={1}
-                bg="rgba(201,163,106,0.15)"
-                color="brand.copper"
-                borderRadius="full"
-                px={2}
-              >
+              {t("home.trust.intro.part1")} <b>Intuition</b> {t("home.trust.intro.part2")}
+              <Badge mx={1} bg="rgba(78,234,213,0.18)" color="brand.ink" borderRadius="0" px={2}>
                 {t("home.trust.ambassador")}
               </Badge>{" "}
               {t("home.trust.intro.part3")}
             </Text>
             <Text fontSize="lg">{t("home.trust.projectsTitle")}</Text>
             <VStack align="flex-start" spacing={4}>
-              <Box
-                cursor="pointer"
-                onClick={() => navigate("/projects/3")}
-                _hover={{ color: "brand.copper" }}
-              >
-                <Text fontWeight="500" fontSize="lg" mb={1} color="brand.parchment">
+              <Box cursor="pointer" onClick={() => navigate("/projects/3")} _hover={{ color: "brand.cyan" }}>
+                <Text fontWeight="600" fontSize="lg" mb={1} color="brand.ink">
                   {t("home.trust.projects.decentrep.title")}
                 </Text>
-                <Text fontSize="md" color="rgba(244,236,225,0.65)">
+                <Text fontSize="md" color="brand.ink" opacity={0.65}>
                   {t("home.trust.projects.decentrep.desc")}
                 </Text>
               </Box>
-              <Box
-                cursor="pointer"
-                onClick={() => navigate("/projects/2")}
-                _hover={{ color: "brand.copper" }}
-              >
-                <Text fontWeight="500" fontSize="lg" mb={1} color="brand.parchment">
+              <Box cursor="pointer" onClick={() => navigate("/projects/2")} _hover={{ color: "brand.cyan" }}>
+                <Text fontWeight="600" fontSize="lg" mb={1} color="brand.ink">
                   {t("home.trust.projects.i7n.title")}
                 </Text>
-                <Text fontSize="md" color="rgba(244,236,225,0.65)">
+                <Text fontSize="md" color="brand.ink" opacity={0.65}>
                   {t("home.trust.projects.i7n.desc")}
                 </Text>
               </Box>
@@ -89,15 +74,8 @@ const TrustSection = () => {
 
         <Card w={{ base: "100%", md: "380px" }} p={8}>
           <Box mb={6}>
-            <Image
-              src={intuitionLogo}
-              alt="Intuition"
-              boxSize="56px"
-              borderRadius="md"
-              objectFit="cover"
-              mb={4}
-            />
-            <Text fontWeight="500" fontSize="lg" mb={2} color="brand.parchment">
+            <Image src={intuitionLogo} alt="Intuition" boxSize="56px" objectFit="cover" mb={4} />
+            <Text fontWeight="600" fontSize="lg" mb={2} color="brand.ink">
               Intuition
             </Text>
             <HStack spacing={4}>
@@ -109,7 +87,7 @@ const TrustSection = () => {
               </Link>
             </HStack>
           </Box>
-          <Text fontSize="md" color="rgba(244,236,225,0.7)" mb={8} fontStyle="italic">
+          <Text fontSize="md" color="brand.ink" opacity={0.7} mb={8} fontStyle="italic">
             {t("home.trust.articleQuote")}
           </Text>
           <Button

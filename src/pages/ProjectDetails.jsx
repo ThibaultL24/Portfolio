@@ -64,7 +64,7 @@ const ProjectDetails = () => {
           <HStack
             spacing={4}
             mb={4}
-            fontFamily="'IBM Plex Mono', monospace"
+            fontFamily="'Michroma', sans-serif"
             fontSize="xs"
             letterSpacing="0.2em"
             textTransform="uppercase"
@@ -76,12 +76,12 @@ const ProjectDetails = () => {
           <Heading as="h1" fontSize={{ base: "4xl", md: "5xl" }} mb={6}>
             {title}
           </Heading>
-          <Text fontSize="lg" whiteSpace="pre-line" color="rgba(244,236,225,0.78)" lineHeight="1.85">
+          <Text fontSize="lg" whiteSpace="pre-line" color="brand.ink" lineHeight="1.85">
             {renderDescription(longDescription)}
           </Text>
         </Box>
 
-        <Box borderRadius="22px" overflow="hidden" border="1px solid rgba(201,163,106,0.16)">
+        <Box overflow="hidden" border="1px solid rgba(17,19,24,0.14)" bg="white">
           {meta.youtube ? (
             <AspectRatio ratio={16 / 9}>
               <iframe src={meta.youtube} title={`${title} demo`} allowFullScreen />
@@ -105,7 +105,7 @@ const ProjectDetails = () => {
               showStatus={false}
             >
               {meta.images.map((image, index) => (
-                <Box key={index} bg="#171410">
+                <Box key={index} bg="#050505">
                   <img
                     src={image}
                     alt={`${title} - ${index + 1}`}
@@ -133,12 +133,12 @@ const ProjectDetails = () => {
                 <Tag
                   key={index}
                   size="lg"
-                  borderRadius="full"
+                  borderRadius="0"
                   px={4}
                   py={2}
-                  bg="rgba(201,163,106,0.1)"
-                  color="brand.parchment"
-                  border="1px solid rgba(201,163,106,0.25)"
+                  bg="white"
+                  color="brand.ink"
+                  border="1px solid rgba(17,19,24,0.18)"
                 >
                   {tech.name}
                 </Tag>
@@ -153,7 +153,7 @@ const ProjectDetails = () => {
           <VStack align="start" spacing={1}>
             {Array.isArray(authors) &&
               authors.map((author, index) => (
-                <Text key={index} color="rgba(244,236,225,0.75)">
+                <Text key={index} color="brand.ink" opacity={0.7}>
                   {author}
                 </Text>
               ))}

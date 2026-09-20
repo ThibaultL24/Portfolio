@@ -10,7 +10,7 @@ const FeaturedWork = () => {
   const featured = PROJECT_CATALOG.filter((project) => project.featured);
 
   return (
-    <Box py={{ base: 10, md: 16 }}>
+    <Box py={{ base: 12, md: 20 }} bg="white" mx={{ base: -4, md: -8, lg: -16 }} px={{ base: 4, md: 8, lg: 16 }}>
       <Flex
         justify="space-between"
         align={{ base: "flex-start", md: "end" }}
@@ -20,16 +20,16 @@ const FeaturedWork = () => {
       >
         <Box>
           <Text
-            fontFamily="'IBM Plex Mono', monospace"
-            fontSize="xs"
-            letterSpacing="0.28em"
+            fontFamily="'Michroma', sans-serif"
+            fontSize="9px"
+            letterSpacing="0.3em"
             textTransform="uppercase"
-            color="brand.copper"
+            color="brand.cyan"
             mb={2}
           >
             {t("home.selected.kicker")}
           </Text>
-          <Heading as="h2" fontSize={{ base: "3xl", md: "5xl" }} fontWeight="500">
+          <Heading as="h2" fontSize={{ base: "4xl", md: "6xl" }} fontWeight="500" color="brand.ink">
             {t("home.selected.title")}
           </Heading>
         </Box>
@@ -37,7 +37,7 @@ const FeaturedWork = () => {
           {t("home.selected.more")}
         </Button>
       </Flex>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
+      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6}>
         {featured.map((project) => (
           <ProjectCard
             key={project.id}

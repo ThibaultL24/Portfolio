@@ -13,12 +13,14 @@ const MainLayout = ({ children }) => {
     <Flex
       direction="column"
       minH="100vh"
-      className={isOpenDyslexic ? "font-opendyslexic" : "font-outfit"}
+      bg="brand.paper"
+      color="brand.ink"
+      className={isOpenDyslexic ? "font-opendyslexic" : "font-inter"}
       lang={isEnglish ? "en" : "fr"}
     >
-      <div className="grain-overlay" />
+      <div className="grid-overlay" />
       <Navbar />
-      <Box as="main" pt="72px" flex="1" position="relative" zIndex={1}>
+      <Box as="main" pt={{ base: "64px", md: "80px" }} flex="1" position="relative" zIndex={1}>
         {children}
       </Box>
       <Footer />

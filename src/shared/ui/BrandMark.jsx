@@ -9,29 +9,29 @@ const BrandMark = () => (
     display="flex"
     alignItems="baseline"
     gap={3}
-    _hover={{ opacity: 0.86 }}
+    _hover={{ opacity: 0.82 }}
   >
     <Text
       as="span"
-      fontFamily="'Fraunces', serif"
-      fontStyle="italic"
-      fontSize="xl"
-      color="brand.copper"
-      letterSpacing="-0.04em"
+      fontFamily="'Teko', sans-serif"
+      fontSize="3xl"
+      lineHeight="1"
+      color="brand.cyan"
+      letterSpacing="0.04em"
+      textTransform="uppercase"
     >
       TL
     </Text>
     <Text
       as="span"
       display={{ base: "none", md: "inline" }}
-      fontFamily="'IBM Plex Mono', monospace"
-      fontSize="11px"
-      letterSpacing="0.22em"
+      fontFamily="'Michroma', sans-serif"
+      fontSize="9px"
+      letterSpacing="0.28em"
       textTransform="uppercase"
-      color="brand.parchment"
-      opacity={0.55}
+      color="white"
     >
-      Atelier
+      Studio
     </Text>
   </Box>
 );

@@ -52,7 +52,7 @@ const ProjectsList = () => {
         ))}
       </Grid>
       {visible.length === 0 && (
-        <Text color="rgba(244,236,225,0.55)">—</Text>
+        <Text color="brand.ink" opacity={0.45}>—</Text>
       )}
     </VStack>
   );

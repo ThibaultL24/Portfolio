@@ -28,7 +28,7 @@ const ProfileSection = () => {
             <Text
               key={key}
               fontSize="md"
-              color="rgba(244,236,225,0.78)"
+              color="brand.ink"
               lineHeight="1.85"
             >
               {t(`about.profile.${key}`)}

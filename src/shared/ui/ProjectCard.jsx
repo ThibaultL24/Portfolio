@@ -21,13 +21,8 @@ const ProjectCard = ({
   const navigate = useNavigate();
 
   return (
-    <Card
-      as="article"
-      cursor="pointer"
-      onClick={() => navigate(`/projects/${projectId}`)}
-      h="100%"
-    >
-      <Box h={featured ? "280px" : "200px"} overflow="hidden">
+    <Card as="article" cursor="pointer" onClick={() => navigate(`/projects/${projectId}`)} h="100%">
+      <Box h={featured ? "260px" : "200px"} overflow="hidden">
         {imageSrc ? (
           <CardImage src={imageSrc} alt={title} h="100%" w="100%" />
         ) : (
@@ -39,34 +34,35 @@ const ProjectCard = ({
           justify="space-between"
           align="center"
           mb={3}
-          fontFamily="'IBM Plex Mono', monospace"
-          fontSize="11px"
+          fontFamily="'Michroma', sans-serif"
+          fontSize="9px"
           letterSpacing="0.18em"
           textTransform="uppercase"
-          color="brand.copper"
+          color="brand.cyan"
         >
           <Text as="span">{year}</Text>
           <Text as="span">{t(`projects.filters.${category}`, category)}</Text>
         </Flex>
         <Text
           as="h3"
-          fontFamily="'Fraunces', serif"
+          fontFamily="'Teko', sans-serif"
           fontWeight="500"
-          fontSize={featured ? "2xl" : "xl"}
-          mb={3}
-          color="brand.parchment"
+          fontSize={featured ? "3xl" : "2xl"}
+          mb={2}
+          color="brand.ink"
+          textTransform="uppercase"
         >
           {title}
         </Text>
-        <Text fontSize="sm" mb={5} color="rgba(244,236,225,0.68)" noOfLines={3}>
+        <Text fontSize="sm" mb={5} color="brand.ink" opacity={0.68} noOfLines={3} textTransform="none">
           {description}
         </Text>
         <Text
-          fontFamily="'IBM Plex Mono', monospace"
-          fontSize="xs"
-          letterSpacing="0.14em"
+          fontFamily="'Michroma', sans-serif"
+          fontSize="9px"
+          letterSpacing="0.16em"
           textTransform="uppercase"
-          color="brand.copper"
+          color="brand.ink"
         >
           {t("projects.viewDetails")} →
         </Text>

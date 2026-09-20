@@ -99,26 +99,30 @@ const CreationsContent = () => {
       >
         <Tab
           _selected={{
-            color: "brand.copper",
-            borderColor: "brand.copper",
+            color: "brand.cyan",
+            borderColor: "brand.cyan",
             mb: "4px",
           }}
-          color="rgba(244,236,225,0.55)"
+          color="brand.ink"
+          opacity={0.55}
           _hover={{
-            color: "brand.copper",
+            color: "brand.cyan",
+            opacity: 1,
           }}
         >
           {t("creations.tabs.visuals")}
         </Tab>
         <Tab
           _selected={{
-            color: "brand.copper",
-            borderColor: "brand.copper",
+            color: "brand.cyan",
+            borderColor: "brand.cyan",
             mb: "4px",
           }}
-          color="rgba(244,236,225,0.55)"
+          color="brand.ink"
+          opacity={0.55}
           _hover={{
-            color: "brand.copper",
+            color: "brand.cyan",
+            opacity: 1,
           }}
         >
           {t("creations.tabs.texts")}
@@ -130,7 +134,7 @@ const CreationsContent = () => {
         {/* Panel Visuels */}
         <TabPanel p={0}>
           <VStack spacing={8} align="stretch">
-            <Text fontSize="lg" color="gray.300">
+            <Text fontSize="lg" color="brand.ink" opacity={0.7}>
               {t("creations.visuals.description")}
             </Text>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
@@ -154,15 +158,7 @@ const CreationsContent = () => {
                     </Heading>
                     <Button
                       mt={2}
-                      colorScheme="black"
                       variant="outline"
-                      borderColor="brand.copper"
-                      color="brand.copper"
-                      _hover={{
-                        bg: "transparent",
-                        color: "brand.parchment",
-                        borderColor: "brand.copperHot",
-                      }}
                       onClick={() => handleVisualClick(item)}
                     >
                       {t("creations.visuals.viewDetail")}
@@ -180,20 +176,21 @@ const CreationsContent = () => {
           >
             <ModalOverlay />
             <ModalContent
-              bg="#0e0c0a"
-              color="brand.parchment"
+              bg="white"
+              color="brand.ink"
               border="1px solid"
-              borderColor="rgba(201,163,106,0.3)"
+              borderColor="rgba(17,19,24,0.14)"
+              borderRadius="0"
               maxW="90vw"
             >
-              <ModalHeader color="brand.copper" textAlign="center">
+              <ModalHeader color="brand.ink" textAlign="center">
                 {selectedVisual
                   ? t(`creations.visuals.titles.${selectedVisual.titleKey}`)
                   : ""}
               </ModalHeader>
               <ModalCloseButton
-                color="brand.copper"
-                _hover={{ bg: "whiteAlpha.100", color: "white" }}
+                color="brand.ink"
+                _hover={{ bg: "blackAlpha.50", color: "brand.cyan" }}
                 onClick={() => setSelectedVisual(null)}
               />
               <ModalBody
@@ -236,23 +233,24 @@ const CreationsContent = () => {
                     variant="outline"
                     cursor="pointer"
                     onClick={() => setSelectedCategory(category.id)}
-                    bg="transparent"
-                    color={isSelected ? "brand.copper" : "brand.parchment"}
-                    borderColor="rgba(201,163,106,0.4)"
+                    bg={isSelected ? "brand.cyan" : "white"}
+                    color={isSelected ? "brand.night" : "brand.ink"}
+                    borderColor="rgba(17,19,24,0.18)"
+                    borderRadius="0"
                     fontWeight={isSelected ? "bold" : "normal"}
                     fontSize="md"
                     px={6}
                     py={2}
                     _hover={{
-                      color: "brand.copper",
-                      borderColor: "brand.copper",
+                      color: isSelected ? "brand.night" : "brand.cyan",
+                      borderColor: "brand.cyan",
                     }}
                     transition="all 0.2s"
                   >
                     {category.icon && (
                       <TagLeftIcon
                         as={category.icon}
-                        color={isSelected ? "brand.copper" : "brand.parchment"}
+                        color={isSelected ? "brand.night" : "brand.ink"}
                       />
                     )}
                     <TagLabel>
@@ -302,30 +300,31 @@ const CreationsContent = () => {
       <Modal isOpen={isOpen} onClose={onClose} size="xl">
         <ModalOverlay />
         <ModalContent
-          bg="#0e0c0a"
-          color="brand.parchment"
+          bg="white"
+          color="brand.ink"
           border="1px solid"
-          borderColor="rgba(201,163,106,0.3)"
+          borderColor="rgba(17,19,24,0.14)"
+          borderRadius="0"
         >
-          <ModalHeader color="brand.copper">
+          <ModalHeader color="brand.ink">
             {selectedText
               ? t(`creations.texts.entries.${selectedText.entryKey}.title`)
               : ""}
           </ModalHeader>
           <ModalCloseButton
-            color="brand.copper"
-            _hover={{ bg: "whiteAlpha.100", color: "white" }}
+            color="brand.ink"
+            _hover={{ bg: "blackAlpha.50", color: "brand.cyan" }}
           />
           <ModalBody pb={6}>
             {selectedText &&
               t(`creations.texts.entries.${selectedText.entryKey}.intro`) !==
                 `creations.texts.entries.${selectedText.entryKey}.intro` && (
-                <Text fontStyle="italic" color="gray.400" mb={4}>
+                <Text fontStyle="italic" color="brand.ink" opacity={0.6} mb={4}>
                   {t(`creations.texts.entries.${selectedText.entryKey}.intro`)}
                 </Text>
               )}
             {selectedText && (
-              <Text whiteSpace="pre-wrap" color="gray.300">
+              <Text whiteSpace="pre-wrap" color="brand.ink" opacity={0.8}>
                 {t(`creations.texts.entries.${selectedText.entryKey}.content`)}
               </Text>
             )}

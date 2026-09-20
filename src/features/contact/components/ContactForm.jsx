@@ -51,20 +51,16 @@ const ContactForm = () => {
   };
 
   const fieldStyle = {
-    bg: "rgba(20,17,14,0.8)",
-    borderColor: "rgba(201,163,106,0.25)",
-    color: "brand.parchment",
-    _hover: { borderColor: "brand.copper" },
-    _focus: { borderColor: "brand.copper", boxShadow: "0 0 0 1px #c9a36a" },
+    bg: "white",
+    borderColor: "rgba(17,19,24,0.18)",
+    color: "brand.ink",
+    borderRadius: "0",
+    _hover: { borderColor: "brand.cyan" },
+    _focus: { borderColor: "brand.cyan", boxShadow: "0 0 0 1px #4eead5" },
   };
 
   return (
-    <Box
-      p={8}
-      border="1px solid rgba(201,163,106,0.18)"
-      borderRadius="22px"
-      bg="rgba(20,17,14,0.7)"
-    >
+    <Box p={8} border="1px solid rgba(17,19,24,0.14)" bg="white">
       <VStack spacing={6} as="form" onSubmit={handleSubmit}>
         <Heading as="h2" fontSize="2xl" alignSelf="flex-start">
           {t("contact.form.title")}

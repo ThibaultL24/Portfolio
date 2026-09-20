@@ -1,16 +1,15 @@
 // src/shared/ui/SectionHeader.jsx
 import { Box, Heading, Text } from "@chakra-ui/react";
-import NeonBeamDivider from "../components/NeonBeamDivider";
 
 const SectionHeader = ({ kicker, title, description }) => (
   <Box mb={{ base: 10, md: 14 }}>
     {kicker && (
       <Text
-        fontFamily="'IBM Plex Mono', monospace"
-        fontSize="xs"
-        letterSpacing="0.28em"
+        fontFamily="'Michroma', sans-serif"
+        fontSize="9px"
+        letterSpacing="0.3em"
         textTransform="uppercase"
-        color="brand.copper"
+        color="brand.cyan"
         mb={3}
       >
         {kicker}
@@ -18,10 +17,12 @@ const SectionHeader = ({ kicker, title, description }) => (
     )}
     <Heading
       as="h1"
-      fontSize={{ base: "4xl", md: "6xl" }}
+      fontSize={{ base: "5xl", md: "7xl" }}
       fontWeight="500"
-      letterSpacing="-0.04em"
+      letterSpacing="0.02em"
       mb={4}
+      color="brand.ink"
+      textTransform="uppercase"
     >
       {title}
     </Heading>
@@ -30,7 +31,7 @@ const SectionHeader = ({ kicker, title, description }) => (
         {description}
       </Text>
     )}
-    <NeonBeamDivider mt={8} />
+    <Box mt={8} h="2px" w="72px" bg="brand.cyan" />
   </Box>
 );
 

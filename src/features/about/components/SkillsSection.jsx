@@ -7,24 +7,18 @@ const SkillsSection = ({ skills }) => {
 
   return (
     <Box py={6}>
-      <Heading as="h2" fontSize="3xl" mb={8}>
+      <Heading as="h2" fontSize="4xl" mb={8} color="brand.ink">
         {t("about.skills.title")}
       </Heading>
-      <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={8}>
+      <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={6}>
         {skills.map((skillGroup) => (
-          <Box
-            key={skillGroup.category}
-            p={6}
-            border="1px solid rgba(201,163,106,0.16)"
-            borderRadius="20px"
-            bg="rgba(20,17,14,0.6)"
-          >
+          <Box key={skillGroup.category} p={6} border="1px solid rgba(17,19,24,0.14)" bg="white">
             <Text
-              fontFamily="'IBM Plex Mono', monospace"
-              fontSize="xs"
+              fontFamily="'Michroma', sans-serif"
+              fontSize="9px"
               letterSpacing="0.2em"
               textTransform="uppercase"
-              color="brand.copper"
+              color="brand.cyan"
               mb={4}
             >
               {t(`about.skills.categories.${skillGroup.category.toLowerCase()}`)}
@@ -34,9 +28,9 @@ const SkillsSection = ({ skills }) => {
                 <WrapItem key={skill}>
                   <Tag
                     bg="transparent"
-                    border="1px solid rgba(201,163,106,0.25)"
-                    color="brand.parchment"
-                    borderRadius="full"
+                    border="1px solid rgba(17,19,24,0.18)"
+                    color="brand.ink"
+                    borderRadius="0"
                     px={3}
                     py={1}
                   >

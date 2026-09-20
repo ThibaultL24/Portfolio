@@ -1,21 +1,15 @@
 // src/shared/ui/ProjectCover.jsx
 import { Box, Text } from "@chakra-ui/react";
 
-const ProjectCover = ({ title, accent = "#c9a36a", motif = "orb" }) => {
+const ProjectCover = ({ title, accent = "#4eead5", motif = "orb" }) => {
   const letter = title?.charAt(0) || "·";
 
   return (
-    <Box
-      position="relative"
-      h="100%"
-      minH="220px"
-      overflow="hidden"
-      bg="#120f0c"
-    >
+    <Box position="relative" h="100%" minH="220px" overflow="hidden" bg="#050505">
       <Box
         position="absolute"
         inset="0"
-        background={`radial-gradient(circle at 30% 20%, ${accent}55, transparent 42%), radial-gradient(circle at 80% 80%, ${accent}22, transparent 50%)`}
+        background={`radial-gradient(circle at 30% 20%, ${accent}55, transparent 42%), radial-gradient(circle at 80% 80%, #d100ff22, transparent 50%)`}
       />
       {motif === "orb" && (
         <Box
@@ -53,43 +47,19 @@ const ProjectCover = ({ title, accent = "#c9a36a", motif = "orb" }) => {
       )}
       {motif === "constellation" && (
         <>
-          <Box
-            position="absolute"
-            w="8px"
-            h="8px"
-            bg={accent}
-            borderRadius="full"
-            top="28%"
-            left="24%"
-          />
-          <Box
-            position="absolute"
-            w="6px"
-            h="6px"
-            bg={accent}
-            borderRadius="full"
-            top="46%"
-            left="58%"
-          />
-          <Box
-            position="absolute"
-            w="10px"
-            h="10px"
-            bg={accent}
-            borderRadius="full"
-            top="62%"
-            left="36%"
-          />
+          <Box position="absolute" w="8px" h="8px" bg={accent} borderRadius="full" top="28%" left="24%" />
+          <Box position="absolute" w="6px" h="6px" bg={accent} borderRadius="full" top="46%" left="58%" />
+          <Box position="absolute" w="10px" h="10px" bg={accent} borderRadius="full" top="62%" left="36%" />
         </>
       )}
       <Text
         position="absolute"
-        bottom={4}
+        bottom={3}
         left={5}
-        fontFamily="'Fraunces', serif"
-        fontSize="6xl"
+        fontFamily="'Teko', sans-serif"
+        fontSize="7xl"
         color={accent}
-        opacity={0.28}
+        opacity={0.35}
         lineHeight="1"
       >
         {letter}

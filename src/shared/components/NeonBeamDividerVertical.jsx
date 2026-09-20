@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 
 const NeonBeamDividerVertical = ({
   width = "1px",
-  color = "#c9a36a",
+  color = "#4eead5",
   ...props
 }) => (
   <Box position="relative" h="100%" w={width} overflow="hidden" {...props}>
