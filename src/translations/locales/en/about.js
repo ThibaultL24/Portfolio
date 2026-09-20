@@ -12,8 +12,6 @@ export const about = {
       'Then the desire to build differently emerged. Create, yes — but this time through digital projects. To bring my ideas to life, to materialize others\'. I therefore started a career transition to web development, following two training blocks at The Hacking Project: the "Full Stack" program, then the "Web Developer" diploma block, totaling six intensive months of coding and two two-month internships.',
     current:
       "Today, I design applications, write clean and readable code, and continue to cultivate curiosity for ideas, uses, words, and humanity.",
-    conclusion:
-      "This portfolio reflects this intersection: between the rigor of code and the expressiveness of writing. Welcome to my universe.",
     downloadCV: "Download CV",
   },
   skills: {
@@ -30,17 +28,16 @@ export const about = {
       javascript: "JavaScript",
       typescript: "TypeScript",
       react: "React",
-      "nextjs": "Next.js",
+      nextjs: "Next.js",
       "tailwind css": "Tailwind CSS",
-      "node.js": "Node.js",
-      ruby: "Ruby",
-      rust: "Rust",
+      "ruby on rails": "Ruby on Rails",
+      python: "Python",
+      nodejs: "Node.js",
       sql: "SQL",
+      web3: "Web3",
       docker: "Docker",
+      github: "GitHub",
       figma: "Figma",
-      whimsical: "Whimsical",
-      github: "Github",
-      "vs code": "VS Code",
     },
   },
 };

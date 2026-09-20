@@ -7,13 +7,7 @@ import { useTranslation } from "../../../hooks/useTranslation";
 
 const ProfileSection = () => {
   const { t } = useTranslation();
-  const paragraphs = [
-    "introduction",
-    "experience",
-    "transition",
-    "current",
-    "conclusion",
-  ];
+  const paragraphs = ["introduction", "experience", "transition", "current"];
 
   return (
     <Grid templateColumns={{ base: "1fr", md: "1fr 1.6fr" }} gap={10} py={4}>

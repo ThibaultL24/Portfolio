@@ -2,13 +2,13 @@
 export const skills = [
   {
     category: "Front-end",
-    items: ["HTML/CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML/CSS"],
   },
   {
     category: "Back-end",
-    items: ["Node.js", "Ruby", "Rust", "SQL", "Docker"],
+    items: ["Ruby on Rails", "Python", "Node.js", "SQL"],
   },
-  { category: "Outils", items: ["Figma", "Github", "VS Code"] },
+  { category: "Outils", items: ["Web3", "Docker", "GitHub", "Figma"] },
 ];
 
 export const experiences = [
