@@ -8,17 +8,17 @@ export const themeConfig = (isOpenDyslexic) => ({
   },
   semanticTokens: {
     colors: {
-      "brand.ink": { default: "#1c1814", _dark: "#f4f4f2" },
-      "brand.paper": { default: "#e7d7c3", _dark: "#050505" },
-      "brand.cardBg": { default: "#f3e8d8", _dark: "#111113" },
-      "brand.muted": { default: "#5c564f", _dark: "rgba(244,244,242,0.64)" },
-      "brand.line": { default: "rgba(28,24,20,0.12)", _dark: "rgba(255,255,255,0.12)" },
-      "brand.nav": { default: "rgba(231,215,195,0.92)", _dark: "rgba(5,5,5,0.88)" },
-      "brand.cyan": { default: "#2f9e90", _dark: "#5eead4" },
-      "brand.cyanBright": { default: "#3cb5a6", _dark: "#8affef" },
-      "brand.night": { default: "#1c1814", _dark: "#050505" },
-      "brand.copper": { default: "#2f9e90", _dark: "#5eead4" },
-      "brand.parchment": { default: "#e7d7c3", _dark: "#050505" },
+      "brand.ink": { default: "#111111", _dark: "#f2f2f2" },
+      "brand.paper": { default: "#f2f2f2", _dark: "#0a0a0a" },
+      "brand.cardBg": { default: "#ffffff", _dark: "#161616" },
+      "brand.muted": { default: "#6b6b6b", _dark: "rgba(242,242,242,0.62)" },
+      "brand.line": { default: "rgba(17,17,17,0.12)", _dark: "rgba(255,255,255,0.14)" },
+      "brand.nav": { default: "rgba(242,242,242,0.92)", _dark: "rgba(10,10,10,0.9)" },
+      "brand.cyan": { default: "#c4102e", _dark: "#ef4444" },
+      "brand.cyanBright": { default: "#e11d48", _dark: "#fb7185" },
+      "brand.night": { default: "#111111", _dark: "#0a0a0a" },
+      "brand.copper": { default: "#c4102e", _dark: "#ef4444" },
+      "brand.parchment": { default: "#f2f2f2", _dark: "#0a0a0a" },
     },
   },
   colors: {
@@ -49,8 +49,8 @@ export const themeConfig = (isOpenDyslexic) => ({
       const isDark = props.colorMode === "dark";
       return {
         body: {
-          bg: isDark ? "#050505" : "#e7d7c3",
-          color: isDark ? "#f4f4f2" : "#1c1814",
+          bg: isDark ? "#0a0a0a" : "#f2f2f2",
+          color: isDark ? "#f2f2f2" : "#111111",
           fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.BODY,
           minHeight: "100vh",
           width: "100%",
@@ -79,7 +79,7 @@ export const themeConfig = (isOpenDyslexic) => ({
           color: "inherit",
         },
         "p.intro, .intro": {
-          color: isDark ? "rgba(244,244,242,0.64)" : "#5c564f",
+          color: isDark ? "rgba(242,242,242,0.62)" : "#6b6b6b",
           fontSize: "lg",
           fontWeight: "400",
           lineHeight: "1.75",
@@ -100,10 +100,11 @@ export const themeConfig = (isOpenDyslexic) => ({
       },
       variants: {
         solid: {
-          bg: "brand.cyan",
-          color: { default: "#ffffff", _dark: "#050505" },
+          bg: "brand.ink",
+          color: "brand.paper",
           _hover: {
-            bg: "brand.cyanBright",
+            bg: "brand.cyan",
+            color: "#ffffff",
           },
         },
         outline: {

@@ -19,14 +19,14 @@ const ExperienceSection = ({ experiences }) => {
             py={6}
             borderTop="1px solid rgba(17,19,24,0.12)"
           >
-            <Text minW="140px" fontSize="sm" color="brand.cyan" fontWeight="600">
+            <Text minW="140px" fontSize="sm" color="brand.muted" fontWeight="600">
               {exp.period}
             </Text>
             <Box>
               <Heading as="h3" fontSize="2xl" mb={1} color="brand.ink">
                 {exp.title}
               </Heading>
-              <Text color="brand.cyan" mb={2}>
+              <Text color="brand.muted" mb={2}>
                 {exp.company}
               </Text>
               <Text color="brand.ink" opacity={0.7}>

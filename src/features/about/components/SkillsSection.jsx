@@ -16,7 +16,7 @@ const SkillsSection = ({ skills }) => {
             <Text
               fontSize="sm"
               letterSpacing="0.06em"
-              color="brand.cyan"
+              color="brand.muted"
               fontWeight="600"
               mb={4}
             >

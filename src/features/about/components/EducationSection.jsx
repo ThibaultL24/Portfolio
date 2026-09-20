@@ -19,7 +19,7 @@ const EducationSection = ({ education }) => {
             py={6}
             borderTop="1px solid rgba(17,19,24,0.12)"
           >
-            <Text minW="140px" fontSize="sm" color="brand.cyan" fontWeight="600">
+            <Text minW="140px" fontSize="sm" color="brand.muted" fontWeight="600">
               {edu.period}
             </Text>
             <Box>

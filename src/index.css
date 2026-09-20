@@ -3,12 +3,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Syne:wght@400;500;600;700&display=swap");
 
 :root {
-  --ink: #1c1814;
-  --night: #1c1814;
-  --paper: #e7d7c3;
-  --white: #f3e8d8;
-  --cyan: #2f9e90;
-  --cyan-bright: #3cb5a6;
+  --ink: #111111;
+  --night: #111111;
+  --paper: #f2f2f2;
+  --white: #ffffff;
+  --cyan: #c4102e;
+  --cyan-bright: #e11d48;
   --rust: #c45c3e;
   --font-title: "Syne", sans-serif;
   --font-subtitle: "Outfit", sans-serif;
@@ -25,12 +25,12 @@
 }
 
 .chakra-ui-dark {
-  --ink: #f4f4f2;
-  --night: #050505;
-  --paper: #050505;
-  --white: #111113;
-  --cyan: #5eead4;
-  --cyan-bright: #8affef;
+  --ink: #f2f2f2;
+  --night: #0a0a0a;
+  --paper: #0a0a0a;
+  --white: #161616;
+  --cyan: #ef4444;
+  --cyan-bright: #fb7185;
   color-scheme: dark;
   color: var(--ink);
 }
@@ -68,8 +68,13 @@ a {
 }
 
 ::selection {
-  background: rgba(47, 158, 144, 0.22);
-  color: var(--ink);
+  background: #111111;
+  color: #ffffff;
+}
+
+.chakra-ui-dark ::selection {
+  background: #f2f2f2;
+  color: #0a0a0a;
 }
 
 .font-opendyslexic p,

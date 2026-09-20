@@ -27,14 +27,6 @@ const HeroSection = () => {
       position="relative"
       overflow="hidden"
     >
-      <Box
-        display="none"
-        _dark={{ display: "block" }}
-        position="absolute"
-        inset={0}
-        background="radial-gradient(circle at 78% 18%, rgba(94,234,212,0.16), transparent 30%), radial-gradient(circle at 12% 82%, rgba(167,139,250,0.12), transparent 26%)"
-        pointerEvents="none"
-      />
       <Flex
         direction={{ base: "column", lg: "row" }}
         align="center"
@@ -50,7 +42,7 @@ const HeroSection = () => {
             fontFamily="'Outfit', sans-serif"
             fontSize="sm"
             letterSpacing="0.08em"
-            color="brand.cyan"
+            color="brand.muted"
             fontWeight="600"
           >
             {t("home.kicker")}
@@ -65,7 +57,7 @@ const HeroSection = () => {
             color="brand.ink"
           >
             Thibault
-            <Text as="span" display="block" color="brand.cyan">
+            <Text as="span" display="block">
               Lenormand
             </Text>
           </Heading>

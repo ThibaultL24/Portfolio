@@ -9,7 +9,7 @@ const SectionHeader = ({ kicker, title, description }) => (
         fontFamily="'Outfit', sans-serif"
         fontSize="sm"
         letterSpacing="0.08em"
-        color="brand.cyan"
+        color="brand.muted"
         fontWeight="600"
         mb={3}
       >

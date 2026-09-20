@@ -20,10 +20,10 @@ const ContactInfo = () => {
       <VStack spacing={6} align="flex-start" w="full">
         <HStack spacing={4}>
           <Box p={3} border="1px solid" borderColor="brand.line" borderRadius="12px" bg="brand.cardBg">
-            <Icon as={FaEnvelope} w={4} h={4} color="brand.cyan" />
+            <Icon as={FaEnvelope} w={4} h={4} color="brand.ink" />
           </Box>
           <VStack align="flex-start" spacing={0}>
-            <Text fontSize="sm" color="brand.cyan">
+            <Text fontSize="sm" color="brand.muted">
               {t("contact.info.email")}
             </Text>
             <Text color="brand.ink">thibault.lenormand24@gmail.com</Text>
@@ -31,10 +31,10 @@ const ContactInfo = () => {
         </HStack>
         <HStack spacing={4}>
           <Box p={3} border="1px solid" borderColor="brand.line" borderRadius="12px" bg="brand.cardBg">
-            <Icon as={FaMapMarkerAlt} w={4} h={4} color="brand.cyan" />
+            <Icon as={FaMapMarkerAlt} w={4} h={4} color="brand.ink" />
           </Box>
           <VStack align="flex-start" spacing={0}>
-            <Text fontSize="sm" color="brand.cyan">
+            <Text fontSize="sm" color="brand.muted">
               {t("contact.info.location")}
             </Text>
             <Text color="brand.ink">Avignon, France</Text>

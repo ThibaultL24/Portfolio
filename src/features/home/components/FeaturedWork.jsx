@@ -19,7 +19,7 @@ const FeaturedWork = () => {
         wrap="wrap"
       >
         <Box>
-          <Text className="font-subtitle" fontFamily="'Outfit', sans-serif" fontSize="sm" letterSpacing="0.08em" color="brand.cyan" fontWeight="600" mb={2}>
+          <Text className="font-subtitle" fontFamily="'Outfit', sans-serif" fontSize="sm" letterSpacing="0.08em" color="brand.muted" fontWeight="600" mb={2}>
             {t("home.selected.kicker")}
           </Text>
           <Heading as="h2" fontFamily="'Outfit', sans-serif" fontSize={{ base: "4xl", md: "5xl" }} fontWeight="500" color="brand.ink">

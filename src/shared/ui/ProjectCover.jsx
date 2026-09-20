@@ -1,15 +1,15 @@
 // src/shared/ui/ProjectCover.jsx
 import { Box, Text } from "@chakra-ui/react";
 
-const ProjectCover = ({ title, accent = "#2f9e90", motif = "orb" }) => {
+const ProjectCover = ({ title, accent = "#111111", motif = "orb" }) => {
   const letter = title?.charAt(0) || "·";
 
   return (
-    <Box position="relative" h="100%" minH="220px" overflow="hidden" bg="#1a1816">
+    <Box position="relative" h="100%" minH="220px" overflow="hidden" bg="#111111">
       <Box
         position="absolute"
         inset="0"
-        background={`radial-gradient(circle at 30% 20%, ${accent}44, transparent 42%), radial-gradient(circle at 80% 80%, #c45c3e22, transparent 50%)`}
+        background={`radial-gradient(circle at 30% 20%, ${accent}55, transparent 42%), radial-gradient(circle at 80% 80%, #c4102e22, transparent 50%)`}
       />
       {motif === "orb" && (
         <Box

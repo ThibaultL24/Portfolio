@@ -36,7 +36,7 @@ const ProjectCard = ({
           mb={3}
           fontSize="xs"
           letterSpacing="0.06em"
-          color="brand.cyan"
+          color="brand.muted"
           fontWeight="600"
         >
           <Text as="span">{year}</Text>
