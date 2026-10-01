@@ -2,13 +2,17 @@
 export const skills = [
   {
     category: "Front-end",
-    items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML/CSS"],
+    items: ["TypeScript", "React", "Next.js", "JavaScript", "Tailwind CSS", "HTML/CSS"],
   },
   {
     category: "Back-end",
-    items: ["Ruby on Rails", "Python", "Node.js", "SQL"],
+    items: ["Ruby on Rails", "Python", "Node.js", "SQL", "Intégration API", "REST API", "GraphQL"],
   },
-  { category: "Outils", items: ["Web3", "Docker", "GitHub", "Figma"] },
+  {
+    category: "Web3",
+    items: ["EVM", "ethers.js", "wagmi", "viem", "Smart contracts", "Intuition"],
+  },
+  { category: "Outils", items: ["Docker", "GitHub", "Figma"] },
 ];
 
 export const experiences = [

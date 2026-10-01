@@ -17,6 +17,7 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
+  useColorModeValue,
   HStack,
   Tag,
   TagLabel,
@@ -64,12 +65,28 @@ const categories = [
   { id: "perso", labelKey: "personal", icon: FaUser },
 ];
 
+const visualModalOverlay = {
+  bg: "blackAlpha.700",
+};
+
 const CreationsContent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedText, setSelectedText] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedVisual, setSelectedVisual] = useState(null);
   const { t } = useTranslation();
+
+  const readerPaper = useColorModeValue("#F6F4EF", "#161B24");
+  const readerInk = useColorModeValue("#121212", "#E8EDF4");
+  const readerMuted = useColorModeValue("#4A4A4A", "#9AA8B8");
+  const readerBorder = useColorModeValue("#D6D2C8", "#2D3A4A");
+  const readerShadow = useColorModeValue(
+    "0 28px 70px rgba(17, 17, 17, 0.18)",
+    "0 32px 80px rgba(0, 0, 0, 0.72)"
+  );
+  const readerOverlay = useColorModeValue("blackAlpha.600", "blackAlpha.850");
+  const readerCloseHover = useColorModeValue("blackAlpha.100", "whiteAlpha.150");
+  const readerScrollbar = useColorModeValue("rgba(0, 0, 0, 0.22)", "rgba(255, 255, 255, 0.22)");
 
   const handleTextClick = (text) => {
     setSelectedText(text);
@@ -172,7 +189,7 @@ const CreationsContent = () => {
             onClose={() => setSelectedVisual(null)}
             size="3xl"
           >
-            <ModalOverlay />
+            <ModalOverlay {...visualModalOverlay} />
             <ModalContent
               bg="brand.cardBg"
               color="brand.ink"
@@ -295,34 +312,83 @@ const CreationsContent = () => {
       </TabPanels>
 
       {/* Modal pour afficher le texte complet */}
-      <Modal isOpen={isOpen} onClose={onClose} size="xl">
-        <ModalOverlay />
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        size="3xl"
+        scrollBehavior="inside"
+        isCentered
+        blockScrollOnMount
+      >
+        <ModalOverlay bg={readerOverlay} backdropFilter="none" />
         <ModalContent
-          bg="brand.cardBg"
-          color="brand.ink"
+          bg={readerPaper}
+          color={readerInk}
           border="1px solid"
-          borderColor="brand.line"
-          borderRadius="16px"
+          borderColor={readerBorder}
+          borderRadius="12px"
+          boxShadow={readerShadow}
+          maxW={{ base: "94vw", md: "42rem" }}
+          maxH={{ base: "90vh", md: "85vh" }}
+          m={4}
+          sx={{ backgroundColor: `${readerPaper} !important`, opacity: 1 }}
         >
-          <ModalHeader color="brand.ink">
+          <ModalHeader
+            color={readerInk}
+            fontFamily="'Outfit', sans-serif"
+            fontSize={{ base: "xl", md: "2xl" }}
+            fontWeight="600"
+            pr={12}
+            pb={4}
+            borderBottom="1px solid"
+            borderColor={readerBorder}
+            bg={readerPaper}
+          >
             {selectedText
               ? t(`creations.texts.entries.${selectedText.entryKey}.title`)
               : ""}
           </ModalHeader>
           <ModalCloseButton
-            color="brand.ink"
-            _hover={{ bg: "blackAlpha.50", color: "brand.cyan" }}
+            color={readerInk}
+            top={3}
+            right={3}
+            _hover={{ bg: readerCloseHover }}
           />
-          <ModalBody pb={6}>
+          <ModalBody
+            py={6}
+            px={{ base: 5, md: 8 }}
+            overflowY="auto"
+            bg={readerPaper}
+            css={{
+              "&::-webkit-scrollbar": { width: "8px" },
+              "&::-webkit-scrollbar-thumb": {
+                background: readerScrollbar,
+                borderRadius: "999px",
+              },
+            }}
+          >
             {selectedText &&
               t(`creations.texts.entries.${selectedText.entryKey}.intro`) !==
                 `creations.texts.entries.${selectedText.entryKey}.intro` && (
-                <Text fontStyle="italic" color="brand.ink" opacity={0.6} mb={4}>
+                <Text
+                  fontStyle="italic"
+                  color={readerMuted}
+                  fontSize="md"
+                  lineHeight="1.75"
+                  mb={6}
+                >
                   {t(`creations.texts.entries.${selectedText.entryKey}.intro`)}
                 </Text>
               )}
             {selectedText && (
-              <Text whiteSpace="pre-wrap" color="brand.ink" opacity={0.8}>
+              <Text
+                as="div"
+                whiteSpace="pre-wrap"
+                color={readerInk}
+                fontSize={{ base: "1.05rem", md: "1.125rem" }}
+                lineHeight="1.9"
+                fontFamily="'Manrope', system-ui, sans-serif"
+              >
                 {t(`creations.texts.entries.${selectedText.entryKey}.content`)}
               </Text>
             )}
