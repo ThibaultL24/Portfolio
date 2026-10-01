@@ -170,7 +170,9 @@ const ProjectDetails = () => {
             <Button as={Link} href={meta.production} isExternal variant="solid">
               {meta.productionLabel === "hackathon"
                 ? t("projects.details.hackathon")
-                : t("projects.details.production")}
+                : meta.productionLabel === "dapp"
+                  ? t("projects.details.dapp")
+                  : t("projects.details.production")}
             </Button>
           )}
           <Button as={RouterLink} to="/projects" variant="ghost">

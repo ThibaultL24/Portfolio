@@ -5,6 +5,8 @@ import graphImg from "../../../assets/img/graph/graph1.png";
 import agentImg from "../../../assets/img/agent.gif";
 import playerMapImg from "../../../assets/img/agentplayermap.png";
 import camilleCover from "../../../assets/img/covers/camille.jpg";
+import corvusCover from "../../../assets/img/covers/corvus.jpg";
+import hunchCover from "../../../assets/img/covers/ideation-hunch.jpg";
 import kaironCover from "../../../assets/img/covers/kairon.jpg";
 import trustbookCover from "../../../assets/img/covers/trustbook.jpg";
 import mmaCover from "../../../assets/img/covers/mma.jpg";
@@ -42,10 +44,37 @@ export const PROJECT_CATALOG = [
     year: "2026",
     category: "commande",
     featured: true,
-    accent: "#111111",
+    accent: "#7ec8e3",
     motif: "constellation",
     github: "https://github.com/ThibaultL24/Corvus",
-    production: null,
+    production: "https://corvus-studio.fr/",
+    imageSrc: corvusCover,
+    images: [],
+  },
+  {
+    id: 12,
+    key: "project12",
+    year: "2026",
+    category: "web3",
+    featured: false,
+    accent: "#7ec8e3",
+    motif: "constellation",
+    github: "https://github.com/intuition-box/intuition-ideation-skill",
+    production: "https://ideation.intuition.box/",
+    productionLabel: "dapp",
+    imageSrc: hunchCover,
+    images: [],
+  },
+  {
+    id: 13,
+    key: "project13",
+    year: "2026",
+    category: "produit",
+    featured: false,
+    accent: "#d4c4a8",
+    motif: "grid",
+    github: "https://github.com/ThibaultL24/TalariaV2",
+    production: "https://talaria.onrender.com",
     imageSrc: null,
     images: [],
   },

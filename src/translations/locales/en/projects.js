@@ -145,7 +145,7 @@ export const projects = {
       longDescription:
         "Corvus Studio is the site of an independent studio making premium advertising visuals. The world mixes dark art direction, cosmic aesthetics, monumental type, and cyan/violet accents.\n\n" +
         "It includes an immersive landing, a work marquee, a filterable gallery with project modal, pricing, creation fields, a studio portrait (Dylan Lacas), and a contact form.\n\n" +
-        "Built with Next.js 15, React 19, TypeScript, Tailwind and Framer Motion. An authenticated back-office (Auth.js + Vercel Blob) manages works, images and social links without redeploying.",
+        "Built with Next.js 15, React 19, TypeScript, Tailwind and Framer Motion. An authenticated back-office (Auth.js + Vercel Blob) manages works, images and social links without redeploying. Live at corvus-studio.fr.",
       technologies: [
         { name: "Next.js 15", color: "gray" },
         { name: "React 19", color: "cyan" },
@@ -154,6 +154,42 @@ export const projects = {
         { name: "Framer Motion", color: "pink" },
         { name: "Auth.js", color: "purple" },
         { name: "Vercel Blob", color: "orange" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project12: {
+      title: "Hunch — Intuition Ideation Skill",
+      description:
+        "Hunch skill and dapp: from a product idea to a GitHub PR and an on-chain attestation.",
+      longDescription:
+        "Hunch (Intuition Ideation Skill) helps Intuition contributors — including non-developers — publish an idea in the ecosystem. The path from idea → GitHub catalog → on-chain graph was fragmented, and jargon (atoms, triples) often blocked people.\n\n" +
+        "The deliverable pairs a five-step Cursor/Claude skill with the Hunch dapp: research, AI assist, PR creation, and attestation. Same journey, two surfaces (IDE and browser).\n\n" +
+        "Open-source skill (intuition-box) and live dapp at ideation.intuition.box.",
+      technologies: [
+        { name: "Cursor Skills", color: "orange" },
+        { name: "Claude", color: "yellow" },
+        { name: "Intuition Protocol", color: "cyan" },
+        { name: "GitHub", color: "gray" },
+        { name: "Next.js", color: "gray" },
+        { name: "wagmi", color: "purple" },
+      ],
+      authors: ["Thibault LENORMAND"],
+    },
+    project13: {
+      title: "Talaria",
+      description:
+        "Historical intelligence pipeline in Rust: person → canonical events, MapLibre map and timeline; debates in the Intuition Agora lane.",
+      longDescription:
+        "Talaria is a historical intelligence engine: resolve a person, collect multi-source documents, extract and gate events, then serve timeline, map, and explorer APIs.\n\n" +
+        "Cultural biography facts (places, dates, evidence) stay in Talaria (`canonical_events`). Opinions, debates, and theories live in the Intuition lane (claims / Agora) — not on the map.\n\n" +
+        "Stack: Rust API, PostGIS, React/TypeScript/MapLibre explorer. Person ingest via UI or API; demo hosted on Render.",
+      technologies: [
+        { name: "Rust", color: "orange" },
+        { name: "React", color: "cyan" },
+        { name: "TypeScript", color: "blue" },
+        { name: "MapLibre", color: "teal" },
+        { name: "PostGIS", color: "green" },
+        { name: "Intuition", color: "purple" },
       ],
       authors: ["Thibault LENORMAND"],
     },
@@ -224,6 +260,7 @@ export const projects = {
     production: "View site",
     authors: "With",
     hackathon: "View hackathon",
+    dapp: "View the dapp",
     year: "Year",
     role: "Role",
   },
