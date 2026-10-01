@@ -1,13 +1,13 @@
 export const home = {
   kicker: "Freelance — Avignon",
   title: "Thibault Lenormand",
-  titleRole: "Développeur full stack & copywriter freelance à Avignon",
-  subtitle: "Développeur full stack & copywriter",
+  titleRole: "Développeur full stack freelance à Avignon",
+  subtitle: "Développeur full stack",
   description:
-    "Sites, produits web et textes qui clarifient une offre et accélèrent la prise de contact. Indépendants, studios et équipes produit — en local et à distance.",
+    "Sites et produits web qui clarifient une offre et accélèrent la prise de contact. Indépendants, studios et équipes produit — en local et à distance.",
   metaTitle: "Thibault Lenormand — Développeur freelance à Avignon",
   metaDescription:
-    "Développeur full stack & copywriter freelance à Avignon. Sites, produits web et textes d’offre pour indépendants, studios et équipes produit.",
+    "Développeur full stack freelance à Avignon. Sites et produits web pour indépendants, studios et équipes produit.",
   ctaProjects: "Voir les projets",
   ctaContact: "Discuter d’un projet",
   downloadCV: "Télécharger CV",
@@ -15,7 +15,7 @@ export const home = {
     items: [
       { title: "Sites", text: "Vitrines, pages d’offre, back-office." },
       { title: "Produits", text: "Outils web, parcours, intégrations." },
-      { title: "Textes", text: "Copy de site, offre, contenus produit." },
+      { title: "Back-office", text: "Contenu, admin, mises à jour." },
     ],
   },
   proof: {

@@ -9,7 +9,6 @@ const MonOffreSection = () => {
     "portfolioCreation",
     "uiuxDesign",
     "technicalConsulting",
-    "writing",
   ];
 
   return (
