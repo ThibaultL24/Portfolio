@@ -23,7 +23,7 @@ const HeroSection = () => {
 
   return (
     <Box
-      bg="brand.paper"
+      bg="transparent"
       color="brand.ink"
       mx={{ base: -4, md: -8, lg: -16 }}
       px={{ base: 4, md: 8, lg: 16 }}
@@ -34,7 +34,7 @@ const HeroSection = () => {
         position="absolute"
         inset={0}
         pointerEvents="none"
-        bg="radial-gradient(ellipse at 22% 35%, rgba(255,255,255,0.55) 0%, transparent 46%), radial-gradient(ellipse at 82% 18%, rgba(17,17,17,0.08) 0%, transparent 48%)"
+        bg="radial-gradient(ellipse at 18% 30%, rgba(126,200,255,0.16) 0%, transparent 46%), radial-gradient(ellipse at 88% 10%, rgba(47,126,201,0.12) 0%, transparent 42%)"
       />
       <Flex
         direction={{ base: "column", lg: "row" }}
@@ -47,7 +47,7 @@ const HeroSection = () => {
       >
         <VStack align="flex-start" spacing={6} flex="1" maxW={{ lg: "58%" }}>
           <Text
-            className="font-subtitle"
+            className="font-subtitle neon-text"
             fontFamily="'Outfit', sans-serif"
             fontSize="sm"
             letterSpacing="0.08em"
@@ -69,6 +69,7 @@ const HeroSection = () => {
             {titlePunch && (
               <Text
                 as="span"
+                className="neon-text"
                 display="block"
                 color="brand.cyan"
                 fontSize={{ base: "2xl", md: "4xl", xl: "5xl" }}
@@ -96,10 +97,9 @@ const HeroSection = () => {
               {offers.map((offer) => (
                 <Text
                   key={offer}
+                  className="glass"
                   px={3}
                   py={1}
-                  border="1px solid"
-                  borderColor="brand.line"
                   borderRadius="999px"
                   fontSize="sm"
                   fontWeight="600"
@@ -139,19 +139,18 @@ const HeroSection = () => {
           <Box position="relative" h={{ base: "420px", md: "520px", lg: "100%" }} minH={{ lg: "560px" }}>
             <Box
               position="absolute"
-              inset="18px -14px -14px 18px"
-              bg="brand.ink"
-              opacity={0.1}
+              inset="22px -18px -18px 22px"
               borderRadius="24px"
+              bg="brand.cyan"
+              opacity={0.22}
+              filter="blur(18px)"
             />
             <Box
+              className="glass neon-edge"
               position="relative"
               h="100%"
               overflow="hidden"
               borderRadius="24px"
-              border="1px solid"
-              borderColor="brand.line"
-              boxShadow="0 28px 60px rgba(17,17,17,0.12)"
             >
               <Box
                 w="100%"

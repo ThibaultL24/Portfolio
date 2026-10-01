@@ -1,14 +1,9 @@
 // src/shared/components/AnimatedBackground.jsx
 const AnimatedBackground = () => (
-  <div
-    aria-hidden="true"
-    style={{
-      position: "fixed",
-      inset: 0,
-      zIndex: -1,
-      background: "var(--paper)",
-    }}
-  />
+  <div className="ambient" aria-hidden="true">
+    <span className="ambient-orb ambient-orb-a" />
+    <span className="ambient-orb ambient-orb-b" />
+  </div>
 );
 
 export default AnimatedBackground;

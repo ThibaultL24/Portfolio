@@ -26,6 +26,7 @@ const BrandMark = () => (
       display={{ base: "none", md: "inline" }}
       fontFamily="'Outfit', sans-serif"
       fontSize="sm"
+      className="neon-text"
       color="brand.cyan"
     >
       Lenormand

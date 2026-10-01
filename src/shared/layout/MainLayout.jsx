@@ -13,8 +13,10 @@ const MainLayout = ({ children }) => {
     <Flex
       direction="column"
       minH="100vh"
-      bg="brand.paper"
+      bg="transparent"
       color="brand.ink"
+      position="relative"
+      zIndex={1}
       className={isOpenDyslexic ? "font-opendyslexic" : "font-inter"}
       lang={isEnglish ? "en" : "fr"}
     >

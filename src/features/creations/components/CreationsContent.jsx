@@ -231,8 +231,8 @@ const CreationsContent = () => {
                     variant="outline"
                     cursor="pointer"
                     onClick={() => setSelectedCategory(category.id)}
-                    bg={isSelected ? "brand.cyan" : "brand.cardBg"}
-                    color={isSelected ? "brand.night" : "brand.ink"}
+                    bg={isSelected ? "brand.cyanTab" : "brand.cardBg"}
+                    color={isSelected ? "white" : "brand.ink"}
                     borderColor="brand.line"
                     borderRadius="999px"
                     fontWeight={isSelected ? "bold" : "normal"}
@@ -240,7 +240,7 @@ const CreationsContent = () => {
                     px={6}
                     py={2}
                     _hover={{
-                      color: isSelected ? "brand.night" : "brand.cyan",
+                      color: isSelected ? "white" : "brand.cyanTab",
                       borderColor: "brand.cyan",
                     }}
                     transition="all 0.2s"
@@ -248,7 +248,7 @@ const CreationsContent = () => {
                     {category.icon && (
                       <TagLeftIcon
                         as={category.icon}
-                        color={isSelected ? "brand.night" : "brand.ink"}
+                        color={isSelected ? "white" : "brand.ink"}
                       />
                     )}
                     <TagLabel>

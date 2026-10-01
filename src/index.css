@@ -25,12 +25,12 @@
 }
 
 .chakra-ui-dark {
-  --ink: #f2f2f2;
-  --night: #0a0a0a;
-  --paper: #0a0a0a;
-  --white: #161616;
-  --cyan: #6eb4f0;
-  --cyan-bright: #8cc4f5;
+  --ink: #f4f7fb;
+  --night: #07090d;
+  --paper: #07090d;
+  --white: #12161c;
+  --cyan: #7ec8ff;
+  --cyan-bright: #b7e3ff;
   color-scheme: dark;
   color: var(--ink);
 }
@@ -68,8 +68,89 @@ a {
 }
 
 ::selection {
-  background: #2f7ec9;
+  background: var(--cyan);
   color: #ffffff;
+}
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.85;
+  animation: drift 18s ease-in-out infinite;
+}
+
+.ambient-orb-a {
+  width: 42vw;
+  height: 42vw;
+  top: -8%;
+  left: -6%;
+  background: radial-gradient(circle, rgba(47, 126, 201, 0.45), transparent 68%);
+}
+
+.ambient-orb-b {
+  width: 36vw;
+  height: 36vw;
+  right: -8%;
+  bottom: 8%;
+  background: radial-gradient(circle, rgba(74, 154, 230, 0.28), transparent 70%);
+  animation-delay: -7s;
+}
+
+.chakra-ui-dark .ambient-orb-a {
+  background: radial-gradient(circle, rgba(126, 200, 255, 0.32), transparent 68%);
+}
+
+.chakra-ui-dark .ambient-orb-b {
+  background: radial-gradient(circle, rgba(47, 126, 201, 0.22), transparent 70%);
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, 6%, 0) scale(1.08);
+  }
+}
+
+.neon-text {
+  text-shadow: 0 0 18px rgba(47, 126, 201, 0.35);
+}
+
+.chakra-ui-dark .neon-text {
+  text-shadow: 0 0 22px rgba(126, 200, 255, 0.55);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(17, 17, 17, 0.06);
+}
+
+.chakra-ui-dark .glass {
+  background: rgba(18, 22, 28, 0.48);
+  border-color: rgba(126, 200, 255, 0.22);
+  box-shadow: 0 0 0 1px rgba(126, 200, 255, 0.06), 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.neon-edge {
+  box-shadow: 0 0 0 1px rgba(47, 126, 201, 0.25), 0 18px 40px rgba(47, 126, 201, 0.12);
+}
+
+.chakra-ui-dark .neon-edge {
+  box-shadow: 0 0 0 1px rgba(126, 200, 255, 0.35), 0 0 32px rgba(126, 200, 255, 0.16);
 }
 
 .font-opendyslexic p,
@@ -140,5 +221,8 @@ a {
   .focus-field:hover > * {
     filter: none;
     opacity: 1;
+  }
+  .ambient-orb {
+    animation: none;
   }
 }

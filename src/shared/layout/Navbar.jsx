@@ -53,7 +53,7 @@ const Navbar = () => {
       borderRadius="0"
       borderBottom="1px solid"
       borderColor={isActive(link.to) ? "brand.ink" : "transparent"}
-      _hover={{ bg: "transparent", color: "brand.cyan" }}
+      _hover={{ bg: "transparent", color: "brand.cyanTab" }}
     >
       {link.label}
     </Button>
@@ -68,10 +68,12 @@ const Navbar = () => {
       zIndex={1000}
       top={0}
       left={0}
+      className="glass"
       bg="brand.nav"
       borderBottom="1px solid"
       borderColor="brand.line"
-      backdropFilter="blur(16px)"
+      backdropFilter="blur(18px)"
+      boxShadow="0 8px 28px rgba(47, 126, 201, 0.08)"
     >
       <Flex h={{ base: 16, md: 20 }} alignItems="center" justifyContent="space-between" gap={4}>
         <BrandMark />

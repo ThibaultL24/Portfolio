@@ -8,14 +8,15 @@ export const themeConfig = (isOpenDyslexic) => ({
   },
   semanticTokens: {
     colors: {
-      "brand.ink": { default: "#111111", _dark: "#f2f2f2" },
-      "brand.paper": { default: "#e2e2e2", _dark: "#0a0a0a" },
-      "brand.cardBg": { default: "#f6f6f6", _dark: "#161616" },
-      "brand.muted": { default: "#6b6b6b", _dark: "rgba(242,242,242,0.62)" },
-      "brand.line": { default: "rgba(17,17,17,0.14)", _dark: "rgba(255,255,255,0.14)" },
-      "brand.nav": { default: "rgba(226,226,226,0.92)", _dark: "rgba(10,10,10,0.9)" },
-      "brand.cyan": { default: "#2f7ec9", _dark: "#6eb4f0" },
-      "brand.cyanBright": { default: "#4a9ae6", _dark: "#8cc4f5" },
+      "brand.ink": { default: "#111111", _dark: "#f4f7fb" },
+      "brand.paper": { default: "#e2e2e2", _dark: "#07090d" },
+      "brand.cardBg": { default: "rgba(255,255,255,0.55)", _dark: "rgba(18,22,28,0.55)" },
+      "brand.muted": { default: "#6b6b6b", _dark: "rgba(244,247,251,0.68)" },
+      "brand.line": { default: "rgba(47,126,201,0.22)", _dark: "rgba(126,200,255,0.28)" },
+      "brand.nav": { default: "rgba(226,226,226,0.78)", _dark: "rgba(7,9,13,0.82)" },
+      "brand.cyan": { default: "#2f7ec9", _dark: "#7ec8ff" },
+      "brand.cyanBright": { default: "#5aa8f0", _dark: "#b7e3ff" },
+      "brand.cyanTab": { default: "#2f7ec9", _dark: "#3d86c8" },
       "brand.night": { default: "#111111", _dark: "#0a0a0a" },
       "brand.copper": { default: "#2f7ec9", _dark: "#6eb4f0" },
       "brand.parchment": { default: "#e2e2e2", _dark: "#0a0a0a" },
@@ -49,8 +50,8 @@ export const themeConfig = (isOpenDyslexic) => ({
       const isDark = props.colorMode === "dark";
       return {
         body: {
-          bg: isDark ? "#0a0a0a" : "#e2e2e2",
-          color: isDark ? "#f2f2f2" : "#111111",
+          bg: isDark ? "#07090d" : "#e2e2e2",
+          color: isDark ? "#f4f7fb" : "#111111",
           fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.BODY,
           minHeight: "100vh",
           width: "100%",
@@ -100,11 +101,14 @@ export const themeConfig = (isOpenDyslexic) => ({
       },
       variants: {
         solid: {
-          bg: "brand.cyan",
+          bg: "brand.cyanTab",
           color: "#ffffff",
+          boxShadow: "0 0 18px rgba(47, 126, 201, 0.28)",
+          transition: "box-shadow 0.25s ease, background 0.25s ease",
           _hover: {
-            bg: "brand.cyanBright",
+            bg: { default: "#5aa8f0", _dark: "#4a96d4" },
             color: "#ffffff",
+            boxShadow: "0 0 22px rgba(61, 134, 200, 0.4)",
           },
         },
         outline: {

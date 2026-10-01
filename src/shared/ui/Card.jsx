@@ -9,13 +9,13 @@ const Card = ({
   ...rest
 }) => {
   const baseStyles = {
-    className: "card",
-    border: "1px solid",
+    className: "card glass",
     borderColor: "brand.line",
     bg: "brand.cardBg",
     color: "brand.ink",
     borderRadius,
-    transition: "border-color 0.2s ease",
+    backdropFilter: "blur(14px)",
+    transition: "border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease",
     w: "100%",
     overflow: "hidden",
     ...rest,
@@ -28,7 +28,9 @@ const Card = ({
   const hoverStyles = hoverEffect
     ? {
         _hover: {
-          borderColor: "brand.ink",
+          borderColor: "brand.cyan",
+          transform: "translateY(-4px)",
+          boxShadow: "0 0 0 1px rgba(126,200,255,0.35), 0 18px 40px rgba(47,126,201,0.18)",
           ...rest._hover,
         },
       }
