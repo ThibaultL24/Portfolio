@@ -4,7 +4,7 @@ export const contact = {
   description:
     "A site, a product, a text. Write to me — I work full remote.",
   form: {
-    title: "Send me a message",
+    title: "Let's talk",
     name: "Name",
     email: "Email",
     subject: "Subject",

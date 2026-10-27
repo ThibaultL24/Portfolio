@@ -3,36 +3,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&family=Syne:wght@400;500;600;700&display=swap");
 
 :root {
-  --ink: #111111;
-  --night: #111111;
-  --paper: #e2e2e2;
-  --white: #ffffff;
-  --cyan: #2f7ec9;
-  --cyan-bright: #4a9ae6;
-  --rust: #2f7ec9;
-  --font-title: "Syne", sans-serif;
-  --font-subtitle: "Outfit", sans-serif;
-  --font-body: "Manrope", system-ui, sans-serif;
-  font-family: var(--font-body);
-  line-height: 1.65;
-  font-weight: 400;
-  color-scheme: light;
-  color: var(--ink);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.chakra-ui-dark {
   --ink: #f4f7fb;
   --night: #07090d;
   --paper: #07090d;
   --white: #12161c;
   --cyan: #7ec8ff;
   --cyan-bright: #b7e3ff;
+  --rust: #7ec8ff;
+  --font-title: "Syne", sans-serif;
+  --font-subtitle: "Outfit", sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+  font-family: var(--font-body);
+  line-height: 1.65;
+  font-weight: 400;
   color-scheme: dark;
   color: var(--ink);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -94,7 +83,7 @@ a {
   height: 42vw;
   top: -8%;
   left: -6%;
-  background: radial-gradient(circle, rgba(47, 126, 201, 0.45), transparent 68%);
+  background: radial-gradient(circle, rgba(126, 200, 255, 0.32), transparent 68%);
 }
 
 .ambient-orb-b {
@@ -102,16 +91,8 @@ a {
   height: 36vw;
   right: -8%;
   bottom: 8%;
-  background: radial-gradient(circle, rgba(74, 154, 230, 0.28), transparent 70%);
-  animation-delay: -7s;
-}
-
-.chakra-ui-dark .ambient-orb-a {
-  background: radial-gradient(circle, rgba(126, 200, 255, 0.32), transparent 68%);
-}
-
-.chakra-ui-dark .ambient-orb-b {
   background: radial-gradient(circle, rgba(47, 126, 201, 0.22), transparent 70%);
+  animation-delay: -7s;
 }
 
 @keyframes drift {
@@ -125,31 +106,17 @@ a {
 }
 
 .neon-text {
-  text-shadow: 0 0 18px rgba(47, 126, 201, 0.35);
-}
-
-.chakra-ui-dark .neon-text {
   text-shadow: 0 0 22px rgba(126, 200, 255, 0.55);
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.42);
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 10px 30px rgba(17, 17, 17, 0.06);
-}
-
-.chakra-ui-dark .glass {
   background: rgba(18, 22, 28, 0.48);
-  border-color: rgba(126, 200, 255, 0.22);
+  border: 1px solid rgba(126, 200, 255, 0.22);
+  backdrop-filter: blur(16px);
   box-shadow: 0 0 0 1px rgba(126, 200, 255, 0.06), 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
 .neon-edge {
-  box-shadow: 0 0 0 1px rgba(47, 126, 201, 0.25), 0 18px 40px rgba(47, 126, 201, 0.12);
-}
-
-.chakra-ui-dark .neon-edge {
   box-shadow: 0 0 0 1px rgba(126, 200, 255, 0.35), 0 0 32px rgba(126, 200, 255, 0.16);
 }
 
@@ -179,14 +146,9 @@ a {
   position: fixed;
   inset: 0;
   z-index: 4;
-  opacity: 0.28;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-.chakra-ui-dark .film-grain {
-  mix-blend-mode: overlay;
   opacity: 0.2;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .focus-field > * {
@@ -230,10 +192,6 @@ a {
 
 /* Metallic TL identity — aligned with the new business card direction. */
 :root {
-  --tl-metal: linear-gradient(115deg, #21557b 0%, #65b4f0 26%, #d5eefc 48%, #4c87bd 70%, #173a63 100%);
-  --tl-accent-glow: rgba(47, 126, 201, 0.18);
-}
-.chakra-ui-dark {
   --tl-metal: linear-gradient(115deg, #28496b 0%, #80c9ff 24%, #effaff 49%, #548ec5 72%, #20466e 100%);
   --tl-accent-glow: rgba(126, 200, 255, 0.24);
 }
@@ -269,9 +227,6 @@ main > * {
 /* TL atmosphere: slow chrome-blue light movement, intentionally behind all content */
 .tl-atmosphere {
   isolation: isolate;
-  background: #e8ebed;
-}
-.chakra-ui-dark .tl-atmosphere {
   background: radial-gradient(ellipse at 75% 35%, #111a27 0%, #0b0f15 46%, #080a0e 100%);
 }
 .tl-atmosphere .ambient-orb {
@@ -285,21 +240,15 @@ main > * {
   height: min(64vw, 850px);
   top: -22%;
   left: 32%;
-  background: radial-gradient(circle, rgba(56,145,198,.28), rgba(103,162,206,.08) 41%, transparent 72%);
+  background: radial-gradient(circle, rgba(30,104,161,.38), rgba(19,54,84,.12) 50%, transparent 72%);
 }
 .tl-atmosphere .ambient-orb-b {
   width: min(52vw, 680px);
   height: min(52vw, 680px);
   right: -18%;
   bottom: -20%;
-  background: radial-gradient(circle, rgba(78,100,126,.22), transparent 70%);
-  animation-delay: -13s;
-}
-.chakra-ui-dark .tl-atmosphere .ambient-orb-a {
-  background: radial-gradient(circle, rgba(30,104,161,.38), rgba(19,54,84,.12) 50%, transparent 72%);
-}
-.chakra-ui-dark .tl-atmosphere .ambient-orb-b {
   background: radial-gradient(circle, rgba(71,116,150,.22), transparent 70%);
+  animation-delay: -13s;
 }
 .tl-atmosphere__beam {
   position: absolute;
@@ -315,9 +264,6 @@ main > * {
 .tl-atmosphere__vignette {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(232,235,237,.55) 0%, transparent 63%);
-}
-.chakra-ui-dark .tl-atmosphere__vignette {
   background: linear-gradient(90deg, rgba(7,9,13,.5), transparent 65%);
 }
 @keyframes tl-ambient-drift {
@@ -348,16 +294,13 @@ main > * {
   transition: transform 420ms cubic-bezier(.2,.7,.25,1);
 }
 .tl-hero__ambient {
-  background: radial-gradient(ellipse 54% 65% at 70% 45%, rgba(66,152,210,.16), transparent 75%);
+  background: radial-gradient(ellipse 60% 70% at 70% 45%, rgba(26,92,146,.3), transparent 73%);
   transform: translate3d(var(--hero-x),var(--hero-y),0);
 }
 .tl-hero__light {
-  background: linear-gradient(105deg, transparent 35%, rgba(130,189,217,.10) 50%, transparent 68%);
-  opacity: .65;
+  background: linear-gradient(105deg, transparent 35%, rgba(126,200,255,.22) 50%, transparent 68%);
+  opacity: .8;
   transform: translate3d(calc(var(--hero-x) * -0.55),calc(var(--hero-y) * -0.55),0) rotate(-8deg);
-}
-.chakra-ui-dark .tl-hero__ambient {
-  background: radial-gradient(ellipse 60% 70% at 70% 45%, rgba(26,92,146,.3), transparent 73%);
 }
 .tl-hero__metal-text {
   background: linear-gradient(112deg,#367aa9 0%,#72c6f1 40%,#d4e4e9 57%,#4d95bc 86%);
@@ -378,32 +321,21 @@ main > * {
 /* Fix: the original hero layers only moved with a desktop pointer.
    Independent CSS motion now makes the atmosphere visible on touch screens too. */
 .tl-hero {
-  background: radial-gradient(ellipse 95% 90% at 75% 48%, rgba(56,143,204,.065), transparent 75%);
-}
-.chakra-ui-dark .tl-hero {
   background: radial-gradient(ellipse 95% 90% at 75% 48%, rgba(28,102,157,.13), transparent 75%);
 }
 .tl-hero__ambient {
   inset: -16%;
   opacity: .95;
   background:
-    radial-gradient(ellipse 42% 55% at 60% 43%, rgba(45,137,198,.32) 0%, transparent 72%),
-    radial-gradient(ellipse 30% 42% at 25% 80%, rgba(113,173,206,.15), transparent 75%);
-  animation: tl-hero-glow 11s ease-in-out infinite alternate;
-}
-.chakra-ui-dark .tl-hero__ambient {
-  background:
     radial-gradient(ellipse 43% 54% at 61% 43%, rgba(38,133,201,.48) 0%, rgba(35,101,162,.16) 45%, transparent 72%),
     radial-gradient(ellipse 32% 46% at 20% 79%, rgba(68,135,180,.24), transparent 76%);
+  animation: tl-hero-glow 11s ease-in-out infinite alternate;
 }
 .tl-hero__light {
   inset: -16%;
   opacity: .85;
-  background: linear-gradient(108deg, transparent 29%, rgba(116,181,220,.04) 43%, rgba(123,195,235,.30) 49%, rgba(195,223,234,.12) 53%, transparent 66%);
-  animation: tl-hero-beam 12s linear infinite;
-}
-.chakra-ui-dark .tl-hero__light {
   background: linear-gradient(108deg, transparent 29%, rgba(72,142,194,.07) 42%, rgba(78,166,229,.32) 49%, rgba(157,205,235,.13) 53%, transparent 67%);
+  animation: tl-hero-beam 12s linear infinite;
 }
 @keyframes tl-hero-glow {
   0% { transform: translate3d(calc(var(--hero-x) - 16%), calc(var(--hero-y) + 5%), 0) scale(.95); }

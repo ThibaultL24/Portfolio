@@ -3,17 +3,23 @@ import ContactHeader from "./components/ContactHeader";
 import MonOffreSection from "./components/MonOffreSection";
 import ContactInfo from "./components/ContactInfo";
 import ContactForm from "./components/ContactForm";
-import { SimpleGrid, Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 
 const ContactContainer = () => (
   <>
     <ContactHeader />
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={12} mb={12}>
+    <Box
+      display="grid"
+      gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
+      columnGap={{ md: 12 }}
+      rowGap={{ base: 10, md: 12 }}
+      alignItems="start"
+    >
       <MonOffreSection />
+      <Box gridColumn={{ md: "2" }} gridRow={{ md: "1 / span 2" }}>
+        <ContactForm />
+      </Box>
       <ContactInfo />
-    </SimpleGrid>
-    <Box maxW="720px">
-      <ContactForm />
     </Box>
   </>
 );

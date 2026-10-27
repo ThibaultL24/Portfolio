@@ -17,6 +17,11 @@ import { useNavigate } from "react-router-dom";
 import intuitionLogo from "../../../assets/img/intuition.jpg";
 import Card from "../../../shared/ui/Card";
 import { useTranslation } from "../../../hooks/useTranslation";
+import { PROJECT_CATALOG } from "../../projects/data/projects";
+
+function coverFor(projectId) {
+  return PROJECT_CATALOG.find((project) => project.id === projectId)?.imageSrc;
+}
 
 function TrustBlock({ kicker, title, children, card, isFirst }) {
   return (
@@ -55,6 +60,38 @@ function TrustBlock({ kicker, title, children, card, isFirst }) {
         </Box>
         <Box w={{ base: "100%", lg: "380px" }} flexShrink={0}>{card}</Box>
       </Flex>
+    </Box>
+  );
+}
+
+function SitePreview({ src, alt, onOpen }) {
+  return (
+    <Box
+      as="button"
+      type="button"
+      onClick={onOpen}
+      aria-label={alt}
+      mb={6}
+      w="100%"
+      maxW="640px"
+      p={0}
+      borderRadius="16px"
+      overflow="hidden"
+      border="1px solid"
+      borderColor="brand.line"
+      bg="brand.cardBg"
+      cursor="pointer"
+      transition="border-color 0.25s ease"
+      _hover={{ borderColor: "brand.cyan" }}
+    >
+      <Image
+        src={src}
+        alt=""
+        w="100%"
+        h={{ base: "210px", md: "280px" }}
+        objectFit="cover"
+        objectPosition="top center"
+      />
     </Box>
   );
 }
@@ -195,6 +232,11 @@ const TrustSection = () => {
           />
         }
       >
+        <SitePreview
+          src={coverFor(6)}
+          alt={t("home.trust.recos.camille.kicker")}
+          onOpen={() => navigate("/projects/6")}
+        />
         <Text className="intro" fontSize="lg" maxW="640px">
           {t("home.trust.recos.camille.blurb")}
         </Text>
@@ -212,6 +254,11 @@ const TrustSection = () => {
           />
         }
       >
+        <SitePreview
+          src={coverFor(7)}
+          alt={t("home.trust.recos.corvus.kicker")}
+          onOpen={() => navigate("/projects/7")}
+        />
         <Text className="intro" fontSize="lg" maxW="640px">
           {t("home.trust.recos.corvus.blurb")}
         </Text>

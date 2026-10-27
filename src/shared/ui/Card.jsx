@@ -22,7 +22,7 @@ const Card = ({
   };
 
   const shadowStyles = showShadow
-    ? { boxShadow: { default: "0 16px 36px rgba(17,17,17,0.06)", _dark: "none" } }
+    ? { boxShadow: "none" }
     : {};
 
   const hoverStyles = hoverEffect

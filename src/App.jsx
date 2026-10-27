@@ -1,7 +1,7 @@
 // src/App.jsx
-import { ChakraProvider, extendTheme, useColorMode } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
@@ -11,17 +11,6 @@ import MainLayout from "./shared/layout/MainLayout";
 import AnimatedBackground from "./shared/components/AnimatedBackground";
 import { themeConfig } from "./shared/theme/themeConfig";
 import { FontContext, LanguageContext } from "./shared/contexts";
-
-function ColorModeFromQuery() {
-  const { setColorMode } = useColorMode();
-
-  useEffect(() => {
-    const mode = new URLSearchParams(window.location.search).get("mode");
-    if (mode === "dark" || mode === "light") setColorMode(mode);
-  }, [setColorMode]);
-
-  return null;
-}
 
 function App() {
   const [isOpenDyslexic, setIsOpenDyslexic] = useState(false);
@@ -43,7 +32,6 @@ function App() {
               toggleLanguage: () => setIsEnglish(!isEnglish),
             }}
           >
-            <ColorModeFromQuery />
             <AnimatedBackground />
             <MainLayout>
               <Routes>

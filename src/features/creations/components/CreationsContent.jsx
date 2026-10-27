@@ -17,7 +17,6 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  useColorModeValue,
   HStack,
   Tag,
   TagLabel,
@@ -69,24 +68,21 @@ const visualModalOverlay = {
   bg: "blackAlpha.700",
 };
 
+const readerPaper = "#161B24";
+const readerInk = "#E8EDF4";
+const readerMuted = "#9AA8B8";
+const readerBorder = "#2D3A4A";
+const readerShadow = "0 32px 80px rgba(0, 0, 0, 0.72)";
+const readerOverlay = "blackAlpha.850";
+const readerCloseHover = "whiteAlpha.150";
+const readerScrollbar = "rgba(255, 255, 255, 0.22)";
+
 const CreationsContent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedText, setSelectedText] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedVisual, setSelectedVisual] = useState(null);
   const { t } = useTranslation();
-
-  const readerPaper = useColorModeValue("#F6F4EF", "#161B24");
-  const readerInk = useColorModeValue("#121212", "#E8EDF4");
-  const readerMuted = useColorModeValue("#4A4A4A", "#9AA8B8");
-  const readerBorder = useColorModeValue("#D6D2C8", "#2D3A4A");
-  const readerShadow = useColorModeValue(
-    "0 28px 70px rgba(17, 17, 17, 0.18)",
-    "0 32px 80px rgba(0, 0, 0, 0.72)"
-  );
-  const readerOverlay = useColorModeValue("blackAlpha.600", "blackAlpha.850");
-  const readerCloseHover = useColorModeValue("blackAlpha.100", "whiteAlpha.150");
-  const readerScrollbar = useColorModeValue("rgba(0, 0, 0, 0.22)", "rgba(255, 255, 255, 0.22)");
 
   const handleTextClick = (text) => {
     setSelectedText(text);

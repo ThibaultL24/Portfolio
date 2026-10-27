@@ -3,23 +3,23 @@ import { COLORS, FONTS } from "./constants";
 
 export const themeConfig = (isOpenDyslexic) => ({
   config: {
-    initialColorMode: "light",
+    initialColorMode: "dark",
     useSystemColorMode: false,
   },
   semanticTokens: {
     colors: {
-      "brand.ink": { default: "#111111", _dark: "#f4f7fb" },
-      "brand.paper": { default: "#e2e2e2", _dark: "#07090d" },
-      "brand.cardBg": { default: "rgba(255,255,255,0.55)", _dark: "rgba(18,22,28,0.55)" },
-      "brand.muted": { default: "#6b6b6b", _dark: "rgba(244,247,251,0.68)" },
-      "brand.line": { default: "rgba(47,126,201,0.22)", _dark: "rgba(126,200,255,0.28)" },
-      "brand.nav": { default: "rgba(226,226,226,0.78)", _dark: "rgba(7,9,13,0.82)" },
-      "brand.cyan": { default: "#2f7ec9", _dark: "#7ec8ff" },
-      "brand.cyanBright": { default: "#5aa8f0", _dark: "#b7e3ff" },
-      "brand.cyanTab": { default: "#2f7ec9", _dark: "#3d86c8" },
-      "brand.night": { default: "#111111", _dark: "#0a0a0a" },
-      "brand.copper": { default: "#2f7ec9", _dark: "#6eb4f0" },
-      "brand.parchment": { default: "#e2e2e2", _dark: "#0a0a0a" },
+      "brand.ink": "#f4f7fb",
+      "brand.paper": "#07090d",
+      "brand.cardBg": "rgba(18,22,28,0.55)",
+      "brand.muted": "rgba(244,247,251,0.68)",
+      "brand.line": "rgba(126,200,255,0.28)",
+      "brand.nav": "rgba(7,9,13,0.82)",
+      "brand.cyan": "#7ec8ff",
+      "brand.cyanBright": "#b7e3ff",
+      "brand.cyanTab": "#3d86c8",
+      "brand.night": "#0a0a0a",
+      "brand.copper": "#6eb4f0",
+      "brand.parchment": "#0a0a0a",
     },
   },
   colors: {
@@ -46,12 +46,11 @@ export const themeConfig = (isOpenDyslexic) => ({
     mono: FONTS.MONO,
   },
   styles: {
-    global: (props) => {
-      const isDark = props.colorMode === "dark";
+    global: () => {
       return {
         body: {
-          bg: isDark ? "#07090d" : "#e2e2e2",
-          color: isDark ? "#f4f7fb" : "#111111",
+          bg: "#07090d",
+          color: "#f4f7fb",
           fontFamily: isOpenDyslexic ? FONTS.OPENDYS : FONTS.BODY,
           minHeight: "100vh",
           width: "100%",
@@ -80,7 +79,7 @@ export const themeConfig = (isOpenDyslexic) => ({
           color: "inherit",
         },
         "p.intro, .intro": {
-          color: isDark ? "rgba(242,242,242,0.62)" : "#6b6b6b",
+          color: "rgba(242,242,242,0.62)",
           fontSize: "lg",
           fontWeight: "400",
           lineHeight: "1.75",
@@ -106,7 +105,7 @@ export const themeConfig = (isOpenDyslexic) => ({
           boxShadow: "0 0 18px rgba(47, 126, 201, 0.28)",
           transition: "box-shadow 0.25s ease, background 0.25s ease",
           _hover: {
-            bg: { default: "#5aa8f0", _dark: "#4a96d4" },
+            bg: "#4a96d4",
             color: "#ffffff",
             boxShadow: "0 0 22px rgba(61, 134, 200, 0.4)",
           },
