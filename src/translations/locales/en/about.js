@@ -7,11 +7,11 @@ export const about = {
     title: "Profile",
     introduction: "My name is Thibault Lenormand.",
     experience:
-      "For over ten years, my path was guided by words, stage, and creation: a degree in modern literature from Avignon University, two years at the theater conservatory and Cours Florent, rich experiences in animation, sales, and catering — all professions of connection, rhythm, and observation.",
+      "For more than ten years, my path was guided by culture, art, and creation: a degree in modern literature at Avignon University, two years at the theater conservatory and Cours Florent, rich experiences in fields such as animation, sales, theater, and catering — all professions of connection, rhythm, and initiative.",
     transition:
-      'Then the desire to build differently emerged. Create, yes — but this time through digital projects. To bring my ideas to life, to materialize others\'. I therefore started a career transition to web development, following two training blocks at The Hacking Project: the "Full Stack" program, then the "Web Developer" diploma block, totaling six intensive months of coding and two two-month internships.',
+      'Then the desire to build differently took hold. Create, yes, but this time through digital projects. To bring my ideas to life, and to make other people\'s ideas real. I started a career change into web development, following two training blocks at The Hacking Project: the "Full Stack" path, then the "Web Developer" diploma block, twelve intensive months of code, and two two-month internships.',
     current:
-      "Today, I design applications, write clean and readable code, and continue to cultivate curiosity for ideas, uses, words, and humanity.",
+      "Today, I design applications, showcase sites, blogs, and portfolios, and I ship them. Have a project, or an idea that's still vague? Let's talk.",
     downloadCV: "Download CV",
   },
   skills: {

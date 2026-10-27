@@ -3,7 +3,7 @@ export const home = {
   title: "Thibault Lenormand\nWeb Dev Fullstack",
   subtitle: "React · Rails · Python — spécialisé web3",
   description:
-    "Je conçois, développe et mets en ligne. Du site vitrine à l’outil métier.",
+    "Je conçois, développe et mets en ligne. Un projet en tête, même encore flou ? Discutons.",
   offers: ["React", "Rails", "Python", "Web3"],
   ctaProjects: "Voir le travail",
   ctaContact: "Parler d’un projet",

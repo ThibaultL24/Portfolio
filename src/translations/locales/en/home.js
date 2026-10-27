@@ -3,7 +3,7 @@ export const home = {
   title: "Thibault Lenormand\nFull-stack Web Dev",
   subtitle: "React · Rails · Python — web3 specialist",
   description:
-    "I design, build, and ship. From a simple site to a working tool.",
+    "I design, build, and ship. A project in mind, even a vague one? Let's talk.",
   offers: ["React", "Rails", "Python", "Web3"],
   ctaProjects: "See the work",
   ctaContact: "Start a project",

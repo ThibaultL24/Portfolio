@@ -7,11 +7,11 @@ export const about = {
     title: "Profil",
     introduction: "Je m'appelle Thibault Lenormand.",
     experience:
-      "Pendant plus de dix ans, mon parcours a été guidé par les mots, la scène et la création : une licence en lettres modernes à la faculté d'Avignon, deux années au conservatoire de théâtre et aux Cours Florent, des expériences riches en animation, en vente, et en restauration — autant de métiers de lien, de rythme et d'observation.",
+      "Pendant plus de dix ans, mon parcours a été guidé par la culture, l'art et la création : une licence en lettres modernes à la faculté d'Avignon, deux années au conservatoire de théâtre et aux Cours Florent, des expériences riches dans différents domaines comme l'animation, la vente, le théâtre ou encore la restauration, autant de métiers de lien, de rythme et de prise d'initiative.",
     transition:
-      'Puis l\'envie de construire différemment s\'est imposée. Créer, oui — mais cette fois à travers des projets numériques. Pouvoir donner vie à mes idées, concrétiser celles des autres. J\'ai donc entamé une reconversion vers le développement web, en suivant deux blocs de formation au sein de The Hacking Project : le parcours "Full Stack", puis le bloc diplômant "Développeur Web", soit six mois intensifs de code, et deux stages de deux mois.',
+      'Puis l\'envie de construire différemment s\'est imposée. Créer, oui mais cette fois à travers des projets numériques. Pouvoir donner vie à mes idées, concrétiser celles des autres. J\'ai donc entamé une reconversion vers le développement web, en suivant deux blocs de formation au sein de The Hacking Project : le parcours "Full Stack", puis le bloc diplômant "Développeur Web", soit 12 mois intensifs de code, et deux stages de deux mois.',
     current:
-      "Aujourd'hui, je conçois des applications, j'écris du code propre et lisible, et je continue de cultiver une curiosité pour les idées, les usages, les mots et l'humain.",
+      "Aujourd'hui, je conçois des applications, des sites vitrines, blogs, portfolio et je les mets en ligne. Vous avez un projet, une idée même encore floue ? Discutons-en !",
     downloadCV: "Télécharger le CV",
   },
   skills: {
