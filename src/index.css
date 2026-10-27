@@ -374,3 +374,52 @@ main > * {
 @media (prefers-reduced-motion: reduce) {
   .tl-hero__ambient,.tl-hero__light,.tl-hero__portrait { transition:none; transform:none; }
 }
+
+/* Fix: the original hero layers only moved with a desktop pointer.
+   Independent CSS motion now makes the atmosphere visible on touch screens too. */
+.tl-hero {
+  background: radial-gradient(ellipse 95% 90% at 75% 48%, rgba(56,143,204,.065), transparent 75%);
+}
+.chakra-ui-dark .tl-hero {
+  background: radial-gradient(ellipse 95% 90% at 75% 48%, rgba(28,102,157,.13), transparent 75%);
+}
+.tl-hero__ambient {
+  inset: -16%;
+  opacity: .95;
+  background:
+    radial-gradient(ellipse 42% 55% at 60% 43%, rgba(45,137,198,.32) 0%, transparent 72%),
+    radial-gradient(ellipse 30% 42% at 25% 80%, rgba(113,173,206,.15), transparent 75%);
+  animation: tl-hero-glow 17s ease-in-out infinite alternate;
+}
+.chakra-ui-dark .tl-hero__ambient {
+  background:
+    radial-gradient(ellipse 43% 54% at 61% 43%, rgba(38,133,201,.48) 0%, rgba(35,101,162,.16) 45%, transparent 72%),
+    radial-gradient(ellipse 32% 46% at 20% 79%, rgba(68,135,180,.24), transparent 76%);
+}
+.tl-hero__light {
+  inset: -16%;
+  opacity: .85;
+  background: linear-gradient(108deg, transparent 27%, rgba(116,181,220,.04) 41%, rgba(123,195,235,.22) 50%, rgba(195,223,234,.08) 54%, transparent 72%);
+  animation: tl-hero-beam 22s ease-in-out infinite alternate;
+}
+.chakra-ui-dark .tl-hero__light {
+  background: linear-gradient(108deg, transparent 27%, rgba(72,142,194,.06) 40%, rgba(78,166,229,.20) 50%, rgba(157,205,235,.07) 56%, transparent 73%);
+}
+@keyframes tl-hero-glow {
+  0% { transform: translate3d(calc(var(--hero-x) - 4%), calc(var(--hero-y) + 2%), 0) scale(.96); }
+  100% { transform: translate3d(calc(var(--hero-x) + 6%), calc(var(--hero-y) - 4%), 0) scale(1.12); }
+}
+@keyframes tl-hero-beam {
+  0% { transform: translate3d(-8%, 0, 0) rotate(-9deg); opacity: .45; }
+  100% { transform: translate3d(8%, 0, 0) rotate(-5deg); opacity: .95; }
+}
+@media (max-width: 768px) {
+  .tl-hero__ambient { opacity: .85; }
+  .tl-hero__light { opacity: .65; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tl-hero__ambient, .tl-hero__light {
+    animation: none !important;
+    transform: none !important;
+  }
+}
