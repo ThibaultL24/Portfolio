@@ -400,7 +400,7 @@ main > * {
   inset: -16%;
   opacity: .85;
   background: linear-gradient(108deg, transparent 29%, rgba(116,181,220,.04) 43%, rgba(123,195,235,.30) 49%, rgba(195,223,234,.12) 53%, transparent 66%);
-  animation: tl-hero-beam 13s ease-in-out infinite alternate;
+  animation: tl-hero-beam 12s linear infinite;
 }
 .chakra-ui-dark .tl-hero__light {
   background: linear-gradient(108deg, transparent 29%, rgba(72,142,194,.07) 42%, rgba(78,166,229,.32) 49%, rgba(157,205,235,.13) 53%, transparent 67%);
@@ -409,9 +409,10 @@ main > * {
   0% { transform: translate3d(calc(var(--hero-x) - 16%), calc(var(--hero-y) + 5%), 0) scale(.95); }
   100% { transform: translate3d(calc(var(--hero-x) + 18%), calc(var(--hero-y) - 8%), 0) scale(1.12); }
 }
+/* One-way light loop: re-enters from the left only after leaving the right edge. */
 @keyframes tl-hero-beam {
-  0% { transform: translate3d(-30%, -3%, 0) rotate(-9deg); opacity: .6; }
-  100% { transform: translate3d(30%, 3%, 0) rotate(-5deg); opacity: 1; }
+  0% { transform: translate3d(-125%, 0, 0) rotate(-7deg); opacity: .8; }
+  100% { transform: translate3d(125%, 0, 0) rotate(-7deg); opacity: .8; }
 }
 @media (max-width: 768px) {
   .tl-hero__ambient { opacity: .85; }
