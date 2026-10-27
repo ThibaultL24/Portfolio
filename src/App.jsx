@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
-import Creations from "./pages/Creations";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProjectDetails from "./pages/ProjectDetails";
@@ -51,7 +50,6 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/projects/:projectId" element={<ProjectDetails />} />
-                <Route path="/creations" element={<Creations />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
               </Routes>
