@@ -11,18 +11,39 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
+import { useRef } from "react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import profileImg from "../../../assets/img/Thibault1.jpg";
 import { useTranslation } from "../../../hooks/useTranslation";
 
 const HeroSection = () => {
   const { t } = useTranslation();
+  const heroRef = useRef(null);
+  const handlePointerMove = (event) => {
+    if (event.pointerType !== "mouse" || !window.matchMedia("(prefers-reduced-motion: no-preference) and (pointer: fine)").matches) return;
+    const el = heroRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+    const y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+    el.style.setProperty("--hero-x", (x * 13).toFixed(2) + "px");
+    el.style.setProperty("--hero-y", (y * 10).toFixed(2) + "px");
+  };
+  const resetParallax = () => {
+    if (!heroRef.current) return;
+    heroRef.current.style.setProperty("--hero-x", "0px");
+    heroRef.current.style.setProperty("--hero-y", "0px");
+  };
   const title = t("home.title");
   const [titleLead, titlePunch] = String(title).split("\n");
   const offers = t("home.offers");
 
   return (
     <Box
+      ref={heroRef}
+      className="tl-hero"
+      onPointerMove={handlePointerMove}
+      onPointerLeave={resetParallax}
       bg="transparent"
       color="brand.ink"
       mx={{ base: -4, md: -8, lg: -16 }}
@@ -30,12 +51,8 @@ const HeroSection = () => {
       position="relative"
       overflow="hidden"
     >
-      <Box
-        position="absolute"
-        inset={0}
-        pointerEvents="none"
-        bg="radial-gradient(ellipse at 18% 30%, rgba(126,200,255,0.16) 0%, transparent 46%), radial-gradient(ellipse at 88% 10%, rgba(47,126,201,0.12) 0%, transparent 42%)"
-      />
+      <Box className="tl-hero__ambient" aria-hidden="true" />
+      <Box className="tl-hero__light" aria-hidden="true" />
       <Flex
         direction={{ base: "column", lg: "row" }}
         align="center"
@@ -47,7 +64,7 @@ const HeroSection = () => {
       >
         <VStack align="flex-start" spacing={6} flex="1" maxW={{ lg: "58%" }}>
           <Text
-            className="font-subtitle neon-text"
+            className="font-subtitle tl-hero__eyebrow"
             fontFamily="'Outfit', sans-serif"
             fontSize="sm"
             letterSpacing="0.08em"
@@ -59,20 +76,20 @@ const HeroSection = () => {
           <Heading
             as="h1"
             fontFamily="'Syne', sans-serif"
-            fontSize={{ base: "4xl", md: "6xl", xl: "7xl" }}
+            fontSize={{ base: "5xl", md: "7xl", xl: "8xl" }}
             fontWeight="600"
             lineHeight="0.98"
-            letterSpacing="-0.03em"
+            letterSpacing="-0.065em"
             color="brand.ink"
           >
             {titleLead}
             {titlePunch && (
               <Text
                 as="span"
-                className="neon-text"
+                className="tl-hero__metal-text"
                 display="block"
                 color="brand.cyan"
-                fontSize={{ base: "2xl", md: "4xl", xl: "5xl" }}
+                fontSize={{ base: "3xl", md: "5xl", xl: "6xl" }}
                 letterSpacing="-0.02em"
                 mt={2}
               >
@@ -146,7 +163,7 @@ const HeroSection = () => {
               filter="blur(18px)"
             />
             <Box
-              className="glass neon-edge"
+              className="glass neon-edge tl-hero__portrait"
               position="relative"
               h="100%"
               overflow="hidden"

@@ -27,7 +27,6 @@ const Navbar = () => {
   const navLinks = [
     { to: "/", label: t("nav.home") },
     { to: "/projects", label: t("nav.projects") },
-    { to: "/creations", label: t("nav.creations") },
     { to: "/about", label: t("nav.about") },
     { to: "/contact", label: t("nav.contact") },
   ];
@@ -42,6 +41,7 @@ const Navbar = () => {
       key={link.to}
       onClick={onClick}
       variant="ghost"
+      className="portfolio-nav-link"
       px={3}
       h="auto"
       py={2}
@@ -68,7 +68,7 @@ const Navbar = () => {
       zIndex={1000}
       top={0}
       left={0}
-      className="glass"
+      className="glass portfolio-navigation"
       bg="brand.nav"
       borderBottom="1px solid"
       borderColor="brand.line"
