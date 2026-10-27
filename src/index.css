@@ -410,8 +410,8 @@ main > * {
   100% { transform: translate3d(calc(var(--hero-x) + 6%), calc(var(--hero-y) - 4%), 0) scale(1.12); }
 }
 @keyframes tl-hero-beam {
-  0% { transform: translate3d(calc(var(--hero-x) * -.55 - 8%), 0, 0) rotate(-9deg); opacity: .45; }
-  100% { transform: translate3d(calc(var(--hero-x) * -.55 + 8%), 0, 0) rotate(-5deg); opacity: .95; }
+  0% { transform: translate3d(-8%, 0, 0) rotate(-9deg); opacity: .45; }
+  100% { transform: translate3d(8%, 0, 0) rotate(-5deg); opacity: .95; }
 }
 @media (max-width: 768px) {
   .tl-hero__ambient { opacity: .85; }
