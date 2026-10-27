@@ -389,7 +389,7 @@ main > * {
   background:
     radial-gradient(ellipse 42% 55% at 60% 43%, rgba(45,137,198,.32) 0%, transparent 72%),
     radial-gradient(ellipse 30% 42% at 25% 80%, rgba(113,173,206,.15), transparent 75%);
-  animation: tl-hero-glow 17s ease-in-out infinite alternate;
+  animation: tl-hero-glow 11s ease-in-out infinite alternate;
 }
 .chakra-ui-dark .tl-hero__ambient {
   background:
@@ -399,19 +399,19 @@ main > * {
 .tl-hero__light {
   inset: -16%;
   opacity: .85;
-  background: linear-gradient(108deg, transparent 27%, rgba(116,181,220,.04) 41%, rgba(123,195,235,.22) 50%, rgba(195,223,234,.08) 54%, transparent 72%);
-  animation: tl-hero-beam 22s ease-in-out infinite alternate;
+  background: linear-gradient(108deg, transparent 29%, rgba(116,181,220,.04) 43%, rgba(123,195,235,.30) 49%, rgba(195,223,234,.12) 53%, transparent 66%);
+  animation: tl-hero-beam 13s ease-in-out infinite alternate;
 }
 .chakra-ui-dark .tl-hero__light {
-  background: linear-gradient(108deg, transparent 27%, rgba(72,142,194,.06) 40%, rgba(78,166,229,.20) 50%, rgba(157,205,235,.07) 56%, transparent 73%);
+  background: linear-gradient(108deg, transparent 29%, rgba(72,142,194,.07) 42%, rgba(78,166,229,.32) 49%, rgba(157,205,235,.13) 53%, transparent 67%);
 }
 @keyframes tl-hero-glow {
-  0% { transform: translate3d(calc(var(--hero-x) - 4%), calc(var(--hero-y) + 2%), 0) scale(.96); }
-  100% { transform: translate3d(calc(var(--hero-x) + 6%), calc(var(--hero-y) - 4%), 0) scale(1.12); }
+  0% { transform: translate3d(calc(var(--hero-x) - 16%), calc(var(--hero-y) + 5%), 0) scale(.95); }
+  100% { transform: translate3d(calc(var(--hero-x) + 18%), calc(var(--hero-y) - 8%), 0) scale(1.12); }
 }
 @keyframes tl-hero-beam {
-  0% { transform: translate3d(-8%, 0, 0) rotate(-9deg); opacity: .45; }
-  100% { transform: translate3d(8%, 0, 0) rotate(-5deg); opacity: .95; }
+  0% { transform: translate3d(-30%, -3%, 0) rotate(-9deg); opacity: .6; }
+  100% { transform: translate3d(30%, 3%, 0) rotate(-5deg); opacity: 1; }
 }
 @media (max-width: 768px) {
   .tl-hero__ambient { opacity: .85; }
